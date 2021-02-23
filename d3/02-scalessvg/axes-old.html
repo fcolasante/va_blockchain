@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.dot {
+  stroke: #000;
+}
+
+</style>
+<body>
+<script type="text/javascript" src="d3.js"></script>
+<script>
+var cx=100;
+var cy=100;
+
+var cw=200;
+var ch=200;
+
+var svg= d3.select("body")
+		   .append("svg")
+		   .attr("width",cw)
+		   .attr("height",ch);
+
+var xscale=d3.scale.linear()
+			 .domain([0,1])
+			 .range([0,cw-20]);
+
+var yscale=d3.scale.linear()
+			 .domain([0,1])
+			 .range([10,ch-10])
+			 
+var xg=svg.append("g")
+		  .attr("transform", "translate("+[20,ch-20]+")");
+		  
+var xAxis=d3.svg.axis()
+			.scale(xscale)
+			.orient("bottom")
+			.ticks(4);
+
+xAxis(xg);
+
+var yg=svg.append("g")
+		  .attr("transform", "translate("+[20,20]+")");
+		  
+var yAxis=d3.svg.axis()
+			.scale(yscale)
+			.orient("left")
+            .tickValues([0,0.5,1]);
+
+yAxis(yg);
+</script>

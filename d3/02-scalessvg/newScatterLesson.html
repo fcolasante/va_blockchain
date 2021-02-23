@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head></head>
+<body>
+<!--<div id="myDiv"></div>-->
+
+<div id="title">My First Visual Environment</div>
+
+<div id="scatterView">
+
+</div>
+
+</body>
+<script type="text/javascript" src="javascript/d3.js"></script>
+
+<script>
+
+var margin = {top: 20, bottom: 20, left:20, right:20};
+var completeWidth=window.innerWidth;
+var completeHeight=window.innerHeight - 0.1*window.innerHeight;
+var width = completeWidth - margin.left - margin.right;
+var height = completeHeight -margin.top - margin.bottom;
+var sizeSquare = 20
+
+/*step 1: preparation */
+var x=d3.scaleLinear()
+		.range([0,width]);
+
+var y=d3.scaleLinear()
+		.range([height,0]);
+
+var color= d3.scaleOrdinal(d3.schemeCategory10);
+
+var xAxis= d3.axisBottom(x);
+var yAxis= d3.axisLeft(y);
+/* end step 1 */
+
+/* step 2: initialization of the drawing area */
+
+var svg = d3.select("#scatterView").append("svg")
+			.attr("width", completeWidth)
+			.attr("height", completeHeight)
+			.append("g")
+			.attr("transform", "translate("+margin.left+","+margin.top+")");
+/* end step 2 */
+
+/* step3: data loading, manipulation and drawing */
+
+var dataInspector;
+
+d3.tsv("data.tsv", function(error,data){
+dataInspector=data;
+
+data.forEach(function(d){
+	d.sepalLength = +d.sepalLength;
+	d.sepalWidth= +d.sepalWidth;
+})
+
+
+x.domain(d3.extent(data, function(d){ return d.sepalWidth;}))
+console.log(d3.extent(data, function(d){ return d.sepalWidth;}))
+y.domain(d3.extent(data, function(d){ return d.sepalLength;}))
+
+svg.append("g")
+   .attr("class","x axis")
+   .attr("transform", "translate(0,"+height+")")
+   .call(xAxis)
+   .append("text")
+   .attr("class","label")
+   .attr("x", width)
+   .attr("y", height)
+   .style("text-anchor","end")
+   .text("Sepal Width (cm)");
+
+svg.append("g")
+   .attr("class","y axis")
+   .call(yAxis)
+   .append("text")
+   .attr("class","label")
+   .attr("transform","rotate(-90)")
+   .attr("y", 6)
+   .attr("dy",".71em")
+   .style("text-anchor","end")
+   .text("Sepal Length (cm)");
+ 
+svg.selectAll(".dot")
+   .data(data)
+   .enter()
+   .append("circle")
+   .attr("class","dot")
+   .attr("r", 3.5)
+   .attr("cx", function(d){ 
+   //console.log(d);
+   return x(d.sepalWidth);
+   
+   })
+   .attr("cy", function(d){ return y(d.sepalLength);})
+   .style("fill", function(d) {return color(d.species); });
+ 
+console.log(color.domain())  
+var legend = svg.selectAll(".legend")
+				.data(color.domain())
+				.enter()
+				.append("g")
+				.attr("class","legend")
+				.attr("transform", function(d,i){return "translate(0,"+i*sizeSquare+")"})
+				.append("rect")
+				.attr("x",width - (0.1*width))
+				.attr("width",sizeSquare)
+				.attr("height",sizeSquare)
+				.style("fill", function(d){
+				console.log(d);
+				return color(d);
+				});
+
+d3.selectAll(".legend").append("text")
+	  .attr("class","legendText")
+	  .attr("x", width - 0.03*width)
+	  .attr("y", sizeSquare/2)
+	  .attr("dy", ".35em")
+	  .style("text-anchor","end")
+	  .text(function(d) {return d});
+  
+});
+
+
+
+/* end step3 */
+
+console.log("hello world!");
+</script>

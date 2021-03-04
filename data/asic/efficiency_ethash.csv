@@ -1,0 +1,4 @@
+model,release,hashRate,power,algo,profitability,efficiency
+Innosilicon A11 Pro ETH (2000Mh),Jun 2021, 2Gh/s, 2500W,EtHash, $157.38/day,1.25j/Mh
+Innosilicon A10 Pro+ ETH (750Mh),Dec 2020, 750Mh/s, 1350W,EtHash, $57.83/day,1.8j/Mh
+Innosilicon A10 Pro ETH (500Mh),May 2020, 500Mh/s, 960W,EtHash, $38.38/day,1.92j/Mh

@@ -1,12 +1,12 @@
 model,release,hashRate,power,algo,profitability,efficiency
-Goldshell LT5,Mar 2021, 2.05Gh/s, 2080W,Scrypt, $5.83/day,1.015j/Mh
-Innosilicon A6+ LTCMaster,Mar 2019, 2.2Gh/s, 2100W,Scrypt, $6.64/day,0.955j/Mh
-FusionSilicon X6 Miner,Aug 2018, 860Mh/s, 1079W,Scrypt, $1.85/day,1.255j/Mh
-Bitmain Antminer L3++ (580Mh),May 2018, 580Mh/s, 942W,Scrypt, $0.63/day,1.624j/Mh
-Bitmain Antminer L3++ (596Mh),May 2018, 596Mh/s, 1050W,Scrypt, $0.41/day,1.762j/Mh
-BW L21,Jan 2018, 550Mh/s, 950W,Scrypt, $0.43/day,1.727j/Mh
-Innosilicon A6 LTCMaster,Jan 2018, 1.23Gh/s, 1500W,Scrypt, $2.77/day,1.22j/Mh
-Innosilicon A4+ LTCMaster,Nov 2017, 620Mh/s, 750W,Scrypt, $1.41/day,1.21j/Mh
-Bitmain Antminer L3+ (600Mh),Oct 2017, 600Mh/s, 850W,Scrypt, $0.84/day,1.517j/Mh
-Innosilicon A4 Dominator,Jul 2017, 280Mh/s, 1050W,Scrypt, -$1.41/day,3.75j/Mh
-Bitmain Antminer L3+ (504Mh),Jun 2017, 504Mh/s, 800W,Scrypt, $0.60/day,1.587j/Mh
+Goldshell LT5,Mar 2021, 2.05Gh/s, 2080W,Scrypt, $9.28/day,1.015j/Mh
+Innosilicon A6+ LTCMaster,Mar 2019, 2.2Gh/s, 2100W,Scrypt, $10.34/day,0.955j/Mh
+FusionSilicon X6 Miner,Aug 2018, 860Mh/s, 1079W,Scrypt, $3.30/day,1.255j/Mh
+Bitmain Antminer L3++ (580Mh),May 2018, 580Mh/s, 942W,Scrypt, $1.61/day,1.624j/Mh
+Bitmain Antminer L3++ (596Mh),May 2018, 596Mh/s, 1050W,Scrypt, $1.42/day,1.762j/Mh
+BW L21,Jan 2018, 550Mh/s, 950W,Scrypt, $1.36/day,1.727j/Mh
+Innosilicon A6 LTCMaster,Jan 2018, 1.23Gh/s, 1500W,Scrypt, $4.84/day,1.22j/Mh
+Innosilicon A4+ LTCMaster,Nov 2017, 620Mh/s, 750W,Scrypt, $2.46/day,1.21j/Mh
+Bitmain Antminer L3+ (600Mh),Oct 2017, 600Mh/s, 850W,Scrypt, $1.85/day,1.517j/Mh
+Innosilicon A4 Dominator,Jul 2017, 280Mh/s, 1050W,Scrypt, -$0.94/day,3.75j/Mh
+Bitmain Antminer L3+ (504Mh),Jun 2017, 504Mh/s, 800W,Scrypt, $1.45/day,1.587j/Mh

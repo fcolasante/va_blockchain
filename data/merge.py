@@ -34,8 +34,8 @@ hashRate['PowerRequired'] = hashRate['hash-rate'] * 1000 * hashRate['PE'] / 10**
 hashRate['Energy'] = hashRate['PowerRequired'] * 24
 
 hashRate.head()
-hashRate.plot(x='Timestamp', y=['Energy'])
-plt.show()
+#hashRate.plot(x='Timestamp', y=['Energy'])
+#plt.show()
 
 print(timeBlock)
 df = pd.merge(left=hashRate, right=timeBlock, left_on='Timestamp', right_on='Timestamp')
@@ -58,8 +58,15 @@ print(df)
 df["EnergyXCoin"] = df['avg-confirmation-time'] * df['PowerRequired'] / 60 / df['Reward'] * 1000
 # KWh/coin
 df["CoinsXDay"] = 24 * 60 / df['avg-confirmation-time'] * df['Reward']
-df.plot(x='Timestamp', y=['CoinsXDay'])
+#df.plot(x='Timestamp', y=['CoinsXDay'])
+#plt.show()
+
+#df['CoinsXDay'].cumsum(axis = 0, skipna = True).plot()
+#plt.show()
+
+
+timeBlock.plot.box()
 plt.show()
 
-df['CoinsXDay'].cumsum(axis = 0, skipna = True).plot()
-plt.show()
+from statsmodels.tsa.seasonal import seasonal_decompose
+from dateutil.parser import parse

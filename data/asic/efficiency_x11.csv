@@ -1,0 +1,24 @@
+model,release,hashRate,power,algo,profitability,efficiency
+StrongU STU-U6,Nov 2019, 440Gh/s, 2200W,X11, $13.63/day,0.005j/Mh
+FusionSilicon X7 Miner,Mar 2019, 262Gh/s, 1420W,X11, $7.80/day,0.005j/Mh
+Bitmain Antminer D5 (119Gh)	,Nov 2018, 119Gh/s, 1566W,X11, $0.89/day,0.013j/Mh
+Dayun Zig D1,Nov 2018, 48Gh/s, 2200W,X11, -$4.16/day,0.046j/Mh
+Baikal BK-G28,Oct 2018, 28Gh/s, 1300W,X11, -$2.47/day,0.046j/Mh
+Spondoolies SPx36,Sep 2018, 540Gh/s, 4400W,X11, $11.83/day,0.008j/Mh
+iBeLink DM56G,May 2018, 56Gh/s, 2100W,X11, -$3.51/day,0.038j/Mh
+Innosilicon A5+ DashMaster,Mar 2018, 65Gh/s, 1500W,X11, -$1.37/day,0.023j/Mh
+PinIdea DR-100 Pro,Nov 2017, 21Gh/s, 900W,X11, -$1.64/day,0.043j/Mh
+Baikal BK-X,Nov 2017, 10Gh/s, 630W,X11, -$1.36/day,0.063j/Mh
+Innosilicon A5 DashMaster,Oct 2017, 32.5Gh/s, 750W,X11, -$0.69/day,0.023j/Mh
+Bitmain Antminer D3 (19.3Gh),Oct 2017, 19.3Gh/s, 1350W,X11, -$3.01/day,0.07j/Mh
+Bitmain Antminer D3 (17.5Gh),Oct 2017, 17.5Gh/s, 1280W,X11, -$2.89/day,0.073j/Mh
+iBeLink DM22G,Sep 2017, 22Gh/s, 810W,X11, -$1.33/day,0.037j/Mh
+Bitmain Antminer D3 (15Gh),Sep 2017, 15Gh/s, 1200W,X11, -$2.78/day,0.08j/Mh
+PinIdea DR-100,Aug 2017, 19Gh/s, 900W,X11, -$1.73/day,0.047j/Mh
+Baikal Giant+ A2000,Aug 2017, 2Gh/s, 450W,X11, -$1.15/day,0.215j/Mh
+iBeLink DM11G,Jul 2017, 10.8Gh/s, 810W,X11, -$1.84/day,0.075j/Mh
+PinIdea DR-3,Apr 2017, 600Mh/s, 345W,X11, -$0.97/day,0.575j/Mh
+Baikal Miner Cube,Apr 2017, 300Mh/s, 90W,X11, -$0.20/day,0.25j/Mh
+Baikal Giant A900,Oct 2016, 900Mh/s, 270W,X11, -$0.58/day,0.241j/Mh
+Baikal Mini Miner,Sep 2016, 150Mh/s, 50W,X11, -$0.11/day,0.267j/Mh
+Baikal Quadruple Mini Miner,Aug 2016, 600Mh/s, 192W,X11, -$0.43/day,0.267j/Mh

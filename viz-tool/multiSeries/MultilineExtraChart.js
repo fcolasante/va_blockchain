@@ -7,7 +7,7 @@ height=svg.attr("height") - margin.top - margin.bottom => here svg.attr("height"
 g elemenet is appended to svg which used to group SVG shapes together and translated as needed.
 -----------------------------------------------------------------------------------------------------------------------------------------------*/
 var svg = d3.select("#chart1"),
-    margin = { top: 20, right: 80, bottom: 30, left: 50 },
+    margin = { top: 20, right: 80, bottom: 30, left: 80 },
     width = 960 - margin.left - margin.right,
     height = svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -312,7 +312,7 @@ This approximates the values and prolts the curve using curveBasis and the color
 /*----------------------------------------------------------------------------------------------------------------------------------------------
 The code below creates the animation effect using the d3.easeLinear effect and duration of 2000
 -----------------------------------------------------------------------------------------------------------------------------------------------*/ 
-      
+      /*
         country
             .attr("stroke-dasharray", totalLength + " " + totalLength)
             .attr("stroke-dashoffset", totalLength)
@@ -321,7 +321,7 @@ The code below creates the animation effect using the d3.easeLinear effect and d
             .ease(d3.easeLinear)
 
             .attr("stroke-dashoffset", 0);
-
+            */
 
 /*----------------------------------------------------------------------------------------------------------------------------------------------
 The code below appends the text / countryname with each line at the end.

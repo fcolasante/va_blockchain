@@ -30,6 +30,7 @@ def dumpAll():
     dumpASIC("equihash","data/asic/efficiency_equihash.csv")
     dumpASIC("x11","data/asic/efficiency_x11.csv")
     dumpASIC("eaglesong","data/asic/efficiency_eaglesong.csv")
+    dumpASIC("cryptonight","data/asic/efficiency_cryptonight.csv")
 
     print("ASCI data dumped...")
     return

@@ -1,3 +1,13 @@
+text {
+    font: 10px sans-serif;
+}
+
+form {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 .axis path {
     display: none;
 }
@@ -11,10 +21,4 @@
 .group-label {
     font-weight: bold;
     text-anchor: end;
-}
-
-form {
-    position: absolute;
-    right: 10px;
-    top: 10px;
 }

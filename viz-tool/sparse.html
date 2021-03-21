@@ -17,16 +17,14 @@
 
 <body>
     <h1>Blockchain Comparator</h1>
-    <svg id="chart1" width="1160" height="500"></svg>
-    <script src="multiSeries/MultilineExtraChart.js" charset="utf-8"></script>
-    <svg id="chart" width="650" height="400"></svg>
     <div id="my_dataviz"></div>
-    <!--<script src="stacked_bar/stacked.js" charset="utf-8"></script>-->
 </body>
 <script>
+  var parseTime = d3.timeParse("%Y-%m-%d");
+  
     // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
+    width =  800 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -39,12 +37,19 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("asic/asic.csv", function(data) {
-    console.log(data);
+d3.csv("asic/asic.csv", d => {
+  d.release = parseTime(d.release);
+  return d;
+}).then( data  => {
   // Add X axis
-  var x = d3.scaleTime().range([0, width]);
-
-  x.domain(d3.extent(data, function (d) { return d.release}));
+  console.log(data);
+  let x = d3.scaleTime()
+            .domain(d3.extent(data, d => d.release))
+            .range([0, width]);
+  //let color = d3.scaleOrdinal(data.map(d => d.power), d3.schemeCategory10)
+  var color = d3.scaleSequential()
+                  .domain(d3.extent(data, d => d.power))
+                  .interpolator(d3.interpolateViridis);
 
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
@@ -65,10 +70,10 @@ d3.csv("asic/asic.csv", function(data) {
     .append("circle")
       .attr("cx", function (d) { return x(d.release); } )
       .attr("cy", function (d) { return y(d.hashRate); } )
-      .attr("r", 1.5)
-      .style("fill", "#69b3a2")
+      .attr("r", d => d.efficiency /10)
+      .style("fill", d => color(d.power))
 
-})
+});
 
 </script>
 </html>

@@ -57,10 +57,6 @@ function gridYAxis() {
 The variable filterdata is used to store the values which needs to be displayed. By default data for all countries will be displayed.
 -----------------------------------------------------------------------------------------------------------------------------------------------*/ 
 
-
-
-var filterData = { "Brazil": true, "China": true, "India": true, "Russia": true, "South Africa": true, "United States": true };
-
 var filterData = { "BTC":false, 
 "ETH,": false,
 "LTC,": false,

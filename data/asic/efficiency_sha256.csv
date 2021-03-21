@@ -1,7 +1,7 @@
 model,release,hashRate,power,algo,profitability,efficiency
 Bitmain Antminer S19j (90Th),Jun 2021, 90Th/s, 3250W,SHA-256, $26.93/day,0.036j/Gh
 Bitmain Antminer S19j Pro (100Th),Jun 2021, 100Th/s, 3050W,SHA-256, $31.53/day,0.031j/Gh
-Innosilicon T2 Turbo 29T/30T,Jan 2021, 30Th/s, 2400W,2  , $5.18/day,0.08j/Gh
+Innosilicon T2 Turbo 29T/30T,Jan 2021, 30Th/s, 2400W,SHA-256, $5.18/day,0.08j/Gh
 Canaan AvalonMiner 1246,Jan 2021, 90Th/s, 3420W,SHA-256, $26.44/day,0.038j/Gh
 MicroBT Whatsminer M31S+,Dec 2020, 80Th/s, 3360W,SHA-256, $22.58/day,0.042j/Gh
 MicroBT Whatsminer M32S,Nov 2020, 66Th/s, 3432W,SHA-256, $16.73/day,0.052j/Gh
@@ -97,4 +97,4 @@ Bitmain Antminer S7-LN,Jun 2016, 2.7Th/s, 697W,SHA-256, -$0.92/day,0.258j/Gh
 Bitmain Antminer S9 (11.5Th),Jun 2016, 11.5Th/s, 1127W,SHA-256, $1.39/day,0.098j/Gh
 Bitmain Antminer S7,Sep 2015, 4.73Th/s, 1293W,SHA-256, -$1.82/day,0.273j/Gh
 Bitmain Antminer S5,Dec 2014, 1.155Th/s, 590W,SHA-256, -$1.23/day,0.511j/Gh
-Bitmain Antminer S3,Jul 2014, 478Gh/s, 366W,SHA-256, -$0.86/day,0.001j/Mh
+Bitmain Antminer S3,Jul 2014, 0.478Th/s, 366W,SHA-256, -$0.86/day,0.001j/Mh

@@ -2,11 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.0.0/d3.min.js" integrity="sha512-55FY9DHtfMBE2epZhXrWn78so/ZT5/GCLim66+L83U5LghiYwVBAEris4/13Iab9S8C9ShJp3LQL/2raiaO+0w==" crossorigin="anonymous"></script>
-
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://d3js.org/d3-brush.v2.min.js"></script>
     <style>
         body {
             font-family: 'Noto Sans', sans-serif;
+        }
+
+        div.tooltip {
+          position: absolute;
+          text-align: center;
+          width: inherit;
+          height: inherit;
+          padding: 2px;
+          font: 12px sans-serif;
+          background: lightsteelblue;
+          border: 0px;
+          border-radius: 8px;
+          text-align: left;
         }
     </style>
     <!--CHART 1-->
@@ -20,21 +33,29 @@
     <div id="my_dataviz"></div>
 </body>
 <script>
-  var parseTime = d3.timeParse("%Y-%m-%d");
+  const parseTime = d3.timeParse("%Y-%m-%d");
+  const formatTime = d3.timeFormat('%d/%m/%Y');
+
+  //https://www.d3-graph-gallery.com/graph/scatter_basic.html
   
     // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width =  800 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width =  900 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+const div = d3
+  .select('body')
+  .append('div')
+  .attr('class', 'tooltip')
+  .style('opacity', 0);
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+let svg = d3.select("#my_dataviz")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform",`translate(${margin.left},${margin.top})`);
 
 //Read the data
 d3.csv("asic/asic.csv", d => {
@@ -44,23 +65,41 @@ d3.csv("asic/asic.csv", d => {
   // Add X axis
   console.log(data);
   let x = d3.scaleTime()
-            .domain(d3.extent(data, d => d.release))
+            .domain(d3.extent(data, d => d.release)).nice()
             .range([0, width]);
-  //let color = d3.scaleOrdinal(data.map(d => d.power), d3.schemeCategory10)
-  var color = d3.scaleSequential()
-                  .domain(d3.extent(data, d => d.power))
-                  .interpolator(d3.interpolateViridis);
 
-  svg.append("g")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x));
+  //let color = d3.scaleOrdinal(data.map(d => d.power), d3.schemeCategory10)
+  let color = d3.scaleSequential()
+                  .domain(d3.extent(data, d => d.profitability))
+                  .interpolator(d3.interpolateRdYlGn);
+
+
+
+  let xAxis = svg.append("g")
+    .attr("transform", `translate(0,${height})`)
+    .call(d3.axisBottom(x))
+    .call(g => g.append("text")
+                  .attr("x", width - margin.right)
+                  .attr("y", -4)
+                  .attr("fill", "#000")
+                  .attr("font-weight", "bold")
+                  .attr("text-anchor", "end")
+                  .text("Release date ASIC")
+    );
 
   // Add Y axis
-  var y = d3.scaleLinear()
-    .domain(d3.extent(data, function (d) { return d.hashRate}))
+  let y = d3.scaleLinear()
+    .domain(d3.extent(data, function (d) { return d.hashRate})).nice()
     .range([ height, 0]);
-  svg.append("g")
-    .call(d3.axisLeft(y));
+
+  let yAxis = svg.append("g")
+    .attr("transform", `translate(0,${margin.top})`)
+    .call(d3.axisLeft(y))
+    .call(g => g.select(".tick:last-of-type text").clone()
+        .attr("x", 4)
+        .attr("text-anchor", "start")
+        .attr("font-weight", "bold")
+        .text("HashRate [GH/s]"));
 
   // Add dots
   svg.append('g')
@@ -71,7 +110,26 @@ d3.csv("asic/asic.csv", d => {
       .attr("cx", function (d) { return x(d.release); } )
       .attr("cy", function (d) { return y(d.hashRate); } )
       .attr("r", d => d.efficiency /10)
-      .style("fill", d => color(d.power))
+      .style("fill", d => color(d.profitability))
+      .on("mouseover", function(event, d) {
+       div.transition()
+         .duration(200)
+         .style("opacity", .9);
+         div
+        .html(`
+          <b>${d.model}</b> <br/>
+          <b>HashRate:    </b>${d.hashRate}           <i>GH/s</i><br/>
+          <b>Efficiency:  </b>${d.efficiency}         <i>j/Gh</i><br/>
+          <b>Power:       </b>${d.power}              <i>W</i><br/>
+          <b>Profitability:  </b>${d.profitability}   <i>$/day</i><br/>
+          <b>Release date: </b>${formatTime(d.release)}<i></i>
+        `)
+        .style('left', event.clientX + 'px')
+        .style('top', event.clientY - 28 + 'px');
+       });
+
+  var brush = d3.brush();
+  console.log(brush);
 
 });
 

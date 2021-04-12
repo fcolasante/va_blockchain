@@ -102,7 +102,7 @@ d3.csv("asic/asic.csv", d => {
         .text("HashRate [GH/s]"));
 
   // Add dots
-  svg.append('g')
+  let circle = svg.append('g')
     .selectAll("dot")
     .data(data)
     .enter()
@@ -126,10 +126,33 @@ d3.csv("asic/asic.csv", d => {
         `)
         .style('left', event.clientX + 'px')
         .style('top', event.clientY - 28 + 'px');
-       });
+       })
 
-  var brush = d3.brush();
-  console.log(brush);
+  /*
+  svg.call( 
+    d3.brush()
+    .on("start brush", brushed)
+  );
+  */
+  function brushed(event) {
+    const selection = event.selection;
+    if (selection === null) {
+      circle.attr("stroke", null);
+    } else {
+      const [x0, x1] = selection;
+      const minX = x.invert(x0[0]);
+      const maxX = x.invert(x1[0]);
+      const minY = y.invert(x0[1]);
+      const maxY = y.invert(x1[1]);
+      
+      circle.attr("stroke", d => {
+        return ( minX <= d.release && d.release <= maxX && minY >= d.hashRate && d.hashRate >= maxY) ? 'red' : null;
+      }).style("stroke-width", 5);
+
+      circle.filter( d => minX <= d.release && d.release <= maxX && minY >= d.hashRate && d.hashRate >= maxY)
+      .attr("fill", "blue");
+    }
+  }
 
 });
 

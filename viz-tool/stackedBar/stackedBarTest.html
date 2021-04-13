@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.0.0/d3.min.js" integrity="sha512-55FY9DHtfMBE2epZhXrWn78so/ZT5/GCLim66+L83U5LghiYwVBAEris4/13Iab9S8C9ShJp3LQL/2raiaO+0w==" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.0.0/d3.min.js" integrity="sha512-55FY9DHtfMBE2epZhXrWn78so/ZT5/GCLim66+L83U5LghiYwVBAEris4/13Iab9S8C9ShJp3LQL/2raiaO+0w==" crossorigin="anonymous"></script>-->
     <style>
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             margin: auto;
             position: relative;
-            width: 960px;
+            width: 1920px;
         }
     </style>
     <!--CHART 2-->
@@ -17,13 +17,35 @@
 </head>
 
 <body>
-    <form>
-        <label><input type="radio" name="mode" value="multiples" checked> Multiples</label>
-        <label><input type="radio" name="mode" value="stacked"> Stacked</label>
-    </form>
+    <script type="module">
+        import { drawStacked } from "./stacked_v6_test.js";
+        //import { chart } from "./stacked.js";
 
-    <h1>Blockchain stackedBar</h1>
-    <svg id="chart2"></svg>
-    <script src="stacked_v5_test.js" charset="utf-8"></script>
+        d3.csv("../multiSeries/hashrate_simple.csv").then(function(data) {
+            drawStacked(data)
+        });
+
+        /*function reDraw(id) {
+            filterData[id] = !filterData[id];
+            console.log("redraw :");
+            console.log(filterData);
+            drawChart(filterData);
+            //drawStacked(filterData);
+        };*/
+
+    </script>
+    <div id="Multi-chart">
+        <h1>Blockchain stackedBar</h1>
+
+        <!--<form>
+            <label><input type="radio" name="mode" value="multiples" checked> Multiples</label>
+            <label><input type="radio" name="mode" value="stacked"> Stacked</label>
+        </form>
+
+        <svg id="chart2"></svg>
+        <script src="stacked_v5_test.js" charset="utf-8"></script>
+        <h1>Bis attempt</h1>
+        <svg id="chart3"  width=900></svg>-->
+    </div>
 </body>
 </html>

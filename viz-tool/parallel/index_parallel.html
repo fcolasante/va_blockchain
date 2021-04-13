@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <title>Nutrient Parallel Coordinates IV</title>
 <body>
-<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
 <script src="https://bl.ocks.org/syntagmatic/raw/3341641/render-queue.js"></script>
 <link rel="stylesheet" href="style.css"></link>
 <script>
@@ -217,9 +217,8 @@ var axes = svg.selectAll(".axis")
     .attr("class", function(d) { return "axis " + d.key.replace(/ /g, "_"); })
     .attr("transform", function(d,i) { return "translate(" + xscale(i) + ")"; });
 
-d3.csv("asic.csv", function(error, data) {
-  if (error) throw error;
-
+d3.csv("asic.csv").then( data => {
+  console.log(data);
   data.forEach(function(d) {
     dimensions.forEach(function(p) {
       d[p.key] = !d[p.key] ? null : p.type.coerce(d[p.key]);

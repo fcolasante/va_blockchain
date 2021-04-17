@@ -110,6 +110,7 @@ values:
 function drawChart(filterData) {
     d3.csv("multiSeries/hashrate_simple.csv", type).then(function (data) {
         console.log(data);
+
         var countries = data.columns.slice(1).map(function (id) {
             return {
                 id: id,
@@ -119,6 +120,7 @@ function drawChart(filterData) {
             };
         });
         console.log(countries);
+        
  /*----------------------------------------------------------------------------------------------------------------------------------------------
 newcountries have the original data from the file whereas countries have the filtered data which are selected by the user. This is done to have
 the names of all the countries even when the filter is changed.

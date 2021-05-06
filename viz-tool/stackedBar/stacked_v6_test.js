@@ -2,13 +2,13 @@
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 20, bottom: 35, left: 50},
-    width  = 960 - margin.left - margin.right,
+    width  = 860 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#Multi-chart")
+var svg = d3.select("#chart-1")
     .append("svg")
-        .attr("id", "chart2")
+        .attr("id", "stacked-chart")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -16,7 +16,7 @@ var svg = d3.select("#Multi-chart")
 
 // to read dates properly
 var parseDate = d3.timeParse("%Y/%m"),   // "%Y/%m"), => DD/MM/YY
-    formatDate = d3.timeFormat("%m-%y");
+    formatDate = d3.timeFormat("%m/%y");
 
 
 // Parse the Data  ../multiSeries/hashrate_simple.csv
@@ -42,6 +42,8 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
     var y = d3.scaleLinear()
         .domain([0, 200000])
         .range([height, 0]);
+
+    var y0 = d3.scaleLinear();
 
     // Add x-axis
     svg.append("g")
@@ -121,6 +123,45 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
                 //.on("mouseover", mouseover)
                 //.on("mousemove", mousemove)
                 //.on("mouseleave", mouseleave);
+
+
+    // ----------------------------------------------
+    // Handle transitions
+    // ----------------------------------------------
+    d3.selectAll("input").on("change", change);
+
+    var timeout = setTimeout(function() {
+        d3.select("input[value=\"stacked\"]")
+            .property("checked", true)
+            .each(change);
+    }, 2000);
+
+    function change() {
+        clearTimeout(timeout);
+        if (this.value === "multiples") transitionMultiples();
+        else transitionStacked();
+    }
+
+    // TO check this transitions
+    function transitionMultiples() {
+        var t = svg.transition().duration(750);
+        var g = t.selectAll(".group")
+            .attr("transform", function(d) { return "translate(0," + y0(d.key) + ")"; })
+            .selectAll("rect")
+                .attr("y", function(d) { return y(d.value); })
+                .select(".group-label")
+                    .attr("y", function(d) { return y(d.values[0].value / 2); });
+    };
+
+    function transitionStacked() {
+        var t = svg.transition().duration(750);
+        var g = t.selectAll(".group")
+            .attr("transform", "translate(0," + y0(y0.domain()[0]) + ")")
+            .selectAll("rect")
+                .attr("y", function(d) { return y(d.value + d.valueOffset); })
+                .select(".group-label")
+                    .attr("y", function(d) { return y(d.values[0].value / 2 + d.values[0].valueOffset); });
+    };
 
 });
 

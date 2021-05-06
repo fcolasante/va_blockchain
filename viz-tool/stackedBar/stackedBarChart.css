@@ -1,24 +1,43 @@
-text {
-    font: 10px sans-serif;
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    /* position: relative; */
 }
 
 form {
-    position: absolute;
     right: 10px;
     top: 10px;
 }
 
-.axis path {
-    display: none;
-}
-
-.axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-}
 
 .group-label {
     font-weight: bold;
     text-anchor: end;
+}
+
+/* My stuff */
+.wrapper {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.chart-box {
+    min-width: 900px;
+    flex-grow: 1;
+    /* background-color: #b6ee62; */
+} 
+
+.one {
+    background-color: whitesmoke;  
+}
+
+.two {
+    background-color: aqua;
 }

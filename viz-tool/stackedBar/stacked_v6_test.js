@@ -1,7 +1,7 @@
 // export function drawStacked(data) {
 
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 20, bottom: 20, left: 50},
+var margin = {top: 10, right: 20, bottom: 35, left: 50},
     width  = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -15,8 +15,8 @@ var svg = d3.select("#Multi-chart")
             .attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
 // to read dates properly
-var parseDate = d3.timeParse("%Y/%m"), // "%Y/%m"), => DD/MM/YY
-    formatDate = d3.timeFormat("%y");
+var parseDate = d3.timeParse("%Y/%m"),   // "%Y/%m"), => DD/MM/YY
+    formatDate = d3.timeFormat("%m-%y");
 
 
 // Parse the Data  ../multiSeries/hashrate_simple.csv
@@ -29,28 +29,28 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
     console.log(subgroups);
 
     // value of the first column "dates" group
-    var dates = d3.map(data, function(d){ return d.date; }).keys();  //RABARBARO
+    var dates = d3.map(data, function(d) { return d.date; });
     console.log(dates);
 
     // Create X axis
     var x = d3.scaleBand()
         .domain(dates)
-        .range([0, width])
-        .padding([0.1]);   
+        .range([0, width]);
+        //.padding([0.1]);   
 
     // Create Y axis
     var y = d3.scaleLinear()
-        .domain([0, 300000])
+        .domain([0, 200000])
         .range([height, 0]);
 
     // Add x-axis
     svg.append("g")
         .attr("class", "x-axis") 
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickSizeOuter(0).tickFormat(formatDate));
-        //.selectAll("text")
-        //    .attr("transform", "translate(-10,0)rotate(-45)")
-        //    .style("text-anchor", "end");
+        .call(d3.axisBottom(x).tickSizeOuter(0).tickFormat(formatDate))
+        .selectAll("text")
+            .attr("transform", "translate(-10,0)rotate(-45)")
+            .style("text-anchor", "end");
 
     // Add y-axis
     svg.append("g")
@@ -64,7 +64,9 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
 
     //stack the data? --> stack per subgroup
     var stackedData = d3.stack()
-        .keys(subgroups)(data);
+        .keys(subgroups)
+        .order(d3.stackOrderNone)
+        (data);
 
     console.log(stackedData);
 
@@ -112,7 +114,7 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
             .selectAll("rect")
             .data(function(d) { return d; })
             .enter().append("rect")
-                .attr("x", function(d) { return x(d.date); })
+                .attr("x", function(d) { return x(d.data.date); })
                 .attr("y", function(d) { return y(d[1]); })
                 .attr("height", function(d) { return y(d[0]) - y(d[1]); })
                 .attr("width", x.bandwidth());

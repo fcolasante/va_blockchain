@@ -47,7 +47,7 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
 
     // Add x-axis
     svg.append("g")
-        .attr("class", "x-axis") 
+        //.attr("class", "x-axis") 
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x).tickSizeOuter(0).tickFormat(formatDate))
         .selectAll("text")
@@ -56,7 +56,7 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
 
     // Add y-axis
     svg.append("g")
-        .attr("class", "y-axis")
+        //.attr("class", "y-axis")
         .call(d3.axisLeft(y));
 
     // color palette => one color per subgroup
@@ -128,7 +128,7 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
     // ----------------------------------------------
     // Handle transitions
     // ----------------------------------------------
-    d3.selectAll("input").on("change", change);
+    /*d3.selectAll("input").on("change", change);
 
     var timeout = setTimeout(function() {
         d3.select("input[value=\"stacked\"]")
@@ -161,7 +161,7 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
                 .attr("y", function(d) { return y(d.value + d.valueOffset); })
                 .select(".group-label")
                     .attr("y", function(d) { return y(d.values[0].value / 2 + d.values[0].valueOffset); });
-    };
+    }; */
 
 });
 

@@ -18,7 +18,7 @@ form {
 /* My stuff */
 .wrapper {
     width: 100%;
-    max-width: 1800px;
+    max-width: 1870px;
     margin: 0 auto;
 }
 
@@ -29,7 +29,7 @@ form {
 }
 
 .chart-box {
-    min-width: 900px;
+    min-width: 500px;
     flex-grow: 1;
     /* background-color: #b6ee62; */
 } 
@@ -41,3 +41,29 @@ form {
 .two {
     background-color: aqua;
 }
+
+
+
+/*
+    Time series stuff (may use another .css file) 
+*/
+.axis--x path {
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+  

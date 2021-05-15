@@ -2,11 +2,11 @@
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 20, bottom: 35, left: 50},
-    width  = 860 - margin.left - margin.right,
+    width  = 660 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#chart-1")
+var svg = d3.select("#chart-2")
     .append("svg")
         .attr("id", "stacked-chart")
         .attr("width", width + margin.left + margin.right)
@@ -14,12 +14,14 @@ var svg = d3.select("#chart-1")
         .append("g")
             .attr("transform","translate(" + margin.left + "," + margin.top + ")");
 
-// to read dates properly
-var parseDate = d3.timeParse("%Y/%m"),   // "%Y/%m"), => DD/MM/YY
-    formatDate = d3.timeFormat("%m/%y");
+// to read dates properly:
+//   format with "%Y/%m" if using 'stacked_bar_months.csv', 
+//   with "%Y-%m-%d" if using '../multiSeries/hashrate_simple.csv'
+var parseDate = d3.timeParse("%Y/%m"),   
+    formatDate = d3.timeFormat("%m-%y");
 
 
-// Parse the Data  ../multiSeries/hashrate_simple.csv
+// Parse the Data ../multiSeries/hashrate_simple.csv
 d3.csv("./stacked_bar_months.csv").then(function(data) {
     data.forEach(function(d) { d.date = parseDate(d.date); });
     console.log(data)
@@ -40,7 +42,7 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
 
     // Create Y axis
     var y = d3.scaleLinear()
-        .domain([0, 200000])
+        .domain([0, 200000])      // too low if all crypto are selected
         .range([height, 0]);
 
     var y0 = d3.scaleLinear();

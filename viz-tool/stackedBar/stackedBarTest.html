@@ -11,17 +11,18 @@
     <div id="multi-chart" class="wrapper">
         <div class="flex-container">
             <div id="chart-1" class="chart-box one">
-                <h1>chart1-stackedBar</h1>
+                <h1>chart1-timeSeries</h1>
+                <script type="module" src="timeSeries_test.js" charset="utf-8"></script>
+                <svg id="chart-series" width="1160" height="500"></svg>
+            </div>
+            
+            <div id="chart-2" class="chart-box two">
+                <h1>chart2-stackedBar</h1>
                 <form>
                     <label><input type="radio" name="mode" value="multiples" checked> Multiples</label>
                     <label><input type="radio" name="mode" value="stacked"> Stacked</label>
                 </form>
                 <script type="module" src="stacked_v6_test.js" charset="utf-8"></script>
-            </div>
-            
-            <div id="chart-2" class="chart-box two">
-                <h1>chart2-asic</h1>
-                <script type="module" src="asic_test.js" charset="utf-8"></script>
             </div>
 
         </div>

@@ -6,6 +6,7 @@ from matplotlib import pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn import preprocessing
 
+
 """ PREPROCESSING DATA TO PERFORM PCA """
 # using cleaned file 
 df = pd.read_csv("data/asic/asic_clean.csv")
@@ -52,7 +53,7 @@ plt.show()
 d = np.stack([hashRate,power,profitability,efficiency], axis=1)
 print(d.shape) 
 
-#plotting d on a 2D scatterplot
+# plotting d on a 2D scatterplot
 plt.plot(d[:,0],d[:,2],
          'o', markersize=5,
          color='blue',
@@ -60,8 +61,6 @@ plt.plot(d[:,0],d[:,2],
          label='original data')
 plt.xlabel('X1')
 plt.ylabel('X2')
-#plt.xlim([-1,1]) 
-#plt.ylim([-1,1]) 
 plt.legend()
 plt.show()
 
@@ -119,5 +118,4 @@ d_val.sort()
 print('Variance of the two PCA components:',d_val[1]/sum(d_val),d_val[0]/sum(d_val))
 
 v=pca.explained_variance_ratio_
-
 print(v)

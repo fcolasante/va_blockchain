@@ -27,10 +27,11 @@ print()
 release  = df['release'].to_numpy()
 hashRate = df['hashRate (Th/s)'].to_numpy()
 
-df['efficiency (j/Gh)'] = df['efficiency (j/Gh)'].apply(lambda x: x*500)
+#df['efficiency (j/Gh)'] = df['efficiency (j/Gh)'].apply(lambda x: x*500)
 efficiency = df['efficiency (j/Gh)'].to_numpy()
 power      = df['power (W)'].to_numpy()
-df.to_csv('data/asic/asic.csv',index=False)
+
+df.to_csv('data/asic/asic_final.csv',index=False)
 
 
 import numpy as np

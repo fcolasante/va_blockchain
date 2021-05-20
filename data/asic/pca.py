@@ -14,8 +14,10 @@ df['hashRate (Th/s)']       = df['hashRate (Th/s)'].astype(float)
 df['profitability ($/day)'] = df['profitability ($/day)'].astype(float)
 df['power (W)']             = df['power (W)'].astype(int)
 df['efficiency (j/Gh)']     = df['efficiency (j/Gh)'].astype(float)
-
 df['release'] = pd.to_datetime(df['release'],format= '%b %Y' )
+
+# save cleaned file
+df.to_csv("data/asic/pca_asic.csv")
 
 print(df)
 print()
@@ -31,6 +33,7 @@ profitability = df['profitability ($/day)'].to_numpy()
 #df['efficiency (j/Gh)'] = df['efficiency (j/Gh)'].apply(lambda x: x*500)
 efficiency = df['efficiency (j/Gh)'].to_numpy()
 power      = df['power (W)'].to_numpy()
+
 
 
 import matplotlib.cbook as cbook

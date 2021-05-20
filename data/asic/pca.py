@@ -10,19 +10,18 @@ from sklearn import preprocessing
 """ PREPROCESSING DATA TO PERFORM PCA """
 # using cleaned file 
 df = pd.read_csv("data/asic/asic_clean.csv")
+print(df.head())
+print()
+
 df['hashRate (Th/s)']       = df['hashRate (Th/s)'].astype(float)
 df['profitability ($/day)'] = df['profitability ($/day)'].astype(float)
 df['power (W)']             = df['power (W)'].astype(int)
 df['efficiency (j/Gh)']     = df['efficiency (j/Gh)'].astype(float)
 df['release'] = pd.to_datetime(df['release'],format= '%b %Y' )
 
-
-print(df)
-print()
 print(df.dtypes)
 print()
-print(df.head())
-print()
+print(df)
 
 release       = df['release'].to_numpy()
 hashRate      = df['hashRate (Th/s)'].to_numpy()

@@ -1,9 +1,9 @@
 // export function drawStacked(data) {
 
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 20, bottom: 35, left: 50},
+var margin = {top: 10, right: 10, bottom: 35, left: 60},
     width  = 660 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#chart-2")
@@ -39,6 +39,10 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
         .domain(dates)
         .range([0, width]);
         //.padding([0.1]);   
+
+    function gridXaxis(){
+        return d3.axisBottom(x).ticks(5)
+    }
 
     // Create Y axis
     var y = d3.scaleLinear()
@@ -168,3 +172,25 @@ d3.csv("./stacked_bar_months.csv").then(function(data) {
 });
 
 //};
+
+
+function drawChart(filterData) {
+    d3.csv("../multiSeries/hashrate_simple.csv", type).then(function (data) {
+        console.log(data);
+
+        var countries = data.columns.slice(1).map(function (id) {
+            return {
+                id: id,
+                values: data.map(function (d) {
+                    return { date: d.date, price: d[id] };
+                })
+            };
+        });
+        console.log(countries);
+               
+        var newcountries = countries;
+        countries = countries.filter(function (d) { return filterData[d.id] == true });
+    
+    }); 
+
+};

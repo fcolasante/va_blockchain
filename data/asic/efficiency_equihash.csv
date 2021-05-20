@@ -1,9 +1,0 @@
-model,release,hashRate,power,algo,profitability,efficiency
-Bitmain Antminer Z15,Jun 2020, 420ksol/s, 1510W,Equihash, $16.69/day,3.595j/ksol
-Innosilicon A9++ ZMaster,May 2019, 140ksol/s, 1550W,Equihash, $2.55/day,11.071j/ksol
-Bitmain Antminer Z11,Apr 2019, 135ksol/s, 1418W,Equihash, $2.68/day,10.504j/ksol
-Innosilicon A9+ ZMaster,Jan 2019, 120ksol/s, 1550W,Equihash, $1.55/day,12.917j/ksol
-ASICminer Zeon 180K,Sep 2018, 180ksol/s, 2200W,Equihash, $2.68/day,12.222j/ksol
-Bitmain Antminer Z9,Sep 2018, 42ksol/s, 970W,Equihash, -$0.69/day,23.095j/ksol
-Innosilicon A9 ZMaster,Jun 2018, 50ksol/s, 620W,Equihash, $0.72/day,12.4j/ksol
-Bitmain Antminer Z9 Mini,Jun 2018, 10ksol/s, 300W,Equihash, -$0.36/day,30j/ksol

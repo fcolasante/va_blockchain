@@ -16,8 +16,6 @@ df['power (W)']             = df['power (W)'].astype(int)
 df['efficiency (j/Gh)']     = df['efficiency (j/Gh)'].astype(float)
 df['release'] = pd.to_datetime(df['release'],format= '%b %Y' )
 
-# save cleaned file
-df.to_csv("data/asic/pca_asic.csv")
 
 print(df)
 print()
@@ -70,11 +68,15 @@ plt.show()
 
 # normalize the data with StandardScaler
 d_std = preprocessing.StandardScaler().fit_transform(d)
-#d_std is a numpy array with scaled (Z-score) data
-#compute PCA
+# d_std is a numpy array with scaled (Z-score) data
+# compute PCA
 pca=PCA(n_components=4)
+# d_pca is a numpy array with transformed data
 d_pca=pca.fit_transform(d_std)
-#d_pca is a numpy array with transformed data
+
+# save PCA results to csv
+pca_res = pd.DataFrame(d_pca)
+pca_res.to_csv("data/asic/pca_asic.csv")
 
 
 #plotting d_pca 

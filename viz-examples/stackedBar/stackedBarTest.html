@@ -3,33 +3,29 @@
 <head>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.0.0/d3.min.js" integrity="sha512-55FY9DHtfMBE2epZhXrWn78so/ZT5/GCLim66+L83U5LghiYwVBAEris4/13Iab9S8C9ShJp3LQL/2raiaO+0w==" crossorigin="anonymous"></script>-->
-    <style>
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            margin: auto;
-            position: relative;
-            width: 1920px;
-        }
-    </style>
-    <!--CHART 2-->
     <link rel="stylesheet" href="stackedBarChart.css">
 </head>
 
 <body>
-    <div id="Multi-chart">
-        <h1>Blockchain stackedBar</h1>
-        <script src="stacked_v6_test.js" charset="utf-8"></script>
+    <!-- CHARTS -->
+    <div id="multi-chart" class="wrapper">
+        <div class="flex-container">
+            <div id="chart-1" class="chart-box one">
+                <h2>chart1-timeSeries</h2>
+                <script type="module" src="timeSeries_test.js" charset="utf-8"></script>
+                <svg id="chart-series" width="1100" height="400"></svg>
+            </div>
+            
+            <div id="chart-2" class="chart-box two">
+                <h2>chart2-stackedBar</h2>
+                <!--<form>
+                    <label><input type="radio" name="mode" value="multiples" checked> Multiples</label>
+                    <label><input type="radio" name="mode" value="stacked"> Stacked</label>
+                </form>-->
+                <script type="module" src="stacked_v6_test.js" charset="utf-8"></script>
+            </div>
 
-        <!--<form>
-            <label><input type="radio" name="mode" value="multiples" checked> Multiples</label>
-            <label><input type="radio" name="mode" value="stacked"> Stacked</label>
-        </form>
-
-        <svg id="chart2"></svg>
-        <script src="stacked_v5_test.js" charset="utf-8"></script>
-        <h1>Bis attempt</h1>
-        <svg id="chart3"  width=900></svg>-->
+        </div>
     </div>
 </body>
 </html>

@@ -1,160 +1,160 @@
-model,release,hashRate,power,algo,profitability,efficiency
-Goldshell CK5,Mar 2021, 12Th/s, 2400W,Eaglesong, $91.71/day,0.2j/Gh
-iBeLink BM-N1,Nov 2020, 6.6Th/s, 2400W,Eaglesong, $47.33/day,0.364j/Gh
-Todek Toddminer C1 PRO,May 2020, 3Th/s, 2700W,Eaglesong, $16.88/day,0.9j/Gh
-Bitmain Antminer K5 (1130Gh),Apr 2020, 1.13Th/s, 1580W,Eaglesong, $4.74/day,1.398j/Gh
-Todek Toddminer C1,Mar 2020, 1.55Th/s, 1380W,Eaglesong, $8.76/day,0.89j/Gh
-Bitmain Antminer Z15,Jun 2020, 420ksol/s, 1510W,Equihash, $16.69/day,3.595j/ksol
-Innosilicon A9++ ZMaster,May 2019, 140ksol/s, 1550W,Equihash, $2.55/day,11.071j/ksol
-Bitmain Antminer Z11,Apr 2019, 135ksol/s, 1418W,Equihash, $2.68/day,10.504j/ksol
-Innosilicon A9+ ZMaster,Jan 2019, 120ksol/s, 1550W,Equihash, $1.55/day,12.917j/ksol
-ASICminer Zeon 180K,Sep 2018, 180ksol/s, 2200W,Equihash, $2.68/day,12.222j/ksol
-Bitmain Antminer Z9,Sep 2018, 42ksol/s, 970W,Equihash, -$0.69/day,23.095j/ksol
-Innosilicon A9 ZMaster,Jun 2018, 50ksol/s, 620W,Equihash, $0.72/day,12.4j/ksol
-Bitmain Antminer Z9 Mini,Jun 2018, 10ksol/s, 300W,Equihash, -$0.36/day,30j/ksol
-Innosilicon A11 Pro ETH (2000Mh),Jun 2021, 2Gh/s, 2500W,EtHash, $192.40/day,1.25j/Mh
-Innosilicon A10 Pro+ ETH (750Mh),Dec 2020, 750Mh/s, 1350W,EtHash, $70.96/day,1.8j/Mh
-Innosilicon A10 Pro ETH (500Mh),May 2020, 500Mh/s, 960W,EtHash, $47.13/day,1.92j/Mh
-Goldshell LT5,Mar 2021, 2.05Gh/s, 2080W,Scrypt, $9.28/day,1.015j/Mh
-Innosilicon A6+ LTCMaster,Mar 2019, 2.2Gh/s, 2100W,Scrypt, $10.34/day,0.955j/Mh
-FusionSilicon X6 Miner,Aug 2018, 860Mh/s, 1079W,Scrypt, $3.30/day,1.255j/Mh
-Bitmain Antminer L3++ (580Mh),May 2018, 580Mh/s, 942W,Scrypt, $1.61/day,1.624j/Mh
-Bitmain Antminer L3++ (596Mh),May 2018, 596Mh/s, 1050W,Scrypt, $1.42/day,1.762j/Mh
-BW L21,Jan 2018, 550Mh/s, 950W,Scrypt, $1.36/day,1.727j/Mh
-Innosilicon A6 LTCMaster,Jan 2018, 1.23Gh/s, 1500W,Scrypt, $4.84/day,1.22j/Mh
-Innosilicon A4+ LTCMaster,Nov 2017, 620Mh/s, 750W,Scrypt, $2.46/day,1.21j/Mh
-Bitmain Antminer L3+ (600Mh),Oct 2017, 600Mh/s, 850W,Scrypt, $1.85/day,1.517j/Mh
-Innosilicon A4 Dominator,Jul 2017, 280Mh/s, 1050W,Scrypt, -$0.94/day,3.75j/Mh
-Bitmain Antminer L3+ (504Mh),Jun 2017, 504Mh/s, 800W,Scrypt, $1.45/day,1.587j/Mh
-Bitmain Antminer S19j (90Th),Jun 2021, 90Th/s, 3250W,SHA-256, $26.93/day,0.036j/Gh
-Bitmain Antminer S19j Pro (100Th),Jun 2021, 100Th/s, 3050W,SHA-256, $31.53/day,0.031j/Gh
-Innosilicon T2 Turbo 29T/30T,Jan 2021, 30Th/s, 2400W,SHA-256, $5.18/day,0.08j/Gh
-Canaan AvalonMiner 1246,Jan 2021, 90Th/s, 3420W,SHA-256, $26.44/day,0.038j/Gh
-MicroBT Whatsminer M31S+,Dec 2020, 80Th/s, 3360W,SHA-256, $22.58/day,0.042j/Gh
-MicroBT Whatsminer M32S,Nov 2020, 66Th/s, 3432W,SHA-256, $16.73/day,0.052j/Gh
-StrongU Hornbill H8,Oct 2020, 74Th/s, 3330W,SHA-256, $20.25/day,0.045j/Gh
-MicroBT Whatsminer M30S++,Oct 2020, 112Th/s, 3472W,SHA-256, $35.16/day,0.031j/Gh
-MicroBT Whatsminer M30S+,Oct 2020, 100Th/s, 3400W,SHA-256, $30.53/day,0.034j/Gh
-Canaan AvalonMiner 1146 Pro,Aug 2020, 63Th/s, 3276W,SHA-256, $15.97/day,0.052j/Gh
-Canaan AvalonMiner 1166 Pro,Aug 2020, 81Th/s, 3400W,SHA-256, $22.87/day,0.042j/Gh
-MicroBT Whatsminer M32,Jul 2020, 62Th/s, 3348W,SHA-256, $15.36/day,0.054j/Gh
-Bitmain Antminer T19 (84Th),Jun 2020, 84Th/s, 3150W,SHA-256, $24.80/day,0.038j/Gh
-Bitmain Antminer S19 (95Th),May 2020, 95Th/s, 3250W,SHA-256, $28.94/day,0.034j/Gh
-Bitmain Antminer S19 Pro (110Th),May 2020, 110Th/s, 3250W,SHA-256, $34.99/day,0.03j/Gh
-MicroBT Whatsminer M31S,Apr 2020, 76Th/s, 3220W,SHA-256, $21.01/day,0.044j/Gh
-MicroBT Whatsminer M30S,Apr 2020, 86Th/s, 3268W,SHA-256, $25.26/day,0.038j/Gh
-ASICminer 8 Nano S 58Th,Dec 2019, 58Th/s, 2500W,SHA-256, $16.18/day,0.043j/Gh
-Bitmain Antminer T17+ (64Th),Dec 2019, 64Th/s, 3200W,SHA-256, $16.59/day,0.05j/Gh
-Bitmain Antminer S17+ (73Th),Dec 2019, 73Th/s, 2920W,SHA-256, $21.02/day,0.04j/Gh
-Bitmain Antminer T17e (53Th),Nov 2019, 53Th/s, 2915W,SHA-256, $12.97/day,0.055j/Gh
-Bitmain Antminer S17e (64Th),Nov 2019, 64Th/s, 2880W,SHA-256, $17.51/day,0.045j/Gh
-Ebang Ebit E12+,Sep 2019, 50Th/s, 2500W,SHA-256, $12.96/day,0.05j/Gh
-Ebang Ebit E12,Sep 2019, 44Th/s, 2500W,SHA-256, $10.54/day,0.057j/Gh
-Canaan AvalonMiner 1047,Sep 2019, 37Th/s, 2380W,SHA-256, $8.06/day,0.064j/Gh
-Canaan AvalonMiner 1066,Sep 2019, 50Th/s, 3250W,SHA-256, $10.80/day,0.065j/Gh
-Innosilicon T3+ 57T,Sep 2019, 57Th/s, 3300W,SHA-256, $13.48/day,0.058j/Gh
-StrongU STU-U8 Pro,Sep 2019, 60Th/s, 2800W,SHA-256, $16.13/day,0.047j/Gh
-MicroBT Whatsminer M21,Aug 2019, 31Th/s, 1860W,SHA-256, $7.14/day,0.06j/Gh
-MicroBT Whatsminer M20S,Aug 2019, 68Th/s, 3360W,SHA-256, $17.74/day,0.049j/Gh
-Bitmain Antminer S9k (13.5Th),Aug 2019, 13.5Th/s, 1310W,SHA-256, $1.67/day,0.097j/Gh
-Innosilicon T3 50T,Jul 2019, 50Th/s, 3100W,SHA-256, $11.23/day,0.062j/Gh
-StrongU STU-U8,Jul 2019, 46Th/s, 2100W,SHA-256, $12.50/day,0.046j/Gh
-Bitmain Antminer S9 SE (16Th),Jul 2019, 16Th/s, 1280W,SHA-256, $2.76/day,0.08j/Gh
-MicroBT Whatsminer M21S,Jun 2019, 56Th/s, 3360W,SHA-256, $12.90/day,0.06j/Gh
-Bitmain Antminer T17 (40Th),May 2019, 40Th/s, 2200W,SHA-256, $9.79/day,0.055j/Gh
-Innosilicon T3+ 52T,May 2019, 52Th/s, 2800W,SHA-256, $14.63/day,0.042j/Gh
-Bitmain Antminer S17 (53Th),Apr 2019, 53Th/s, 2385W,SHA-256, $14.50/day,0.045j/Gh
-Bitmain Antminer S17 (56Th),Apr 2019, 56Th/s, 2520W,SHA-256, $15.32/day,0.045j/Gh
-Bitmain Antminer S17 Pro (50Th),Apr 2019, 50Th/s, 1975W,SHA-256, $14.47/day,0.04j/Gh
-Bitmain Antminer S17 Pro (53Th),Apr 2019, 53Th/s, 2094W,SHA-256, $15.34/day,0.04j/Gh
-Innosilicon T3 39T,Mar 2019, 39Th/s, 2150W,SHA-256, $9.53/day,0.055j/Gh
-Innosilicon T3 43T,Jan 2019, 43Th/s, 2100W,SHA-256, $11.29/day,0.049j/Gh
-Holic H28,Dec 2018, 28Th/s, 2100W,SHA-256, $5.24/day,0.075j/Gh
-Holic H22,Dec 2018, 22Th/s, 1700W,SHA-256, $4.26/day,0.073j/Gh
-Bitmain Antminer T15 (23Th),Dec 2018, 23Th/s, 1541W,SHA-256, $4.84/day,0.067j/Gh
-Bitmain Antminer S15 (28Th),Dec 2018, 28Th/s, 1596W,SHA-256, $6.69/day,0.057j/Gh
-Bitfury Tardis,Nov 2018, 80Th/s, 6300W,SHA-256, $14.11/day,0.079j/Gh
-Bitmain Antminer S11 (20.5Th),Nov 2018, 20.5Th/s, 1530W,SHA-256, $3.86/day,0.075j/Gh
-GMO miner B3,Nov 2018, 33Th/s, 3417W,SHA-256, $3.46/day,0.104j/Gh
-Innosilicon T2 Turbo 25T,Oct 2018, 25Th/s, 2050W,SHA-256, $4.18/day,0.082j/Gh
-Ebang Ebit E11++,Oct 2018, 44Th/s, 1980W,SHA-256, $12.04/day,0.045j/Gh
-Ebang Ebit E11+,Oct 2018, 37Th/s, 2035W,SHA-256, $9.06/day,0.055j/Gh
-Ebang Ebit E11,Oct 2018, 30Th/s, 1950W,SHA-256, $6.48/day,0.065j/Gh
-ASICminer 8 Nano 44Th,Oct 2018, 44Th/s, 2100W,SHA-256, $11.69/day,0.048j/Gh
-GMO miner B2,Oct 2018, 24Th/s, 1950W,SHA-256, $4.06/day,0.081j/Gh
-Canaan AvalonMiner 921,Sep 2018, 20Th/s, 1700W,SHA-256, $3.17/day,0.085j/Gh
-MicroBT Whatsminer M10,Sep 2018, 33Th/s, 2145W,SHA-256, $7.13/day,0.065j/Gh
-MicroBT Whatsminer M10S,Sep 2018, 55Th/s, 3500W,SHA-256, $12.10/day,0.064j/Gh
-Innosilicon T2 Turbo+ 32T,Sep 2018, 32Th/s, 2200W,SHA-256, $6.57/day,0.069j/Gh
-Bitmain Antminer S9 Hydro (18Th),Aug 2018, 18Th/s, 1728W,SHA-256, $2.28/day,0.096j/Gh
-Bitfily Snow Panther B1+,Aug 2018, 24.5Th/s, 2100W,SHA-256, $3.83/day,0.086j/Gh
-Bitmain Antminer S9j (14.5Th),Aug 2018, 14.5Th/s, 1350W,SHA-256, $1.96/day,0.093j/Gh
-Innosilicon T2 Turbo,Aug 2018, 24Th/s, 1980W,SHA-256, $3.97/day,0.083j/Gh
-Ebang Ebit E9i,Jul 2018, 13.5Th/s, 1420W,SHA-256, $1.35/day,0.105j/Gh
-Bitfily Snow Panther B1,Jul 2018, 16Th/s, 1380W,SHA-256, $2.48/day,0.086j/Gh
-Aladdin Miner 16Th/s Bitcoin,Jul 2018, 16Th/s, 1400W,SHA-256, $2.42/day,0.088j/Gh
-Innosilicon T2 Terminator,May 2018, 17.2Th/s, 1570W,SHA-256, $2.41/day,0.091j/Gh
-Ebang Ebit E9.3,May 2018, 16Th/s, 1760W,SHA-256, $1.38/day,0.11j/Gh
-Bitmain Antminer S9i (13Th),May 2018, 13Th/s, 1280W,SHA-256, $1.53/day,0.099j/Gh
-ASICminer 8 Nano Pro,May 2018, 76Th/s, 4000W,SHA-256, $19.12/day,0.053j/Gh
-Ebang Ebit E9.2,May 2018, 12Th/s, 1320W,SHA-256, $1.04/day,0.11j/Gh
-Bitmain Antminer S9i (14Th),May 2018, 14Th/s, 1320W,SHA-256, $1.84/day,0.094j/Gh
-Canaan AvalonMiner 841,Apr 2018, 13.6Th/s, 1290W,SHA-256, $1.77/day,0.095j/Gh
-Halong Mining DragonMint T1,Apr 2018, 16Th/s, 1480W,SHA-256, $2.19/day,0.093j/Gh
-MicroBT Whatsminer M3X,Mar 2018, 12.5Th/s, 2050W,SHA-256, -$0.86/day,0.164j/Gh
-Bitmain Antminer V9 (4Th),Mar 2018, 4Th/s, 1027W,SHA-256, -$1.35/day,0.257j/Gh
-Ebang Ebit E10,Feb 2018, 18Th/s, 1650W,SHA-256, $2.51/day,0.092j/Gh
-Canaan AvalonMiner 821,Feb 2018, 11.5Th/s, 1200W,SHA-256, $1.18/day,0.104j/Gh
-Ebang Ebit E9+,Jan 2018, 9Th/s, 1300W,SHA-256, -$0.12/day,0.144j/Gh
-Pantech WX6,Jan 2018, 34Th/s, 5000W,SHA-256, -$0.69/day,0.147j/Gh
-Bitmain Antminer T9+ (10.5Th),Jan 2018, 10.5Th/s, 1432W,SHA-256, $0.11/day,0.136j/Gh
-Bitfily Snow Panther A1,Jan 2018, 49Th/s, 5400W,SHA-256, $4.20/day,0.11j/Gh
-MicroBT Whatsminer M3,Jan 2018, 12Th/s, 2000W,SHA-256, -$0.92/day,0.167j/Gh
-Bitfury B8,Dec 2017, 49Th/s, 6400W,SHA-256, $1.32/day,0.131j/Gh
-Bitmain Antminer S9 (14Th),Nov 2017, 14Th/s, 1372W,SHA-256, $1.69/day,0.098j/Gh
-Pantech SX6,Sep 2017, 8.5Th/s, 1000W,SHA-256, $0.55/day,0.118j/Gh
-Bitmain Antminer S9 (13.5Th),Sep 2017, 13.5Th/s, 1323W,SHA-256, $1.63/day,0.098j/Gh
-Bitmain Antminer T9 (12.5Th),Aug 2017, 12.5Th/s, 1576W,SHA-256, $0.50/day,0.126j/Gh
-Bitmain Antminer S9 (13Th),Jul 2017, 13Th/s, 1300W,SHA-256, $1.50/day,0.1j/Gh
-Bitmain Antminer T9 (11.5Th),Apr 2017, 11.5Th/s, 1450W,SHA-256, $0.46/day,0.126j/Gh
-Canaan AvalonMiner 741,Apr 2017, 7.3Th/s, 1150W,SHA-256, -$0.37/day,0.158j/Gh
-Bitmain Antminer R4,Feb 2017, 8.7Th/s, 845W,SHA-256, $1.07/day,0.097j/Gh
-Bitmain Antminer S9 (12.5Th),Feb 2017, 12.5Th/s, 1225W,SHA-256, $1.51/day,0.098j/Gh
-Bitmain Antminer S7-LN,Jun 2016, 2.7Th/s, 697W,SHA-256, -$0.92/day,0.258j/Gh
-Bitmain Antminer S9 (11.5Th),Jun 2016, 11.5Th/s, 1127W,SHA-256, $1.39/day,0.098j/Gh
-Bitmain Antminer S7,Sep 2015, 4.73Th/s, 1293W,SHA-256, -$1.82/day,0.273j/Gh
-Bitmain Antminer S5,Dec 2014, 1.155Th/s, 590W,SHA-256, -$1.23/day,0.511j/Gh
-Bitmain Antminer S3,Jul 2014, 478Gh/s, 366W,SHA-256, -$0.86/day,0.001j/Mh
-StrongU STU-U6,Nov 2019, 440Gh/s, 2200W,X11, $13.63/day,0.005j/Mh
-FusionSilicon X7 Miner,Mar 2019, 262Gh/s, 1420W,X11, $7.80/day,0.005j/Mh
-Bitmain Antminer D5 (119Gh)	,Nov 2018, 119Gh/s, 1566W,X11, $0.89/day,0.013j/Mh
-Dayun Zig D1,Nov 2018, 48Gh/s, 2200W,X11, -$4.16/day,0.046j/Mh
-Baikal BK-G28,Oct 2018, 28Gh/s, 1300W,X11, -$2.47/day,0.046j/Mh
-Spondoolies SPx36,Sep 2018, 540Gh/s, 4400W,X11, $11.83/day,0.008j/Mh
-iBeLink DM56G,May 2018, 56Gh/s, 2100W,X11, -$3.51/day,0.038j/Mh
-Innosilicon A5+ DashMaster,Mar 2018, 65Gh/s, 1500W,X11, -$1.37/day,0.023j/Mh
-PinIdea DR-100 Pro,Nov 2017, 21Gh/s, 900W,X11, -$1.64/day,0.043j/Mh
-Baikal BK-X,Nov 2017, 10Gh/s, 630W,X11, -$1.36/day,0.063j/Mh
-Innosilicon A5 DashMaster,Oct 2017, 32.5Gh/s, 750W,X11, -$0.69/day,0.023j/Mh
-Bitmain Antminer D3 (19.3Gh),Oct 2017, 19.3Gh/s, 1350W,X11, -$3.01/day,0.07j/Mh
-Bitmain Antminer D3 (17.5Gh),Oct 2017, 17.5Gh/s, 1280W,X11, -$2.89/day,0.073j/Mh
-iBeLink DM22G,Sep 2017, 22Gh/s, 810W,X11, -$1.33/day,0.037j/Mh
-Bitmain Antminer D3 (15Gh),Sep 2017, 15Gh/s, 1200W,X11, -$2.78/day,0.08j/Mh
-PinIdea DR-100,Aug 2017, 19Gh/s, 900W,X11, -$1.73/day,0.047j/Mh
-Baikal Giant+ A2000,Aug 2017, 2Gh/s, 450W,X11, -$1.15/day,0.215j/Mh
-iBeLink DM11G,Jul 2017, 10.8Gh/s, 810W,X11, -$1.84/day,0.075j/Mh
-PinIdea DR-3,Apr 2017, 600Mh/s, 345W,X11, -$0.97/day,0.575j/Mh
-Baikal Miner Cube,Apr 2017, 300Mh/s, 90W,X11, -$0.20/day,0.25j/Mh
-Baikal Giant A900,Oct 2016, 900Mh/s, 270W,X11, -$0.58/day,0.241j/Mh
-Baikal Mini Miner,Sep 2016, 150Mh/s, 50W,X11, -$0.11/day,0.267j/Mh
-Baikal Quadruple Mini Miner,Aug 2016, 600Mh/s, 192W,X11, -$0.43/day,0.267j/Mh
-Baikal BK-N240,May 2018, 240kh/s, 650W,CryptoNight, -$0.73/day,2.708j/kh
-Baikal BK-N70,May 2018, 70kh/s, 240W,CryptoNight, -$0.30/day,3.143j/kh
-Innosilicon A8C CryptoMaster,May 2018, 80kh/s, 175W,CryptoNight, -$0.12/day,2.188j/kh
-Bitmain Antminer X3 (220Kh),May 2018, 220kh/s, 465W,CryptoNight, -$0.29/day,2.114j/kh
-Innosilicon A8+ CryptoMaster,Apr 2018, 240kh/s, 480W,CryptoNight, -$0.24/day,2j/kh
-PinIdea RR-210,Apr 2018, 30kh/s, 350W,CryptoNight, -$0.87/day,11.667j/kh
-Innosilicon A8 CryptoMaster,Apr 2018, 160kh/s, 350W,CryptoNight, -$0.25/day,2.188j/kh
-PinIdea RR-200,Apr 2018, 27kh/s, 350W,CryptoNight, -$0.88/day,12.963j/kh
-Baikal BK-N+,Mar 2018, 40kh/s, 120W,CryptoNight, -$0.16/day,3j/kh
-Baikal BK-N,Mar 2018, 20kh/s, 60W,CryptoNight, -$0.08/day,3j/kh
+model,release,hashRate,power,algo,profitability,efficiency,,
+Goldshell CK5,Mar 2021, 12Th/s, 2400W,Eaglesong, $91.71/day,0.2j/Gh,,
+iBeLink BM-N1,Nov 2020, 6.6Th/s, 2400W,Eaglesong, $47.33/day,0.364j/Gh,,
+Todek Toddminer C1 PRO,May 2020, 3Th/s, 2700W,Eaglesong, $16.88/day,0.9j/Gh,,
+Bitmain Antminer K5,Apr 2020, 1.13Th/s, 1580W,Eaglesong, $4.74/day,1.398j/Gh,,
+Todek Toddminer C1,Mar 2020, 1.55Th/s, 1380W,Eaglesong, $8.76/day,0.89j/Gh,,
+Bitmain Antminer Z15,Jun 2020,0.00000042Th/s, 1510W,Equihash, $16.69/day,3595000j/Gh, 420kh/s,3.595j/kh
+Innosilicon A9++ ZMaster,May 2019,0.00000014Th/s, 1550W,Equihash, $2.55/day,11071000j/Gh, 140kh/s,11.071j/kh
+Bitmain Antminer Z11,Apr 2019,0.000000135Th/s, 1418W,Equihash, $2.68/day,10504000j/Gh, 135kh/s,10.504j/kh
+Innosilicon A9+ ZMaster,Jan 2019,0.00000012Th/s, 1550W,Equihash, $1.55/day,12917000j/Gh, 120kh/s,12.917j/kh
+ASICminer Zeon 180K,Sep 2018,0.00000018Th/s, 2200W,Equihash, $2.68/day,12222000j/Gh, 180kh/s,12.222j/kh
+Bitmain Antminer Z9,Sep 2018,0.000000042Th/s, 970W,Equihash, -$0.69/day,23095000j/Gh, 42kh/s,23.095j/kh
+Innosilicon A9 ZMaster,Jun 2018,0.00000005Th/s, 620W,Equihash, $0.72/day,12400000j/Gh, 50kh/s,12.4j/kh
+Bitmain Antminer Z9 Mini,Jun 2018,0.00000001Th/s, 300W,Equihash, -$0.36/day,30000000j/Gh, 10kh/s,30j/kh
+Innosilicon A11 Pro ETH,Jun 2021,0.002Th/s, 2500W,EtHash, $192.40/day,1250j/Gh, 2Gh/s,1.25j/Mh
+Innosilicon A10 Pro+ ETH,Dec 2020,0.000750Th/s, 1350W,EtHash, $70.96/day,1800j/Gh, 750Mh/s,1.8j/Mh
+Innosilicon A10 Pro ETH,May 2020,0.0005Th/s, 960W,EtHash, $47.13/day,1920j/Gh, 500Mh/s,1.92j/Mh
+Goldshell LT5,Mar 2021,0.00205Th/s, 2080W,Scrypt, $9.28/day,1015j/Gh, 2.05Gh/s,1.015j/Mh
+Innosilicon A6+ LTCMaster,Mar 2019,0.0022Th/s, 2100W,Scrypt, $10.34/day,955j/Gh, 2.2Gh/s,0.955j/Mh
+FusionSilicon X6 Miner,Aug 2018,0.00086Th/s, 1079W,Scrypt, $3.30/day,1255j/Gh, 860Mh/s,1.255j/Mh
+Bitmain Antminer L3++,May 2018,0.00058Th/s, 942W,Scrypt, $1.61/day,1624j/Gh, 580Mh/s,1.624j/Mh
+Bitmain Antminer L3++,May 2018,0.000596Th/s, 1050W,Scrypt, $1.42/day,1762j/Gh, 596Mh/s,1.762j/Mh
+BW L21,Jan 2018,0.00055Th/s, 950W,Scrypt, $1.36/day,1727j/Gh, 550Mh/s,1.727j/Mh
+Innosilicon A6 LTCMaster,Jan 2018,0.00123Th/s, 1500W,Scrypt, $4.84/day,1220j/Gh, 1.23Gh/s,1.22j/Mh
+Innosilicon A4+ LTCMaster,Nov 2017,0.00062Th/s, 750W,Scrypt, $2.46/day,1210j/Gh, 620Mh/s,1.21j/Mh
+Bitmain Antminer L3+,Oct 2017,0.0006Th/s, 850W,Scrypt, $1.85/day,1517j/Gh, 600Mh/s,1.517j/Mh
+Innosilicon A4 Dominator,Jul 2017,0.00028Th/s, 1050W,Scrypt, -$0.94/day,3750j/Gh, 280Mh/s,3.75j/Mh
+Bitmain Antminer L3+,Jun 2017,0.000504Th/s, 800W,Scrypt, $1.45/day,1587j/Gh, 504Mh/s,1.587j/Mh
+Bitmain Antminer S19j,Jun 2021, 90Th/s, 3250W,SHA-256, $26.93/day,0.036j/Gh,,
+Bitmain Antminer S19j Pro,Jun 2021, 100Th/s, 3050W,SHA-256, $31.53/day,0.031j/Gh,,
+Innosilicon T2 Turbo 29T/30T,Jan 2021, 30Th/s, 2400W,SHA-256, $5.18/day,0.08j/Gh,,
+Canaan AvalonMiner 1246,Jan 2021, 90Th/s, 3420W,SHA-256, $26.44/day,0.038j/Gh,,
+MicroBT Whatsminer M31S+,Dec 2020, 80Th/s, 3360W,SHA-256, $22.58/day,0.042j/Gh,,
+MicroBT Whatsminer M32S,Nov 2020, 66Th/s, 3432W,SHA-256, $16.73/day,0.052j/Gh,,
+StrongU Hornbill H8,Oct 2020, 74Th/s, 3330W,SHA-256, $20.25/day,0.045j/Gh,,
+MicroBT Whatsminer M30S++,Oct 2020, 112Th/s, 3472W,SHA-256, $35.16/day,0.031j/Gh,,
+MicroBT Whatsminer M30S+,Oct 2020, 100Th/s, 3400W,SHA-256, $30.53/day,0.034j/Gh,,
+Canaan AvalonMiner 1146 Pro,Aug 2020, 63Th/s, 3276W,SHA-256, $15.97/day,0.052j/Gh,,
+Canaan AvalonMiner 1166 Pro,Aug 2020, 81Th/s, 3400W,SHA-256, $22.87/day,0.042j/Gh,,
+MicroBT Whatsminer M32,Jul 2020, 62Th/s, 3348W,SHA-256, $15.36/day,0.054j/Gh,,
+Bitmain Antminer T19,Jun 2020, 84Th/s, 3150W,SHA-256, $24.80/day,0.038j/Gh,,
+Bitmain Antminer S19,May 2020, 95Th/s, 3250W,SHA-256, $28.94/day,0.034j/Gh,,
+Bitmain Antminer S19 Pro,May 2020, 110Th/s, 3250W,SHA-256, $34.99/day,0.03j/Gh,,
+MicroBT Whatsminer M31S,Apr 2020, 76Th/s, 3220W,SHA-256, $21.01/day,0.044j/Gh,,
+MicroBT Whatsminer M30S,Apr 2020, 86Th/s, 3268W,SHA-256, $25.26/day,0.038j/Gh,,
+ASICminer 8 Nano S 58Th,Dec 2019, 58Th/s, 2500W,SHA-256, $16.18/day,0.043j/Gh,,
+Bitmain Antminer T17+,Dec 2019, 64Th/s, 3200W,SHA-256, $16.59/day,0.05j/Gh,,
+Bitmain Antminer S17+,Dec 2019, 73Th/s, 2920W,SHA-256, $21.02/day,0.04j/Gh,,
+Bitmain Antminer T17e,Nov 2019, 53Th/s, 2915W,SHA-256, $12.97/day,0.055j/Gh,,
+Bitmain Antminer S17e,Nov 2019, 64Th/s, 2880W,SHA-256, $17.51/day,0.045j/Gh,,
+Ebang Ebit E12+,Sep 2019, 50Th/s, 2500W,SHA-256, $12.96/day,0.05j/Gh,,
+Ebang Ebit E12,Sep 2019, 44Th/s, 2500W,SHA-256, $10.54/day,0.057j/Gh,,
+Canaan AvalonMiner 1047,Sep 2019, 37Th/s, 2380W,SHA-256, $8.06/day,0.064j/Gh,,
+Canaan AvalonMiner 1066,Sep 2019, 50Th/s, 3250W,SHA-256, $10.80/day,0.065j/Gh,,
+Innosilicon T3+ 57T,Sep 2019, 57Th/s, 3300W,SHA-256, $13.48/day,0.058j/Gh,,
+StrongU STU-U8 Pro,Sep 2019, 60Th/s, 2800W,SHA-256, $16.13/day,0.047j/Gh,,
+MicroBT Whatsminer M21,Aug 2019, 31Th/s, 1860W,SHA-256, $7.14/day,0.06j/Gh,,
+MicroBT Whatsminer M20S,Aug 2019, 68Th/s, 3360W,SHA-256, $17.74/day,0.049j/Gh,,
+Bitmain Antminer S9k,Aug 2019, 13.5Th/s, 1310W,SHA-256, $1.67/day,0.097j/Gh,,
+Innosilicon T3 50T,Jul 2019, 50Th/s, 3100W,SHA-256, $11.23/day,0.062j/Gh,,
+StrongU STU-U8,Jul 2019, 46Th/s, 2100W,SHA-256, $12.50/day,0.046j/Gh,,
+Bitmain Antminer S9 SE,Jul 2019, 16Th/s, 1280W,SHA-256, $2.76/day,0.08j/Gh,,
+MicroBT Whatsminer M21S,Jun 2019, 56Th/s, 3360W,SHA-256, $12.90/day,0.06j/Gh,,
+Bitmain Antminer T17,May 2019, 40Th/s, 2200W,SHA-256, $9.79/day,0.055j/Gh,,
+Innosilicon T3+ 52T,May 2019, 52Th/s, 2800W,SHA-256, $14.63/day,0.042j/Gh,,
+Bitmain Antminer S17,Apr 2019, 53Th/s, 2385W,SHA-256, $14.50/day,0.045j/Gh,,
+Bitmain Antminer S17,Apr 2019, 56Th/s, 2520W,SHA-256, $15.32/day,0.045j/Gh,,
+Bitmain Antminer S17 Pro,Apr 2019, 50Th/s, 1975W,SHA-256, $14.47/day,0.04j/Gh,,
+Bitmain Antminer S17 Pro,Apr 2019, 53Th/s, 2094W,SHA-256, $15.34/day,0.04j/Gh,,
+Innosilicon T3 39T,Mar 2019, 39Th/s, 2150W,SHA-256, $9.53/day,0.055j/Gh,,
+Innosilicon T3 43T,Jan 2019, 43Th/s, 2100W,SHA-256, $11.29/day,0.049j/Gh,,
+Holic H28,Dec 2018, 28Th/s, 2100W,SHA-256, $5.24/day,0.075j/Gh,,
+Holic H22,Dec 2018, 22Th/s, 1700W,SHA-256, $4.26/day,0.073j/Gh,,
+Bitmain Antminer T15,Dec 2018, 23Th/s, 1541W,SHA-256, $4.84/day,0.067j/Gh,,
+Bitmain Antminer S15,Dec 2018, 28Th/s, 1596W,SHA-256, $6.69/day,0.057j/Gh,,
+Bitfury Tardis,Nov 2018, 80Th/s, 6300W,SHA-256, $14.11/day,0.079j/Gh,,
+Bitmain Antminer S11,Nov 2018, 20.5Th/s, 1530W,SHA-256, $3.86/day,0.075j/Gh,,
+GMO miner B3,Nov 2018, 33Th/s, 3417W,SHA-256, $3.46/day,0.104j/Gh,,
+Innosilicon T2 Turbo 25T,Oct 2018, 25Th/s, 2050W,SHA-256, $4.18/day,0.082j/Gh,,
+Ebang Ebit E11++,Oct 2018, 44Th/s, 1980W,SHA-256, $12.04/day,0.045j/Gh,,
+Ebang Ebit E11+,Oct 2018, 37Th/s, 2035W,SHA-256, $9.06/day,0.055j/Gh,,
+Ebang Ebit E11,Oct 2018, 30Th/s, 1950W,SHA-256, $6.48/day,0.065j/Gh,,
+ASICminer 8 Nano 44Th,Oct 2018, 44Th/s, 2100W,SHA-256, $11.69/day,0.048j/Gh,,
+GMO miner B2,Oct 2018, 24Th/s, 1950W,SHA-256, $4.06/day,0.081j/Gh,,
+Canaan AvalonMiner 921,Sep 2018, 20Th/s, 1700W,SHA-256, $3.17/day,0.085j/Gh,,
+MicroBT Whatsminer M10,Sep 2018, 33Th/s, 2145W,SHA-256, $7.13/day,0.065j/Gh,,
+MicroBT Whatsminer M10S,Sep 2018, 55Th/s, 3500W,SHA-256, $12.10/day,0.064j/Gh,,
+Innosilicon T2 Turbo+ 32T,Sep 2018, 32Th/s, 2200W,SHA-256, $6.57/day,0.069j/Gh,,
+Bitmain Antminer S9 Hydro,Aug 2018, 18Th/s, 1728W,SHA-256, $2.28/day,0.096j/Gh,,
+Bitfily Snow Panther B1+,Aug 2018, 24.5Th/s, 2100W,SHA-256, $3.83/day,0.086j/Gh,,
+Bitmain Antminer S9j,Aug 2018, 14.5Th/s, 1350W,SHA-256, $1.96/day,0.093j/Gh,,
+Innosilicon T2 Turbo,Aug 2018, 24Th/s, 1980W,SHA-256, $3.97/day,0.083j/Gh,,
+Ebang Ebit E9i,Jul 2018, 13.5Th/s, 1420W,SHA-256, $1.35/day,0.105j/Gh,,
+Bitfily Snow Panther B1,Jul 2018, 16Th/s, 1380W,SHA-256, $2.48/day,0.086j/Gh,,
+Aladdin Miner 16Th/s Bitcoin,Jul 2018, 16Th/s, 1400W,SHA-256, $2.42/day,0.088j/Gh,,
+Innosilicon T2 Terminator,May 2018, 17.2Th/s, 1570W,SHA-256, $2.41/day,0.091j/Gh,,
+Ebang Ebit E9.3,May 2018, 16Th/s, 1760W,SHA-256, $1.38/day,0.11j/Gh,,
+Bitmain Antminer S9i,May 2018, 13Th/s, 1280W,SHA-256, $1.53/day,0.099j/Gh,,
+ASICminer 8 Nano Pro,May 2018, 76Th/s, 4000W,SHA-256, $19.12/day,0.053j/Gh,,
+Ebang Ebit E9.2,May 2018, 12Th/s, 1320W,SHA-256, $1.04/day,0.11j/Gh,,
+Bitmain Antminer S9i,May 2018, 14Th/s, 1320W,SHA-256, $1.84/day,0.094j/Gh,,
+Canaan AvalonMiner 841,Apr 2018, 13.6Th/s, 1290W,SHA-256, $1.77/day,0.095j/Gh,,
+Halong Mining DragonMint T1,Apr 2018, 16Th/s, 1480W,SHA-256, $2.19/day,0.093j/Gh,,
+MicroBT Whatsminer M3X,Mar 2018, 12.5Th/s, 2050W,SHA-256, -$0.86/day,0.164j/Gh,,
+Bitmain Antminer V9,Mar 2018, 4Th/s, 1027W,SHA-256, -$1.35/day,0.257j/Gh,,
+Ebang Ebit E10,Feb 2018, 18Th/s, 1650W,SHA-256, $2.51/day,0.092j/Gh,,
+Canaan AvalonMiner 821,Feb 2018, 11.5Th/s, 1200W,SHA-256, $1.18/day,0.104j/Gh,,
+Ebang Ebit E9+,Jan 2018, 9Th/s, 1300W,SHA-256, -$0.12/day,0.144j/Gh,,
+Pantech WX6,Jan 2018, 34Th/s, 5000W,SHA-256, -$0.69/day,0.147j/Gh,,
+Bitmain Antminer T9+,Jan 2018, 10.5Th/s, 1432W,SHA-256, $0.11/day,0.136j/Gh,,
+Bitfily Snow Panther A1,Jan 2018, 49Th/s, 5400W,SHA-256, $4.20/day,0.11j/Gh,,
+MicroBT Whatsminer M3,Jan 2018, 12Th/s, 2000W,SHA-256, -$0.92/day,0.167j/Gh,,
+Bitfury B8,Dec 2017, 49Th/s, 6400W,SHA-256, $1.32/day,0.131j/Gh,,
+Bitmain Antminer S9,Nov 2017, 14Th/s, 1372W,SHA-256, $1.69/day,0.098j/Gh,,
+Pantech SX6,Sep 2017, 8.5Th/s, 1000W,SHA-256, $0.55/day,0.118j/Gh,,
+Bitmain Antminer S9,Sep 2017, 13.5Th/s, 1323W,SHA-256, $1.63/day,0.098j/Gh,,
+Bitmain Antminer T9,Aug 2017, 12.5Th/s, 1576W,SHA-256, $0.50/day,0.126j/Gh,,
+Bitmain Antminer S9,Jul 2017, 13Th/s, 1300W,SHA-256, $1.50/day,0.1j/Gh,,
+Bitmain Antminer T9,Apr 2017, 11.5Th/s, 1450W,SHA-256, $0.46/day,0.126j/Gh,,
+Canaan AvalonMiner 741,Apr 2017, 7.3Th/s, 1150W,SHA-256, -$0.37/day,0.158j/Gh,,
+Bitmain Antminer R4,Feb 2017, 8.7Th/s, 845W,SHA-256, $1.07/day,0.097j/Gh,,
+Bitmain Antminer S9,Feb 2017, 12.5Th/s, 1225W,SHA-256, $1.51/day,0.098j/Gh,,
+Bitmain Antminer S7-LN,Jun 2016, 2.7Th/s, 697W,SHA-256, -$0.92/day,0.258j/Gh,,
+Bitmain Antminer S9,Jun 2016, 11.5Th/s, 1127W,SHA-256, $1.39/day,0.098j/Gh,,
+Bitmain Antminer S7,Sep 2015, 4.73Th/s, 1293W,SHA-256, -$1.82/day,0.273j/Gh,,
+Bitmain Antminer S5,Dec 2014, 1.155Th/s, 590W,SHA-256, -$1.23/day,0.511j/Gh,,
+Bitmain Antminer S3,Jul 2014,0.478Th/s, 366W,SHA-256, -$0.86/day,1j/Gh, 478Gh/s,0.001j/Mh
+StrongU STU-U6,Nov 2019,0.440Th/s, 2200W,X11, $13.63/day,5j/Gh, 440Gh/s,0.005j/Mh
+FusionSilicon X7 Miner,Mar 2019,0.262Th/s, 1420W,X11, $7.80/day,5j/Gh, 262Gh/s,0.005j/Mh
+Bitmain Antminer D5 ,Nov 2018,0.119Th/s, 1566W,X11, $0.89/day,13j/Gh, 119Gh/s,0.013j/Mh
+Dayun Zig D1,Nov 2018,0.048Th/s, 2200W,X11, -$4.16/day,46j/Gh, 48Gh/s,0.046j/Mh
+Baikal BK-G28,Oct 2018,0.028Th/s, 1300W,X11, -$2.47/day,46j/Gh, 28Gh/s,0.046j/Mh
+Spondoolies SPx36,Sep 2018,0.540Th/s, 4400W,X11, $11.83/day,8j/Gh, 540Gh/s,0.008j/Mh
+iBeLink DM56G,May 2018,0.056Th/s, 2100W,X11, -$3.51/day,38j/Gh, 56Gh/s,0.038j/Mh
+Innosilicon A5+ DashMaster,Mar 2018,0.065Th/s, 1500W,X11, -$1.37/day,23j/Gh, 65Gh/s,0.023j/Mh
+PinIdea DR-100 Pro,Nov 2017,0.021Th/s, 900W,X11, -$1.64/day,43j/Gh, 21Gh/s,0.043j/Mh
+Baikal BK-X,Nov 2017,0.010Th/s, 630W,X11, -$1.36/day,63j/Gh, 10Gh/s,0.063j/Mh
+Innosilicon A5 DashMaster,Oct 2017,0.0325Th/s, 750W,X11, -$0.69/day,23j/Gh, 32.5Gh/s,0.023j/Mh
+Bitmain Antminer D3,Oct 2017,0.0193Th/s, 1350W,X11, -$3.01/day,7j/Gh, 19.3Gh/s,0.07j/Mh
+Bitmain Antminer D3,Oct 2017,0.0175Th/s, 1280W,X11, -$2.89/day,73j/Gh, 17.5Gh/s,0.073j/Mh
+iBeLink DM22G,Sep 2017,0.022Th/s, 810W,X11, -$1.33/day,37j/Gh, 22Gh/s,0.037j/Mh
+Bitmain Antminer D3,Sep 2017,0.015Th/s, 1200W,X11, -$2.78/day,8j/Gh, 15Gh/s,0.08j/Mh
+PinIdea DR-100,Aug 2017,0.019Th/s, 900W,X11, -$1.73/day,47j/Gh, 19Gh/s,0.047j/Mh
+Baikal Giant+ A2000,Aug 2017,0.002Th/s, 450W,X11, -$1.15/day,215j/Gh, 2Gh/s,0.215j/Mh
+iBeLink DM11G,Jul 2017,0.0108Th/s, 810W,X11, -$1.84/day,75j/Gh, 10.8Gh/s,0.075j/Mh
+PinIdea DR-3,Apr 2017,0.0006Th/s, 345W,X11, -$0.97/day,575j/Gh, 600Mh/s,0.575j/Mh
+Baikal Miner Cube,Apr 2017,0.0003Th/s, 90W,X11, -$0.20/day,25j/Gh, 300Mh/s,0.25j/Mh
+Baikal Giant A900,Oct 2016,0.0009Th/s, 270W,X11, -$0.58/day,241j/Gh, 900Mh/s,0.241j/Mh
+Baikal Mini Miner,Sep 2016,0.00015Th/s, 50W,X11, -$0.11/day,267j/Gh, 150Mh/s,0.267j/Mh
+Baikal Quadruple Mini Miner,Aug 2016,0.0006Th/s, 192W,X11, -$0.43/day,267j/Gh, 600Mh/s,0.267j/Mh
+Baikal BK-N240,May 2018,0.00000024Th/s, 650W,CryptoNight, -$0.73/day,2708000j/Gh, 240kh/s,2.708j/kh
+Baikal BK-N70,May 2018,0.00000007Th/s, 240W,CryptoNight, -$0.30/day,3143000j/Gh, 70kh/s,3.143j/kh
+Innosilicon A8C CryptoMaster,May 2018,0.00000008Th/s, 175W,CryptoNight, -$0.12/day,2188000j/Gh, 80kh/s,2.188j/kh
+Bitmain Antminer X3,May 2018,0.00000022Th/s, 465W,CryptoNight, -$0.29/day,2114000j/Gh, 220kh/s,2.114j/kh
+Innosilicon A8+ CryptoMaster,Apr 2018,0.00000024Th/s, 480W,CryptoNight, -$0.24/day,2000000j/Gh, 240kh/s,2j/kh
+PinIdea RR-210,Apr 2018,0.00000003Th/s, 350W,CryptoNight, -$0.87/day,11667000j/Gh, 30kh/s,11.667j/kh
+Innosilicon A8 CryptoMaster,Apr 2018,0.00000016Th/s, 350W,CryptoNight, -$0.25/day,2188000j/Gh, 160kh/s,2.188j/kh
+PinIdea RR-200,Apr 2018,0.000000027Th/s, 350W,CryptoNight, -$0.88/day,12963000j/Gh, 27kh/s,12.963j/kh
+Baikal BK-N+,Mar 2018,0.00000004Th/s, 120W,CryptoNight, -$0.16/day,3000000j/Gh, 40kh/s,3j/kh
+Baikal BK-N,Mar 2018,0.00000002Th/s, 60W,CryptoNight, -$0.08/day,3000000j/Gh, 20kh/s,3j/kh

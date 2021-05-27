@@ -1,0 +1,10 @@
+<span fxLayout="row">
+      <div *ngFor="let algo of algos" fxFlex fxLayout="column">
+        <mat-checkbox [(ngModel)]="algo.enabled"
+                      (ngModelChange)="updateAlgo()">
+          {{algo.name}}
+          <!--<small>Mean: {{mean(algo.name) | number: '1.2-5'}}</small>-->
+        </mat-checkbox>
+        <li *ngFor="let crypto of algo.cryptos">{{ crypto }}</li>
+      </div>
+</span>

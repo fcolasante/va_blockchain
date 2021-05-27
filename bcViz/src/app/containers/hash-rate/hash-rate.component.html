@@ -1,0 +1,18 @@
+<div fxLayout="row">
+  <div fxLayout="column" fxLayoutAlign="start">
+    <app-hr-series [allHashRate]="allHashRate"
+                   [originalSeries]="originalSeries"
+                   [color]="color"
+                   [cryptos]="cryptos"
+
+    >
+    </app-hr-series>
+  </div>
+  <div>
+    <app-country-consumption [country]="consumption"
+                             [allHashRate]="allHashRate"
+                             [color]="color"
+                             [cryptos]="cryptos"
+    ></app-country-consumption>
+  </div>
+</div>

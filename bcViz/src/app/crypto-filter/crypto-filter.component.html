@@ -1,0 +1,7 @@
+<span fxLayout="row">
+      <div *ngFor="let crypto of filteredCrypto" fxFlex="">
+        <mat-checkbox [checked]="crypto.enabled" >
+          {{crypto.name}}
+        </mat-checkbox>
+      </div>
+</span>

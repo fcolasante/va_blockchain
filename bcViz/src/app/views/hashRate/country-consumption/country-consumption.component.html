@@ -1,0 +1,25 @@
+<div fxLayout="column" fxFlexFill>
+  <div fxLayout="row">
+    <mat-form-field appearance="fill">
+      <mat-label>Year</mat-label>
+      <mat-select (selectionChange)="updateYear($event)">
+        <mat-option *ngFor="let y of yearsList" [value]="y">
+          {{y}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Cryptos</mat-label>
+      <mat-select (selectionChange)="updateCrypto($event)">
+        <mat-option *ngFor="let y of cryptos" [value]="y.symbol">
+          {{ y.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    {{this.currentCrypto}} in {{this.currentYear}} consumed {{this.currentConsumption}} TWh/year
+  </div>
+  <figure id="barplot"></figure>
+</div>

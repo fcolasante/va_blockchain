@@ -1,215 +1,216 @@
-country,cons2016,cons2017,cons2018,cons2019
-Aruba,0.8,0.9,0.9,
-Afghanistan,5.5,5.8,6,
-Angola,9,9.5,10,
-Albania,5.7,5,4.8,
-United Arab Emirates,114,118,119,
-Argentina,128,125,125,
-Armenia,5.3,5.6,5.4,5.7905171
-American Samoa,0.2,0.2,0.2,
-Antigua and Barbuda,0.3,0.3,0.3,
-Australia,227,231,234,241.020131
-Austria,65,66,66,66.848708
-Azerbaijan,20,20,20,
-Burundi,0.3,0.4,0.3,
-Belgium,82,83,83,82.051496
-Benin,1.1,1.1,1.2,
-Burkina Faso,1.5,1.6,1.8,
-Bangladesh,62,66,71,
-Bulgaria,32,34,33,33.1343173
-Bahrain,26,26,27,
-The Bahamas,1.7,1.7,1.8,
-Bosnia and Herzegovina,12,12,12,
-Belarus,32,32,33,32.736415
-Belize,0.6,0.6,0.6,
-Bermuda,0.6,0.6,0.6,
-Bolivia,7.9,8.1,8.3,9.0573537
-Brazil,510,517,529,597.2345504
-Barbados,1,1,1,
-Brunei,3.8,3.4,3.6,
-Bhutan,2.1,2,2.4,
-Botswana,3.6,3.6,3.3,
-Central African Republic,0.2,0.1,0.1,
-Canada,551,553,559,549.26386279
-Switzerland,58,59,58,56.35254
-Chile,73,72,76,74.99209
-China,5565,5951,6453,
-Côte d’Ivoire,5.7,6.8,6.7,
-Cameroon,5.7,6.4,6.7,
-Congo-Kinshasa,7.4,8.6,8.6,
-Congo-Brazzaville,1.5,2,2,
-Cook Islands,0,0,0,
-Colombia,68,72,70,
-Comoros,0,0,0,
-Cabo Verde,0.4,0.4,0.5,
-Costa Rica,9.8,9.9,10,
-Cuba,16,16,16,
-Cayman Islands,0.6,0.6,0.6,0.64650345
-Cyprus,4.4,4.5,4.6,4.5238734
-Czech Republic,62,64,64,63.919966
-Germany,538,539,533,524.268434
-Dominica,0.1,0,0,
-Denmark,33,33,33,32.703064
-Dominican Republic,15,16,16,0.08386554
-Algeria,56,60,62,
-Ecuador,23,24,25,
-Egypt,131,143,151,
-Eritrea,0.3,0.3,0.4,
-Spain,240,245,245,241.562852
-Estonia,8.8,8.7,9.1,8.857956
-Ethiopia,8.6,8.8,9,
-Finland,83,83,85,84.206701
-Fiji,0.9,1,1,
-France,458,455,450,449.422585
-Faroe Islands,0.3,0.3,0.3,0.355074
-Gabon,2.1,2.2,2.2,
-United Kingdom,310,307,307,300.520358
-Georgia,10,11,12,12.1789608
-Ghana,8.3,9,8.8,
-Gibraltar,0.2,0.2,0.2,
-Guinea,2.1,2.3,2,
-Guadeloupe,1.5,1.5,1.5,
-"Gambia, The",0.3,0.3,0.3,
-Equatorial Guinea,1.2,1.2,1.3,
-Greece,57,58,51,53.63537
-Grenada,0.2,0.2,0.2,
-Nigeria,27,28,29,
-Nicaragua,3.6,3.7,3.7,
-Netherlands,109,110,112,110.68171
-Netherlands Antilles,0.8,0.8,0.7,
-Norway,122,123,126,124.126519
-Nepal,5,5.8,6.6,
-Nauru,0,0,0,
-New Zealand,40,40,40,41.165451
-Oman,29,31,32,
-Pakistan,96,106,121,
-Panama,8.7,9,9.3,
-Peru,44,46,47,
-Philippines,78,82,86,93.3543207
-Papua New Guinea,3.6,3.6,3.8,
-Poland,149,153,157,152.573352
-Puerto Rico,18,14,15,
-North Korea,14,12,13,
-Portugal,47,47,48,48.035112
-Paraguay,12,12,13,
-Palestinian Territories,5.2,5.3,5.5,
-French Polynesia,0.5,0.5,0.5,
-Qatar,37,40,43,
-Reunion,2.9,2.9,2.9,
-Romania,50,51,52,55.0077777
-Russia,910,919,929,965.1560464
-Rwanda,0.7,0.8,0.8,
-Saudi Arabia,319,323,322,
-Sudan,10,11,11,
-Senegal,3.5,3.8,3.8,
-Singapore,48,49,49,47.58252
-Saint Helena,0,0,0,
-Solomon Islands,0,0,0,
-Sierra Leone,0.2,0.2,0.2,
-El Salvador,5.8,5.7,5.7,6.21199574
-Somalia,0.3,0.3,0.3,
-Saint Pierre and Miquelon,0,0,0,
-Serbia,30,30,30,
-South Sudan,0.4,0.5,0.5,
-Sao Tome and Principe,0,0,0,
-Suriname,1.7,1.7,1.7,
-Slovakia,27,28,28,26.236542
-Slovenia,13,14,14,14.023035
-Sweden,133,132,130,131.798015
-Eswatini,1.6,1.6,1.7,
-Seychelles,0.4,0.4,0.4,
-Syria,14,14,14,
-Turks and Caicos Islands,0.2,0.2,0.2,
-Greenland,0.5,0.5,0.5,
-Guatemala,10,10,11,
-French Guiana,0.8,1,1,
-Guam,1.6,1.7,1.6,
-Guyana,0.8,0.9,0.9,
-Hong Kong,45,44,45,
-Honduras,5.8,6.3,6.7,
-Croatia,16,17,17,17.4749266
-Haiti,0.4,0.4,0.4,
-Hungary,39,41,41,41.620749
-Indonesia,213,221,249,263.1385035
-India,1168,1226,1277,
-Ireland,26,26,27,27.202795
-Iran,236,252,255,
-Iraq,38,41,44,
-Iceland,18,18,19,18.679313
-Israel,55,55,56,
-Italy,294,300,302,297.150052
-Jamaica,3,3,3,
-Jordan,17,18,17,
-Japan,947,949,940,902.842634
-Kazakhstan,83,87,92,
-Kenya,7.6,8.8,8.7,
-Kyrgyzstan,11,11,12,
-Cambodia,6,6.9,8.4,
-Kiribati,0,0,0,
-Saint Kitts and Nevis,0.2,0.2,0.2,
-South Korea,509,512,535,527.035648
-Kuwait,57,59,59,
-Laos,4.4,3.6,4.1,
-Lebanon,16,18,18,
-Liberia,0.3,0.3,0.3,
-Libya,24,25,26,
-Saint Lucia,0.3,0.4,0.4,
-Sri Lanka,13,14,13,
-Lesotho,0.9,0.9,0.9,
-Lithuania,10,11,11,11.306302
-Luxembourg,6.4,6.4,6.5,5.816501
-Latvia,6.8,6.8,7,6.876723
-Macau,5.1,5.2,5.4,
-Morocco,28,30,30,
-Moldova,4.9,5.2,5.5,5.9566105
-Madagascar,2,2.1,2.1,
-Maldives,0.6,0.6,0.6,
-Mexico,259,261,271,267.91059
-North Macedonia,6.4,6.3,6.3,7.023724
-Mali,2.1,2.7,3,
-Malta,2.1,2.3,2.3,2.456173
-Burma,13,17,18,
-Montenegro,2.8,3,3,
-Mongolia,5.9,6.4,6.9,
-Mozambique,12,14,13,
-Mauritania,1,0.9,0.9,
-Montserrat,0,0,0,
-Martinique,1.3,1.4,1.4,
-Mauritius,2.7,2.8,2.8,
-Malawi,2,1.9,1.5,
-Malaysia,137,144,147,
-Namibia,3.9,4.1,4.2,
-New Caledonia,2.7,2.8,2.7,
-Niger,1.1,1.1,1.6,
-Chad,0.2,0.2,0.2,
-Togo,1,1.3,1.3,
-Thailand,184,184,186,
-Tajikistan,13,14,14,16.0853177
-Turkmenistan,15,15,15,
-Timor-Leste,0,0,0,
-Tonga,0,0,0,
-Trinidad and Tobago,9.2,9.1,8.2,
-Tunisia,15,16,16,
-Turkey,231,248,258,251.376078
-Taiwan,237,242,247,237.55742556
-Tanzania,5.8,5.8,5.8,
-Uganda,3.3,3.3,3.5,
-Ukraine,133,124,127,128.8064393
-Uruguay,11,11,12,
-United States,3921,3888,4033,3989.566399731
-U.S. Pacific Islands,0.5,0.5,0.5,
-Uzbekistan,45,48,49,
-Saint Vincent/Grenadines,0.1,0.1,0.1,
-Venezuela,70,66,65,
-British Virgin Islands,0.2,0.1,0,
-U.S. Virgin Islands,0.6,0.5,0.6,
-Vietnam,162,178,217,
-Vanuatu,0,0,0,
-Wake Island,0,0,0,
-World,21877,22486,23398,
-Samoa,0.1,0.1,0.1,
-Kosovo,4,4.6,4.6,5.7154386
-Yemen,3.6,3,2.7,
-South Africa,206,208,207,210.3043921
-Zambia,11,12,13,
-Zimbabwe,7.1,7.8,7.4,
+"World",21877,22486,23398,
+,,,,
+"country","cons2016","cons2017","cons2018","cons2019"
+"Aruba","0.8","0.9","0.9",
+"Afghanistan","5.5","5.8",6,
+"Angola",9,"9.5",10,
+"Albania","5.7",5,"4.8",
+"United Arab Emirates",114,118,119,
+"Argentina",128,125,125,
+"Armenia","5.3","5.6","5.4","5.7905171"
+"American Samoa","0.2","0.2","0.2",
+"Antigua and Barbuda","0.3","0.3","0.3",
+"Australia",227,231,234,"241.020131"
+"Austria",65,66,66,"66.848708"
+"Azerbaijan",20,20,20,
+"Burundi","0.3","0.4","0.3",
+"Belgium",82,83,83,"82.051496"
+"Benin","1.1","1.1","1.2",
+"Burkina Faso","1.5","1.6","1.8",
+"Bangladesh",62,66,71,
+"Bulgaria",32,34,33,"33.1343173"
+"Bahrain",26,26,27,
+"The Bahamas","1.7","1.7","1.8",
+"Bosnia and Herzegovina",12,12,12,
+"Belarus",32,32,33,"32.736415"
+"Belize","0.6","0.6","0.6",
+"Bermuda","0.6","0.6","0.6",
+"Bolivia","7.9","8.1","8.3","9.0573537"
+"Brazil",510,517,529,"597.2345504"
+"Barbados",1,1,1,
+"Brunei","3.8","3.4","3.6",
+"Bhutan","2.1",2,"2.4",
+"Botswana","3.6","3.6","3.3",
+"Central African Republic","0.2","0.1","0.1",
+"Canada",551,553,559,"549.26386279"
+"Switzerland",58,59,58,"56.35254"
+"Chile",73,72,76,"74.99209"
+"China",5565,5951,6453,
+"Côte d’Ivoire","5.7","6.8","6.7",
+"Cameroon","5.7","6.4","6.7",
+"Congo-Kinshasa","7.4","8.6","8.6",
+"Congo-Brazzaville","1.5",2,2,
+"Cook Islands",0,0,0,
+"Colombia",68,72,70,
+"Comoros",0,0,0,
+"Cabo Verde","0.4","0.4","0.5",
+"Costa Rica","9.8","9.9",10,
+"Cuba",16,16,16,
+"Cayman Islands","0.6","0.6","0.6","0.64650345"
+"Cyprus","4.4","4.5","4.6","4.5238734"
+"Czech Republic",62,64,64,"63.919966"
+"Germany",538,539,533,"524.268434"
+"Dominica","0.1",0,0,
+"Denmark",33,33,33,"32.703064"
+"Dominican Republic",15,16,16,"0.08386554"
+"Algeria",56,60,62,
+"Ecuador",23,24,25,
+"Egypt",131,143,151,
+"Eritrea","0.3","0.3","0.4",
+"Spain",240,245,245,"241.562852"
+"Estonia","8.8","8.7","9.1","8.857956"
+"Ethiopia","8.6","8.8",9,
+"Finland",83,83,85,"84.206701"
+"Fiji","0.9",1,1,
+"France",458,455,450,"449.422585"
+"Faroe Islands","0.3","0.3","0.3","0.355074"
+"Gabon","2.1","2.2","2.2",
+"United Kingdom",310,307,307,"300.520358"
+"Georgia",10,11,12,"12.1789608"
+"Ghana","8.3",9,"8.8",
+"Gibraltar","0.2","0.2","0.2",
+"Guinea","2.1","2.3",2,
+"Guadeloupe","1.5","1.5","1.5",
+"Gambia, The","0.3","0.3","0.3",
+"Equatorial Guinea","1.2","1.2","1.3",
+"Greece",57,58,51,"53.63537"
+"Grenada","0.2","0.2","0.2",
+"Nigeria",27,28,29,
+"Nicaragua","3.6","3.7","3.7",
+"Netherlands",109,110,112,"110.68171"
+"Netherlands Antilles","0.8","0.8","0.7",
+"Norway",122,123,126,"124.126519"
+"Nepal",5,"5.8","6.6",
+"Nauru",0,0,0,
+"New Zealand",40,40,40,"41.165451"
+"Oman",29,31,32,
+"Pakistan",96,106,121,
+"Panama","8.7",9,"9.3",
+"Peru",44,46,47,
+"Philippines",78,82,86,"93.3543207"
+"Papua New Guinea","3.6","3.6","3.8",
+"Poland",149,153,157,"152.573352"
+"Puerto Rico",18,14,15,
+"North Korea",14,12,13,
+"Portugal",47,47,48,"48.035112"
+"Paraguay",12,12,13,
+"Palestinian Territories","5.2","5.3","5.5",
+"French Polynesia","0.5","0.5","0.5",
+"Qatar",37,40,43,
+"Reunion","2.9","2.9","2.9",
+"Romania",50,51,52,"55.0077777"
+"Russia",910,919,929,"965.1560464"
+"Rwanda","0.7","0.8","0.8",
+"Saudi Arabia",319,323,322,
+"Sudan",10,11,11,
+"Senegal","3.5","3.8","3.8",
+"Singapore",48,49,49,"47.58252"
+"Saint Helena",0,0,0,
+"Solomon Islands",0,0,0,
+"Sierra Leone","0.2","0.2","0.2",
+"El Salvador","5.8","5.7","5.7","6.21199574"
+"Somalia","0.3","0.3","0.3",
+"Saint Pierre and Miquelon",0,0,0,
+"Serbia",30,30,30,
+"South Sudan","0.4","0.5","0.5",
+"Sao Tome and Principe",0,0,0,
+"Suriname","1.7","1.7","1.7",
+"Slovakia",27,28,28,"26.236542"
+"Slovenia",13,14,14,"14.023035"
+"Sweden",133,132,130,"131.798015"
+"Eswatini","1.6","1.6","1.7",
+"Seychelles","0.4","0.4","0.4",
+"Syria",14,14,14,
+"Turks and Caicos Islands","0.2","0.2","0.2",
+"Greenland","0.5","0.5","0.5",
+"Guatemala",10,10,11,
+"French Guiana","0.8",1,1,
+"Guam","1.6","1.7","1.6",
+"Guyana","0.8","0.9","0.9",
+"Hong Kong",45,44,45,
+"Honduras","5.8","6.3","6.7",
+"Croatia",16,17,17,"17.4749266"
+"Haiti","0.4","0.4","0.4",
+"Hungary",39,41,41,"41.620749"
+"Indonesia",213,221,249,"263.1385035"
+"India",1168,1226,1277,
+"Ireland",26,26,27,"27.202795"
+"Iran",236,252,255,
+"Iraq",38,41,44,
+"Iceland",18,18,19,"18.679313"
+"Israel",55,55,56,
+"Italy",294,300,302,"297.150052"
+"Jamaica",3,3,3,
+"Jordan",17,18,17,
+"Japan",947,949,940,"902.842634"
+"Kazakhstan",83,87,92,
+"Kenya","7.6","8.8","8.7",
+"Kyrgyzstan",11,11,12,
+"Cambodia",6,"6.9","8.4",
+"Kiribati",0,0,0,
+"Saint Kitts and Nevis","0.2","0.2","0.2",
+"South Korea",509,512,535,"527.035648"
+"Kuwait",57,59,59,
+"Laos","4.4","3.6","4.1",
+"Lebanon",16,18,18,
+"Liberia","0.3","0.3","0.3",
+"Libya",24,25,26,
+"Saint Lucia","0.3","0.4","0.4",
+"Sri Lanka",13,14,13,
+"Lesotho","0.9","0.9","0.9",
+"Lithuania",10,11,11,"11.306302"
+"Luxembourg","6.4","6.4","6.5","5.816501"
+"Latvia","6.8","6.8",7,"6.876723"
+"Macau","5.1","5.2","5.4",
+"Morocco",28,30,30,
+"Moldova","4.9","5.2","5.5","5.9566105"
+"Madagascar",2,"2.1","2.1",
+"Maldives","0.6","0.6","0.6",
+"Mexico",259,261,271,"267.91059"
+"North Macedonia","6.4","6.3","6.3","7.023724"
+"Mali","2.1","2.7",3,
+"Malta","2.1","2.3","2.3","2.456173"
+"Burma",13,17,18,
+"Montenegro","2.8",3,3,
+"Mongolia","5.9","6.4","6.9",
+"Mozambique",12,14,13,
+"Mauritania",1,"0.9","0.9",
+"Montserrat",0,0,0,
+"Martinique","1.3","1.4","1.4",
+"Mauritius","2.7","2.8","2.8",
+"Malawi",2,"1.9","1.5",
+"Malaysia",137,144,147,
+"Namibia","3.9","4.1","4.2",
+"New Caledonia","2.7","2.8","2.7",
+"Niger","1.1","1.1","1.6",
+"Chad","0.2","0.2","0.2",
+"Togo",1,"1.3","1.3",
+"Thailand",184,184,186,
+"Tajikistan",13,14,14,"16.0853177"
+"Turkmenistan",15,15,15,
+"Timor-Leste",0,0,0,
+"Tonga",0,0,0,
+"Trinidad and Tobago","9.2","9.1","8.2",
+"Tunisia",15,16,16,
+"Turkey",231,248,258,"251.376078"
+"Taiwan",237,242,247,"237.55742556"
+"Tanzania","5.8","5.8","5.8",
+"Uganda","3.3","3.3","3.5",
+"Ukraine",133,124,127,"128.8064393"
+"Uruguay",11,11,12,
+"United States",3921,3888,4033,"3989.566399731"
+"U.S. Pacific Islands","0.5","0.5","0.5",
+"Uzbekistan",45,48,49,
+"Saint Vincent/Grenadines","0.1","0.1","0.1",
+"Venezuela",70,66,65,
+"British Virgin Islands","0.2","0.1",0,
+"U.S. Virgin Islands","0.6","0.5","0.6",
+"Vietnam",162,178,217,
+"Vanuatu",0,0,0,
+"Wake Island",0,0,0,
+"Samoa","0.1","0.1","0.1",
+"Kosovo",4,"4.6","4.6","5.7154386"
+"Yemen","3.6",3,"2.7",
+"South Africa",206,208,207,"210.3043921"
+"Zambia",11,12,13,
+"Zimbabwe","7.1","7.8","7.4",

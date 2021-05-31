@@ -1,20 +1,11 @@
 import numpy as np
+from numpy.core.numeric import full
 import pandas as pd
-from scipy.interpolate import interp1d
 
+PLOTS = False
 VERBOSE = False
 
-# read consumption data from csv file
-print("\n################## MOST RECENT DATA")
-df = pd.read_csv("data/dataset/country_consumption.csv", delimiter=",", skiprows=2)
-print(df)
-print()
 
-
-"""
-    WEIGHTED PERCENTILE
-    (how much of the consumption (%) is due to how many countries)
-"""
 def recursive_wp(seq, q, curr_n, weights_sum, verbose=False):
     if curr_n <= 0:
         return 0.0, 0
@@ -36,12 +27,26 @@ def recursive_wp(seq, q, curr_n, weights_sum, verbose=False):
         return recursive_wp(seq,q,curr_n-1,weights_sum)
 
 def weighted_percentile(a, q=0.5, verbose=VERBOSE):
+    """
+    Computes the q-th weighted percentile of the np.array a. 
+    """
     weights_sum = np.sum(a, axis=None)
     if verbose:
         print("[INFO]: debug ...")
         print("  w_sum:", weights_sum)
     p_n, n = recursive_wp(seq=a, q=q, curr_n=len(a)-1, weights_sum=weights_sum, verbose=verbose)
     return p_n, n
+
+
+"""
+    WEIGHTED PERCENTILE
+    (how much of the consumption (%) is due to how many countries)
+"""
+# read consumption data from csv file
+print("\n################## MOST RECENT DATA")
+df = pd.read_csv("data/dataset/country_consumption.csv", delimiter=",", skiprows=2)
+print(df)
+print()
     
 
 # compute 90th weighted percentile for each year
@@ -56,19 +61,15 @@ for col in df.columns[1:4]:
 
     q = 0.9
     p_n, n = weighted_percentile(sorted_np, q=q)
-    print(f"#### year: {col}")
-    print(f"    weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['country'][n]}\n")
+    print(f"---> year: {col}")
+    print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['country'][n]}\n")
 
 print()
-countries = df["country"].apply(lambda row: str(row))
 
 
-
-"""
-    CONSUMPTION PREDICTION
-"""
-# read full consumption data from csv file
 print("################## FULL DATA")
+# read full consumption data from csv file
+# to compute weighted percentile over all years
 full_df = pd.read_csv("data/dataset/INT-Export-05-18-2021_11-31-59.csv", delimiter=",", skiprows=2)
 print(full_df)
 
@@ -80,7 +81,55 @@ for col in full_df.columns[2:-1]:
         print(sorted_np)
 
     p_n, n = weighted_percentile(sorted_np, q=0.9)
-    print(f"#### year: {col}")
-    print(f"---> weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['Country (billion kWh)'][n][8:]}")
+    print(f"---> year: {col}")
+    print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['Country (billion kWh)'][n][8:]}\n")
 
 print()
+
+
+"""
+    CONSUMPTION PREDICTION
+    (through polynomial regression)
+"""
+import matplotlib.pyplot as plt
+
+print("\n################## PREDICTIONS")
+countries = full_df["Country (billion kWh)"].apply(lambda row: str(row))
+#print(countries)
+
+
+tot_years = 42
+years_to_plt = 40 # starting from most latest
+col_idx = tot_years - years_to_plt
+
+for idx, row in full_df.iterrows():
+    country_name = row["Country (billion kWh)"][8:]
+    x = np.arange(0,len(row[col_idx:-1]),1,dtype=np.float64)
+    y = np.array(row[col_idx:-1],dtype=np.float64)
+    print("[INFO]: Analyzing consumption of", country_name, "...")
+    
+    poly_model = np.polyfit(x,y,2)
+    predict = np.poly1d(poly_model)
+    #print(predict(45))
+    x_lin_reg = np.arange(0,len(row[col_idx:-1]),1)
+    y_lin_reg = predict(x_lin_reg)
+
+    if PLOTS:
+        plt.figure()
+        cols_labels = [full_df.columns[col_idx:-1][col] for col in range(0,len(full_df.columns[col_idx:-1])+1,5)]
+
+        plt.scatter(x, y, alpha=0.5)
+        plt.plot(x_lin_reg, y_lin_reg, c='r')
+        plt.xlabel("year", fontsize=10)
+        plt.xticks(np.arange(0,len(row[col_idx:-1])+1,5), labels=cols_labels, rotation=45)
+        plt.ylabel("consumption (10^9 kWh)", fontsize=10)
+        plt.yticks(np.arange(0,100+1,10))
+
+        plt.title(country_name)
+        plt.grid(True)
+        if VERBOSE:
+            print(len(row[col_idx:-1]))
+            print([col for col in full_df.columns[col_idx:-1]])
+
+        plt.show()
+        

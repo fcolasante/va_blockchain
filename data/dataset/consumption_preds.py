@@ -1,6 +1,9 @@
 import numpy as np
 from numpy.core.numeric import full
+
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 PLOTS = False
 VERBOSE = False
@@ -48,8 +51,8 @@ df = pd.read_csv("data/dataset/country_consumption.csv", delimiter=",", skiprows
 print(df)
 print()
     
-
 # compute 90th weighted percentile for each year
+print("[INFO]: Computing 90th weighted percentile on recent data...")
 for col in df.columns[1:4]:
     sorted_df = df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
@@ -62,7 +65,7 @@ for col in df.columns[1:4]:
     q = 0.9
     p_n, n = weighted_percentile(sorted_np, q=q)
     print(f"---> year: {col}")
-    print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['country'][n]}\n")
+    print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['country'][n]}")
 
 print()
 
@@ -74,6 +77,7 @@ full_df = pd.read_csv("data/dataset/INT-Export-05-18-2021_11-31-59.csv", delimit
 print(full_df)
 
 # compute 90th weighted percentile for each year avilable (since 1980)
+print("\n[INFO]: Computing 90th weighted percentile on all data...")
 for col in full_df.columns[2:-1]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
@@ -82,7 +86,7 @@ for col in full_df.columns[2:-1]:
 
     p_n, n = weighted_percentile(sorted_np, q=0.9)
     print(f"---> year: {col}")
-    print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['Country (billion kWh)'][n][8:]}\n")
+    print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['Country (billion kWh)'][n][8:]}")
 
 print()
 
@@ -91,15 +95,13 @@ print()
     CONSUMPTION PREDICTION
     (through polynomial regression)
 """
-import matplotlib.pyplot as plt
-
-print("\n################## PREDICTIONS")
+print("\n################## PREDICTIONS\n")
 countries = full_df["Country (billion kWh)"].apply(lambda row: str(row))
 #print(countries)
 
 
 tot_years = 42
-years_to_plt = 40 # starting from most latest
+years_to_plt = 40 # starting from latest
 col_idx = tot_years - years_to_plt
 
 for idx, row in full_df.iterrows():
@@ -133,3 +135,25 @@ for idx, row in full_df.iterrows():
 
         plt.show()
         
+
+"""
+    HASHRATE PREDICTION
+    (through polynomial regression)
+"""
+print("\n\n################## CRYPTO HASHRATE")
+# read full consumption data from csv file
+# to compute weighted percentile over all years
+hr_df = pd.read_csv("data/dataset/hashrate_complete.csv", delimiter=",")
+print(hr_df)
+
+print("\n[INFO]: Computing regression hashrate data...")
+for crypto in hr_df.columns[1:]:
+    x = np.arange(0,len(hr_df[crypto]),1,dtype=np.float64)
+    y = np.array(hr_df[crypto],dtype=np.float64)
+    print("[INFO]: Analyzing hashrate of", crypto, "...")
+
+    poly_model = np.polyfit(x,y,2)
+    predict = np.poly1d(poly_model)
+    #print(predict(45))
+    x_lin_reg = np.arange(0,len(hr_df[crypto]),1)
+    y_lin_reg = predict(x_lin_reg)

@@ -1,9 +1,7 @@
 import numpy as np
 from numpy.core.numeric import full
-
 import pandas as pd
 import matplotlib.pyplot as plt
-
 
 PLOTS = False
 VERBOSE = False
@@ -67,12 +65,9 @@ for col in df.columns[1:4]:
     print(f"---> year: {col}")
     print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['country'][n]}")
 
-print()
 
-
-print("################## FULL DATA")
-# read full consumption data from csv file
-# to compute weighted percentile over all years
+print("\n################## FULL DATA")
+# read full consumption data from csv file to compute weighted percentile over all years
 full_df = pd.read_csv("data/dataset/INT-Export-05-18-2021_11-31-59.csv", delimiter=",", skiprows=2)
 print(full_df)
 
@@ -91,37 +86,38 @@ for col in full_df.columns[2:-1]:
 print()
 
 
+
 """
     CONSUMPTION PREDICTION
     (through polynomial regression)
 """
-print("\n################## PREDICTIONS\n")
-countries = full_df["Country (billion kWh)"].apply(lambda row: str(row))
-#print(countries)
-
+print("\n################## PREDICTIONS")
+#sorted_df = full_df.sort_values(by=["Country (billion kWh)"], ascending=True, ignore_index=True)
 
 tot_years = 42
 years_to_plt = 40 # starting from latest
 col_idx = tot_years - years_to_plt
+cons_preds = []
 
+# computing consumption prediction via regression for each country (i.e. each row)
+print(f"\n[INFO]: Computing regression on consumption data (38 years data) ...")
 for idx, row in full_df.iterrows():
     country_name = row["Country (billion kWh)"][8:]
     x = np.arange(0,len(row[col_idx:-1]),1,dtype=np.float64)
     y = np.array(row[col_idx:-1],dtype=np.float64)
-    print("[INFO]: Analyzing consumption of", country_name, "...")
+    #print("Analyzing consumption of", country_name, "...")
     
-    poly_model = np.polyfit(x,y,2)
+    poly_model = np.polyfit(x,y,1)
     predict = np.poly1d(poly_model)
-    #print(predict(45))
-    x_lin_reg = np.arange(0,len(row[col_idx:-1]),1)
-    y_lin_reg = predict(x_lin_reg)
 
+    x_sqr_reg = np.arange(0,len(row[col_idx:-1]),1)
+    y_sqr_reg = predict(x_sqr_reg)
     if PLOTS:
         plt.figure()
         cols_labels = [full_df.columns[col_idx:-1][col] for col in range(0,len(full_df.columns[col_idx:-1])+1,5)]
 
         plt.scatter(x, y, alpha=0.5)
-        plt.plot(x_lin_reg, y_lin_reg, c='r')
+        plt.plot(x_sqr_reg, y_sqr_reg, c='r')
         plt.xlabel("year", fontsize=10)
         plt.xticks(np.arange(0,len(row[col_idx:-1])+1,5), labels=cols_labels, rotation=45)
         plt.ylabel("consumption (10^9 kWh)", fontsize=10)
@@ -135,25 +131,59 @@ for idx, row in full_df.iterrows():
 
         plt.show()
         
+    x_to_pred = np.arange(years_to_plt,years_to_plt+10,1)
+    y_preds = predict(x_to_pred)
+    # append prediction to DataFrame
+    cons_preds.append([country_name] + list(y_preds))
+    
+
+year_to_pred = ["country"] + [str(year) for year in range(2020,2030,1)]
+cons_preds_df = pd.DataFrame(cons_preds, columns=year_to_pred)
+print(cons_preds_df)
+cons_preds_df.to_csv("data/dataset/consumption_preds.csv")
+
+
 
 """
     HASHRATE PREDICTION
     (through polynomial regression)
 """
 print("\n\n################## CRYPTO HASHRATE")
-# read full consumption data from csv file
-# to compute weighted percentile over all years
+# read crypto hashrate data from csv
 hr_df = pd.read_csv("data/dataset/hashrate_complete.csv", delimiter=",")
 print(hr_df)
 
-print("\n[INFO]: Computing regression hashrate data...")
+days_to_pred = (366*3) + (365*7)  # 3 leap and 7 normal years to predict 
+hr_preds_df = pd.DataFrame(columns=hr_df.columns)
+
+
+# computing hashrate prediction via regression for each crypto (i.e. each column)
+print(f"\n[INFO]: Computing regression on hashrate data ({len(hr_df['date'])//365} years data) ...")
 for crypto in hr_df.columns[1:]:
     x = np.arange(0,len(hr_df[crypto]),1,dtype=np.float64)
     y = np.array(hr_df[crypto],dtype=np.float64)
-    print("[INFO]: Analyzing hashrate of", crypto, "...")
+    print(f"Analyzing hashrate of {crypto} ...")
 
-    poly_model = np.polyfit(x,y,2)
+    poly_model = np.polyfit(x,y,1)
     predict = np.poly1d(poly_model)
-    #print(predict(45))
-    x_lin_reg = np.arange(0,len(hr_df[crypto]),1)
-    y_lin_reg = predict(x_lin_reg)
+
+    x_sqr_reg = np.arange(0,len(hr_df[crypto]),1)
+    y_sqr_reg = predict(x_sqr_reg)
+
+    x_to_pred = np.arange(len(hr_df[crypto]),len(hr_df[crypto])+days_to_pred,1)
+    y_preds = predict(x_to_pred)
+    # append prediction to DataFrame
+    hr_preds_df[crypto] = pd.Series(y_preds)
+
+
+import datetime 
+base = datetime.date.fromisoformat(list(hr_df["date"])[-1])
+date_list = [base + datetime.timedelta(days=x) for x in range(days_to_pred)]
+hr_preds_df["date"] = date_list
+print("\n[INFO]: first pred date:", base)
+print("[INFO]: last pred date:", date_list[-1])
+
+
+print()
+print(hr_preds_df)
+hr_preds_df.to_csv("data/dataset/hashrate_preds.csv")

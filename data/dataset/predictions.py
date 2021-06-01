@@ -178,9 +178,9 @@ for crypto in hr_df.columns[1:]:
 
 import datetime 
 base = datetime.date.fromisoformat(list(hr_df["date"])[-1])
-date_list = [base + datetime.timedelta(days=x) for x in range(days_to_pred)]
+date_list = [base + datetime.timedelta(days=x) for x in range(1,days_to_pred+1)]
 hr_preds_df["date"] = date_list
-print("\n[INFO]: first pred date:", base)
+print("\n[INFO]: last hr date:", base)
 print("[INFO]: last pred date:", date_list[-1])
 
 

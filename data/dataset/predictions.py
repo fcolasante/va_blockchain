@@ -91,7 +91,7 @@ print()
     CONSUMPTION PREDICTION
     (through polynomial regression)
 """
-print("\n################## PREDICTIONS")
+print("\n################## ENERGY PREDICTIONS")
 #sorted_df = full_df.sort_values(by=["Country (billion kWh)"], ascending=True, ignore_index=True)
 
 tot_years = 42
@@ -190,10 +190,10 @@ import datetime
 base = datetime.date.fromisoformat(list(hr_df["date"])[-1])
 date_list = [base + datetime.timedelta(days=x) for x in range(1,days_to_pred+1)]
 hr_preds_df["date"] = date_list
-print("\n[INFO]: last hr date:", base)
+print("\n[INFO]: last hashrate:", base)
 print("[INFO]: last prediction:", date_list[-1])
 
 
-print()
+print("\n################## HASHRATE PREDICTIONS")
 print(hr_preds_df)
 hr_preds_df.to_csv("data/dataset/hashrate_preds.csv")

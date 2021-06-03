@@ -110,14 +110,14 @@ for idx, row in full_df.iterrows():
     poly_model = np.polyfit(x,y,1)
     predict = np.poly1d(poly_model)
 
-    x_sqr_reg = np.arange(0,len(row[col_idx:-1]),1)
-    y_sqr_reg = predict(x_sqr_reg)
+    x_lin_reg = np.arange(0,len(row[col_idx:-1]),1)
+    y_lin_reg = predict(x_lin_reg)
     if PLOTS:
         plt.figure()
         cols_labels = [full_df.columns[col_idx:-1][col] for col in range(0,len(full_df.columns[col_idx:-1])+1,5)]
 
         plt.scatter(x, y, alpha=0.5)
-        plt.plot(x_sqr_reg, y_sqr_reg, c='r')
+        plt.plot(x_lin_reg, y_lin_reg, c='r')
         plt.xlabel("year", fontsize=10)
         plt.xticks(np.arange(0,len(row[col_idx:-1])+1,5), labels=cols_labels, rotation=45)
         plt.ylabel("consumption (10^9 kWh)", fontsize=10)
@@ -160,15 +160,25 @@ hr_preds_df = pd.DataFrame(columns=hr_df.columns)
 # computing hashrate prediction via regression for each crypto (i.e. each column)
 print(f"\n[INFO]: Computing regression on hashrate data ({len(hr_df['date'])//365} years data) ...")
 for crypto in hr_df.columns[1:]:
-    x = np.arange(0,len(hr_df[crypto]),1,dtype=np.float64)
-    y = np.array(hr_df[crypto],dtype=np.float64)
     print(f"Analyzing hashrate of {crypto} ...")
+    y = np.array(hr_df[crypto], dtype=np.float64)
+
+    # removing NaN values for cryptos that have only recent data
+    nan = np.isnan(y)
+    clean = []
+    for i in range(len(nan)):
+        if not nan[i]:
+            clean.append(y[i])
+
+    y = np.array(clean, dtype=np.float64)
+    x = np.arange(0,len(y),1,dtype=np.float64)
+    print(f"    clean values: {len(y)}/{len(nan)}")
 
     poly_model = np.polyfit(x,y,1)
     predict = np.poly1d(poly_model)
 
-    x_sqr_reg = np.arange(0,len(hr_df[crypto]),1)
-    y_sqr_reg = predict(x_sqr_reg)
+    x_lin_reg = np.arange(0,len(hr_df[crypto]),1)
+    y_lin_reg = predict(x_lin_reg)
 
     x_to_pred = np.arange(len(hr_df[crypto]),len(hr_df[crypto])+days_to_pred,1)
     y_preds = predict(x_to_pred)
@@ -181,7 +191,7 @@ base = datetime.date.fromisoformat(list(hr_df["date"])[-1])
 date_list = [base + datetime.timedelta(days=x) for x in range(1,days_to_pred+1)]
 hr_preds_df["date"] = date_list
 print("\n[INFO]: last hr date:", base)
-print("[INFO]: last pred date:", date_list[-1])
+print("[INFO]: last prediction:", date_list[-1])
 
 
 print()

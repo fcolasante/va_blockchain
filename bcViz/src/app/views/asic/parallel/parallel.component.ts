@@ -17,12 +17,9 @@ export class ParallelComponent implements OnInit, OnChanges {
   @Input() color;
   @Output() selectedParallel = new EventEmitter<Asic>();
   private svg;
-  private margin = {top: 20, right: 20, bottom: 20, left: 20};
-  private width = 650 - this.margin.left - this.margin.right;
+  private margin = { top: 20, right: 20, bottom: 30, left: 20 };
+  private width = 800 - this.margin.left - this.margin.right;
   private height = 400 - this.margin.top - this.margin.bottom;
-  private parseTime = d3.timeParse("%Y-%m-%d");
-
-  private parseDesTime = d3.timeParse("%b\xa0%Y");
 
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
@@ -53,6 +50,7 @@ export class ParallelComponent implements OnInit, OnChanges {
       .attr("transform",
         "translate(" + this.margin.left + "," + this.margin.top + ")");
 
+
     const dimensions = ['efficiency', 'hashRate', 'profitability', 'power', 'release', 'algo'];
     let y = {};
     y['model'] = d3.scalePoint().domain(data.map(d => d.model).sort()).range([this.height, 0]);
@@ -80,7 +78,7 @@ export class ParallelComponent implements OnInit, OnChanges {
       .attr("d",  path)
       .style("fill", "none")
       .style("stroke", d => d.enabled ? this.color(d.algo) : 'gray')
-      .style("opacity", 0.5)
+      .style("opacity", d => d.enabled ? 0.5 : 0.1)
       .on("mouseover", (event, d) => {
         console.log(d);
         this.selectedParallel.emit(d);

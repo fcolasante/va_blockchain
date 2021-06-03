@@ -14,7 +14,7 @@ export class PcaComponent implements OnInit, OnChanges {
 
   private svg;
   private margin = { top: 20, right: 10, bottom: 40, left: 40 };
-  private width = 650 - this.margin.left - this.margin.right;
+  private width = 800 - this.margin.left - this.margin.right;
   private height = 400 - this.margin.top - this.margin.bottom;
 
 
@@ -82,7 +82,7 @@ export class PcaComponent implements OnInit, OnChanges {
       .attr("cx", d => x(d.pca_X))
       .attr("cy", d => y(d.pca_Y))
       .attr("r", 3)
-      .style("opacity", 0.5)
+      .style("opacity", d => d.enabled ? 0.5 : 0.1)
       .style("fill", d => d.enabled ? this.color(d.algo) : 'gray');
 
   }

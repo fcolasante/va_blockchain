@@ -1,42 +1,42 @@
 <div class="mat-elevation-z8">
-<mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
   <!-- Position Column -->
   <ng-container matColumnDef="model">
-    <mat-header-cell *matHeaderCellDef> Model </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.model}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef> Model </th>
+    <td mat-cell *matCellDef="let element"> {{element.model}} </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="profitability">
-    <mat-header-cell  *matHeaderCellDef mat-sort-header> Profitability <small>&nbsp; ($/day)</small></mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let element"> {{element.profitability}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Profitability <small>&nbsp; ($/day)</small></th>
+    <td mat-cell *matCellDef="let element"> {{element.profitability}} </td>
   </ng-container>
   <!-- Name Column -->
   <ng-container matColumnDef="hashRate">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Hashrate <small> &nbsp; (Th/s)</small></mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let element"> {{element.hashRate | number: '1.0-5'}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Hashrate <small> &nbsp; (Th/s)</small></th>
+    <td mat-cell *matCellDef="let element"> {{element.hashRate | number: '1.0-5'}} </td>
   </ng-container>
   <ng-container matColumnDef="algo">
-    <mat-header-cell  *matHeaderCellDef > Algorithm </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let element"> {{element.algo}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef > Algorithm </th>
+    <td mat-cell *matCellDef="let element"> {{element.algo}} </td>
   </ng-container>
 
   <ng-container matColumnDef="power">
-    <mat-header-cell  *matHeaderCellDef mat-sort-header> Power <small>&nbsp;(W)</small> </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let element"> {{element.power}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Power <small>&nbsp;(W)</small> </th>
+    <td mat-cell *matCellDef="let element"> {{element.power}} </td>
   </ng-container>
   <ng-container matColumnDef="release">
-    <mat-header-cell *matHeaderCellDef mat-sort-header > Release </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let element"> {{element.release | date }} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header > Release </th>
+    <td mat-cell *matCellDef="let element"> {{element.release | date }} </td>
   </ng-container>
   <ng-container matColumnDef="efficiency">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Efficiency <br/><small>&nbsp;(j/GH)</small> </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let element"> {{element.efficiency | number: '1.0-5'}} </mat-cell>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Efficiency <br/><small>&nbsp;(j/GH)</small> </th>
+    <td mat-cell *matCellDef="let element"> {{element.efficiency | number: '1.0-5'}} </td>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
   <mat-paginator
     [pageSize]="5"
     [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>

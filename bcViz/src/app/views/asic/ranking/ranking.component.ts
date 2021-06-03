@@ -14,9 +14,9 @@ export class RankingComponent implements OnInit, OnChanges {
   @Input() asic;
   @Output() filteredAlgos = new EventEmitter<Algo[]>();
   private svg;
-  private margin = 25;
-  private width = 200 - (this.margin * 2);
-  private height = 400 - (this.margin * 2);
+  private margin = 10;
+  private width = 1200 - (this.margin * 2);
+  private height = 50 - (this.margin * 2);
   constructor() { }
 
   ngOnInit(): void {
@@ -38,55 +38,23 @@ export class RankingComponent implements OnInit, OnChanges {
       .append("g")
       .attr("transform", "translate(" + this.margin + "," + this.margin + ")");
   }
-  /**
-  private drawLegend(): void {
-    const marginLeft = 25;
-    const legend = this.g.selectAll('g')
-      .data(this.allHashRate)
-      .enter()
-      .append('g')
-      .attr('class', 'legend');
-    legend.append("rect")
-      .attr("x", this.width + marginLeft)
-      .attr("y", (d, i) => i * 25)
-      .attr('width', 20)
-      .attr('height', 20)
-      .style("fill", d => {
 
-      })
-      .style("stroke", d => this.color(d.id));
-
-    legend.append('text')
-      .attr('x', this.width)
-      .attr('y', this.margin.top - 30)
-      .attr("transform", "translate(10," + 3 + ")")
-      .text("Cryptos");
-
-    legend.append('text')
-      .attr('x', this.width + marginLeft + 15)
-      .attr('y', (d, i) => (i * 25) + 9)
-      .attr("transform", "translate(10," + 3 + ")")
-      .text(d => d.id);
-    legend
-      .on("click", (event, d) => this.reDraw(d.id));
-  }
-**/
   private buildRanking(): void {
     if (this.algo === undefined) { return; }
     // Add X axis
     if (this.svg) { this.svg.selectAll("*").remove(); }
-    console.log("Building ranking with", this.algo);
+    /**
     this.svg.append("text")
       .attr('transform', `translate(${this.width / 2 }, ${0})`)
       .style("text-anchor", "middle")
       .text("Color legend");
-
+    **/
     this.svg.selectAll('mydots')
       .data(this.algo)
       .enter()
       .append("rect")
-      .attr("x", 0 )
-      .attr("y", (d, i) => 2 + i * 25)
+      .attr("x", (d, i) => 2 + i * 150 )
+      .attr("y", 0)
       .attr('width', 20)
       .attr('height', 20)
       .style("fill", d => d.enabled ? this.color(d.name) : 'white')
@@ -100,10 +68,10 @@ export class RankingComponent implements OnInit, OnChanges {
       .data(this.algo)
       .enter()
       .append("text")
-      .attr("x", 20)
-      .attr("y", (d, i) => 15 + i * 25) // 100 is where the first dot appears. 25 is the distance between dots
+      .attr("x",  (d, i) => 30 + i * 150)
+      .attr("y", 10 ) // 100 is where the first dot appears. 25 is the distance between dots
       .style("fill", d => d.enabled ? this.color(d.name) : 'gray')
-      .text((d, i) => (i + 1 ) + ". " + d.name)
+      .text((d, i) => d.name)
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle");
 

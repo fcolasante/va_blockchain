@@ -17,8 +17,8 @@ export class ScatterComponent implements OnInit, OnChanges {
   @Output() filteredAsicEvent = new EventEmitter<Asic[]>();
   @Input() color;
   private svg;
-  private margin = { top: 20, right: 20, bottom: 30, left: 60 };
-  private width = 600 - this.margin.left - this.margin.right;
+  private margin = { top: 20, right: 20, bottom: 30, left: 40 };
+  private width = 700 - this.margin.left - this.margin.right;
   private height = 400 - this.margin.top - this.margin.bottom;
 
 

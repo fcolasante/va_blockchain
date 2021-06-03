@@ -33,7 +33,7 @@ export class HashRateComponent implements OnInit {
   allHashRate: CryptoHash[];
   hashRate: CryptoHash[];
   consumption: Country[];
-  color = d3.scaleOrdinal(d3.schemeTableau10);
+  color = d3.scaleOrdinal(d3.schemeCategory10);
   cryptos = cryptos;
   private parseTime = d3.timeParse("%Y-%m-%d");
   constructor() { }

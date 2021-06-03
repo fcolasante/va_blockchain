@@ -35,6 +35,7 @@ import { TreeComponent } from './containers/tree/tree.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RankingComponent } from './views/asic/ranking/ranking.component';
 import { CountryConsumptionComponent } from './views/hashRate/country-consumption/country-consumption.component';
+import { BarRaceComponent } from './views/hashRate/bar-race/bar-race.component';
 
 
 
@@ -53,7 +54,8 @@ import { CountryConsumptionComponent } from './views/hashRate/country-consumptio
     AlgoLegendComponent,
     TreeComponent,
     RankingComponent,
-    CountryConsumptionComponent
+    CountryConsumptionComponent,
+    BarRaceComponent
   ],
   imports: [
     BrowserModule,

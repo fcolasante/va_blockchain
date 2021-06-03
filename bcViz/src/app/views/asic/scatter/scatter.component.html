@@ -1,7 +1,6 @@
-<div fxLayout="row" fxLayoutAlign="space-between" fxFlexFill fxLayoutGap="20px">
-  <div fxFlex>
-    <mat-card>
+ <mat-card class="mat-elevation-z8">
       <mat-card-header>
+        <!--
         <mat-card-title>
           ASIC Hashrate
           <button mat-raised-button
@@ -14,18 +13,14 @@
         </mat-card-title>
         <mat-card-subtitle>
           <p>Mean efficiency: {{meanEfficiency | number : '1.2-2'}} <small> j/Gh</small></p>
-        </mat-card-subtitle>
+        </mat-card-subtitle> -->
       </mat-card-header>
       <mat-card-content>
         <div fxLayout="row" fxFlexFill>
           <figure id="scatter"></figure>
-          <div id="legend1" style="display: inline-block"></div>
         </div>
       </mat-card-content>
-    </mat-card>
-    <mat-progress-bar mode="determinate" [value]="meanEfficiency"></mat-progress-bar>
-  </div>
-</div>
-
+ </mat-card>
+    <!--<mat-progress-bar mode="determinate" [value]="meanEfficiency"></mat-progress-bar>-->
 
 

@@ -67,7 +67,7 @@ export class HrSeriesComponent implements OnInit, OnChanges {
       .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
 
     this.x = d3.scaleTime().range([0, this.width]);
-    this.y = d3.scaleLinear().range([this.height, 0]);
+    this.y = d3.scaleLog().range([this.height, 0]);
     this.line = d3.line<HashPoint>()
       .curve(d3.curveBasis)
       .x((d) => this.x(d.date))

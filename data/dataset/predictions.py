@@ -3,7 +3,7 @@ from numpy.core.numeric import full
 import pandas as pd
 import matplotlib.pyplot as plt
 
-PLOTS = True
+PLOTS = False
 VERBOSE = False
 
 
@@ -176,6 +176,7 @@ for crypto in hr_df.columns[1:]:
 
     poly_model = np.polyfit(x,y,1)
     predict = np.poly1d(poly_model)
+    print("f(x)-> ", predict, "\n")
 
     x_lin_reg = np.arange(0,len(hr_df[crypto]),1)
     y_lin_reg = predict(x_lin_reg)

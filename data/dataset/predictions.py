@@ -3,7 +3,7 @@ from numpy.core.numeric import full
 import pandas as pd
 import matplotlib.pyplot as plt
 
-PLOTS = False
+PLOTS = True
 VERBOSE = False
 
 
@@ -112,7 +112,7 @@ for idx, row in full_df.iterrows():
 
     x_lin_reg = np.arange(0,len(row[col_idx:-1]),1)
     y_lin_reg = predict(x_lin_reg)
-    if PLOTS:
+    if PLOTS and False:
         plt.figure()
         cols_labels = [full_df.columns[col_idx:-1][col] for col in range(0,len(full_df.columns[col_idx:-1])+1,5)]
 
@@ -184,6 +184,25 @@ for crypto in hr_df.columns[1:]:
     y_preds = predict(x_to_pred)
     # append prediction to DataFrame
     hr_preds_df[crypto] = pd.Series(y_preds)
+
+    if PLOTS:
+        plt.figure()
+        cols_labels = hr_df.columns[1:]
+
+        plt.scatter(x, y, alpha=0.5)
+        plt.plot(x_lin_reg, y_lin_reg, c='r')
+        plt.xlabel("date", fontsize=10)
+        #plt.xticks(np.arange(0,len(row[col_idx:-1])+1,5), labels=cols_labels, rotation=45)
+        plt.ylabel("hashrate (Gh/s)", fontsize=10)
+        #plt.yticks(np.arange(0,100+1,10))
+
+        plt.title(crypto)
+        plt.grid(True)
+        if VERBOSE:
+            print(len(row[col_idx:-1]))
+            print([col for col in full_df.columns[col_idx:-1]])
+
+        plt.show()
 
 
 import datetime 

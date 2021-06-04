@@ -8,23 +8,34 @@
 
 <body>
     <!-- CHARTS -->
-    <div id="multi-chart" class="wrapper">
-        <div class="flex-container">
-            <div id="chart-1" class="chart-box one">
-                <h2>chart1-timeSeries</h2>
-                <script type="module" src="timeSeries_test.js" charset="utf-8"></script>
-                <svg id="chart-series" width="1100" height="400"></svg>
+    <div id="main-container" class="wrapper">
+        <div id="flex-main" class="flex-container">
+            <div id="legend" class="legend-box">
+                <h1>BcViz</h1>
             </div>
-            
-            <div id="chart-2" class="chart-box two">
-                <h2>chart2-stackedBar</h2>
-                <!--<form>
-                    <label><input type="radio" name="mode" value="multiples" checked> Multiples</label>
-                    <label><input type="radio" name="mode" value="stacked"> Stacked</label>
-                </form>-->
-                <script type="module" src="stacked_v6_test.js" charset="utf-8"></script>
-            </div>
+        
+            <div id="multi-chart" class="flex-container">
+                <div id="chart-1" class="chart-box one">
+                    <h2>chart1-timeSeries</h2>
+                    <script type="module" src="timeSeries_test.js" charset="utf-8"></script>
+                    <svg id="chart-series" width="1100" height="350"></svg>
+                </div>
+                
+                <div id="chart-2" class="chart-box two">
+                    <h2>chart2-stackedBar</h2>
+                    <!--<form>
+                        <label><input type="radio" name="mode" value="multiples" checked> Multiples</label>
+                        <label><input type="radio" name="mode" value="stacked"> Stacked</label>
+                    </form>-->
+                    <script type="module" src="stacked_v6_test.js" charset="utf-8"></script>
+                </div>
 
+                <div id="chart-3" class="chart-box three">
+                    <h2>chart3-parallelCoordinates</h2>
+                    <script type="module" src="parallel_test.js" charset="utf-8"></script>
+                </div>
+
+            </div>
         </div>
     </div>
 </body>

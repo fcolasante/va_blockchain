@@ -70,7 +70,7 @@ country_col = "country"
 
 # compute 90th weighted percentile for each year avilable (since 1980)
 print("\n[INFO]: Computing 90th weighted percentile on all data...")
-for col in full_df.columns[2:]:
+for col in full_df.columns[1:]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
 

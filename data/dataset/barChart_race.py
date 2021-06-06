@@ -3,12 +3,13 @@ import pandas as pd
 
 VERBOSE = False
 
+
 print("\n################## PREDICTIONS")
 # read full consumption data from csv file to compute weighted percentile over all years
 full_df = pd.read_csv("data/dataset/country_race.csv", delimiter=",", skiprows=2)
 print(full_df)
 
-race_df = pd.DataFrame(columns=["country", "value", "rank"])
+race_df = pd.DataFrame(columns=["country", "value", "year", "rank"])
 country_col = "country"
 
 # compute 90th weighted percentile for each year avilable (since 1980)
@@ -21,6 +22,7 @@ for col in full_df.columns[2:]:
         country_col : "country", 
         col : "value"})
     to_race.insert(2, "rank", np.arange(1,len(sorted_df["country"])+1), True)
+    to_race.insert(2, "year", int(col), True)
 
     race_df = race_df.append(to_race, ignore_index=True, verify_integrity=True)
 
@@ -31,5 +33,5 @@ for col in full_df.columns[2:]:
         print(f"col <{col}> added")
 
 sorted_race = race_df.sort_values(by=["rank"], ascending=True, ignore_index=True)
-sorted_race.to_csv("data/dataset/barRace_data.csv", columns=["country", "value", "rank"])
+sorted_race.to_csv("data/dataset/barChart_race_data.csv", columns=["country", "value", "year", "rank"])
 print()

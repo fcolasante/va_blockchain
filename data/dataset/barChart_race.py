@@ -90,7 +90,7 @@ for col in full_df.columns[2:]:
 
 if SAVE:
     sorted_race = race_df.sort_values(by=["rank"], ascending=True, ignore_index=True)
-    sorted_race.to_csv("data/dataset/barChart_race_data.csv", columns=["country", "value", "year", "rank"])
+    sorted_race.to_csv("data/dataset/race_data.csv", columns=["country", "value", "year", "rank"])
 print()
 
 

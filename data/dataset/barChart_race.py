@@ -21,7 +21,6 @@ def consumptionFromHashrate(path="data/dataset/hashrate_race.csv"):
 
         year_lens.append(count)
 
-
     hr_race_df = pd.DataFrame(columns=hr_df.columns)
     hr_race_df["date"] = years
 
@@ -65,8 +64,9 @@ print("\n################## CONSUMPTION")
 full_df = pd.read_csv("data/dataset/country_race.csv", delimiter=",", skiprows=2)
 print(full_df)
 
-race_df = pd.DataFrame(columns=["country", "value", "year", "rank"])
 country_col = "country"
+race_df = pd.DataFrame(columns=["country", "value", "year", "lastValue", "rank"])
+lastValue = 0.0
 
 # compute 90th weighted percentile for each year avilable (since 1980)
 print("\n[INFO]: Computing 90th weighted percentile on all data...")
@@ -77,9 +77,11 @@ for col in full_df.columns[1:]:
     to_race = sorted_df[[country_col,col]].rename(columns={
         country_col : "country", 
         col : "value"})
-    to_race.insert(2, "rank", np.arange(1,len(sorted_df["country"])+1), True)
+    to_race.insert(2, "lastValue", lastValue, True)
     to_race.insert(2, "year", int(col), True)
-
+    to_race.insert(2, "rank", np.arange(1,len(sorted_df["country"])+1), True)
+    
+    lastValue = sorted_np
     race_df = race_df.append(to_race, ignore_index=True, verify_integrity=True)
 
     print(f"---> year: {col}")
@@ -88,10 +90,10 @@ for col in full_df.columns[1:]:
         print("  race_df cols: ", race_df.columns)
         print(f"col <{col}> added")
 
+sorted_race = race_df.sort_values(by=["rank"], ascending=True, ignore_index=True)    
 if SAVE:
-    sorted_race = race_df.sort_values(by=["rank"], ascending=True, ignore_index=True)
-    sorted_race.to_csv("data/dataset/race_data.csv", columns=["country", "value", "year", "rank"])
-print()
+    sorted_race.to_csv("data/dataset/race_data.csv", columns=["country","value","year","lastValue","rank"])
+print(sorted_race)
 
 
 ###############################

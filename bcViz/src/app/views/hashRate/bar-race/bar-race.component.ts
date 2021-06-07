@@ -23,16 +23,16 @@ export class BarRaceComponent implements OnInit {
   private svg;
   private g;
 
-  private tickDuration = 500;
+  private tickDuration = 1000;
   private barPadding;
   // tslint:disable-next-line:variable-name
   private top_n = 40;
-  private year = 2000;
-
+  private year = 2016;
+  private finalYear = 2029;
   constructor() { }
 
   ngOnInit(): void {
-    d3.csv('assets/brand_values.csv')
+    d3.csv('assets/race_data.csv')
       .then( rawData => {
         console.log("Brand", rawData);
         const data: RaceEntry[] = rawData.map(d => {
@@ -45,6 +45,7 @@ export class BarRaceComponent implements OnInit {
             colour: d3.hsl(Math.random() * 360, 0.75, 0.75)
           });
         });
+        console.log("Race", data);
         this.createSvg();
         this.drawChart();
         this.plot(data);
@@ -288,8 +289,8 @@ export class BarRaceComponent implements OnInit {
 
       yearText.html(this.year);
 
-      if (this.year === 2018) { ticker.stop(); }
-      this.year = +d3.format('.1f')((+this.year) + 0.1);
+      if (this.year === this.finalYear) { ticker.stop(); }
+      this.year = +d3.format('.1f')((+this.year) + 1);
     }, this.tickDuration);
 
     // tslint:disable-next-line:only-arrow-functions

@@ -17,13 +17,15 @@ export interface RaceEntry {
   styleUrls: ['./bar-race.component.scss']
 })
 export class BarRaceComponent implements OnInit {
-  private margin = { top: 50, right: 20, bottom: 30, left: 20 };
+  private margin = { top: 50, right: 20, bottom: 30, left: 100 };
   private width = 750 - this.margin.left - this.margin.right;
   private height = 800 - this.margin.top - this.margin.bottom;
   private svg;
   private g;
 
-  private tickDuration = 1000;
+  private tickDuration = 500;
+  private incrementTimeSlot = 1000;
+
   private barPadding;
   // tslint:disable-next-line:variable-name
   private top_n = 40;
@@ -291,7 +293,7 @@ export class BarRaceComponent implements OnInit {
 
       if (this.year === this.finalYear) { ticker.stop(); }
       this.year = +d3.format('.1f')((+this.year) + 1);
-    }, this.tickDuration);
+    }, this.incrementTimeSlot);
 
     // tslint:disable-next-line:only-arrow-functions
 

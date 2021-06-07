@@ -62,6 +62,18 @@ export class HrSeriesComponent implements OnInit, OnChanges {
       .append("svg")
       .attr("width", this.width + this.margin.left + this.margin.right)
       .attr("height", this.height + this.margin.top + this.margin.bottom);
+    this.svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 )
+      .attr("x", 0 - (this.height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Hashrate [Th] ");
+
+    this.svg.append("text")
+      .attr('transform', `translate(${this.width / 2 }, ${this.height + this.margin.bottom  })`)
+      .style("text-anchor", "middle")
+      .text("Time");
 
     this.g = this.svg.append("g")
       .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");

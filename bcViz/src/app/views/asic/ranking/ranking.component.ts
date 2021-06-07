@@ -16,7 +16,7 @@ export class RankingComponent implements OnInit, OnChanges {
   private svg;
   private margin = 10;
   private width = 1200 - (this.margin * 2);
-  private height = 50 - (this.margin * 2);
+  private height = 40 - (this.margin * 2);
   constructor() { }
 
   ngOnInit(): void {
@@ -24,7 +24,6 @@ export class RankingComponent implements OnInit, OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.algo) {
-      console.log("RANKING", changes);
       this.buildRanking();
     }
   }
@@ -43,12 +42,7 @@ export class RankingComponent implements OnInit, OnChanges {
     if (this.algo === undefined) { return; }
     // Add X axis
     if (this.svg) { this.svg.selectAll("*").remove(); }
-    /**
-    this.svg.append("text")
-      .attr('transform', `translate(${this.width / 2 }, ${0})`)
-      .style("text-anchor", "middle")
-      .text("Color legend");
-    **/
+
     this.svg.selectAll('mydots')
       .data(this.algo)
       .enter()

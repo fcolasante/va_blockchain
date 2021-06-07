@@ -1,5 +1,4 @@
 <div fxLayout="row">
-  <div fxLayout="column" fxLayoutAlign="start">
     <app-hr-series [allHashRate]="allHashRate"
                    [originalSeries]="originalSeries"
                    [color]="color"
@@ -7,12 +6,12 @@
 
     >
     </app-hr-series>
-  </div>
-  <div>
-    <app-country-consumption [country]="consumption"
+  <div fxLayout="column" fxLayoutAlign="start">
+    <!--<app-country-consumption [country]="consumption"
                              [allHashRate]="allHashRate"
                              [color]="color"
                              [cryptos]="cryptos"
-    ></app-country-consumption>
+    ></app-country-consumption>-->
+    <app-bar-race></app-bar-race>
   </div>
 </div>

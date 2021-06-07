@@ -20,7 +20,7 @@ const cryptos: Cryptocurrecy[] = [
   {symbol: "ZEC", name: "Bitcoin Cash",  enabled: true, efficiency: 0.00000359},
   {symbol: "BSV", name: "Dogecoin",  enabled: true, efficiency: 0.0305 },
   {symbol: "DOGE", name: "Dogecoin",  enabled: true, efficiency: 954 },
-  {symbol: "VTC", name: "Bitcoin Cash",  enabled: true, efficiency: 84.87 },
+  //{symbol: "VTC", name: "Bitcoin Cash",  enabled: true, efficiency: 84.87 },
 ];
 
 @Component({

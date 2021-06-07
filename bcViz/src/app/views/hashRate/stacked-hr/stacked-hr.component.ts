@@ -16,7 +16,7 @@ export class StackedHRComponent implements OnInit , OnChanges{
   @Input() color;
   @Input() x;
 
-  private margin = { top: 20, right: 80, bottom: 30, left: 40 };
+  private margin = { top: 30, right: 20, bottom: 30, left: 30 };
   private width = 800 - this.margin.left - this.margin.right;
   private height = 400 - this.margin.top - this.margin.bottom;
   private parseTime = d3.timeParse("%Y-%m-%d");
@@ -52,6 +52,10 @@ export class StackedHRComponent implements OnInit , OnChanges{
     this.y = d3.scaleLinear().range([this.height, 0]).domain( [0, 1]);
 
     this.g.selectAll("*").remove();
+    this.g.append("text")
+      .attr('transform', `translate(${this.width / 2 }, 0)`)
+      .style("text-anchor", "middle")
+      .text("Cryptocurrency hashrate proportion");
 
     this.g.append("g")
       .attr("class", "axis axis--x")

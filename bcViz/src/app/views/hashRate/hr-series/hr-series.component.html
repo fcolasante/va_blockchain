@@ -1,18 +1,6 @@
 <div fxLayoutGap="20px">
   <mat-card>
-    <mat-card-header>
-      <mat-card-title>Network hashrate</mat-card-title>
-      <button mat-fab aria-label="Example icon button with a home icon"
-              matTooltip="ASICs allow miners to use hardware made specifically for Bitcoin or other SHA-256 algo coins.
-      An ASIC has benefits over CPU, GPU and FPGAs due to being designed for one specific task.
-      They are able to mine Bitcoin at a higher hash rate (speed of processing transactions) than CPUs, GPUs and FPGAs."
-      >
-        <mat-icon>info</mat-icon>
-      </button>
-    </mat-card-header>
-    <mat-card-content>
       <figure id="hr"></figure>
-    </mat-card-content>
   </mat-card>
 
   <app-stacked-hr [filterCrypto]="filterCrypto"

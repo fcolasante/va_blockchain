@@ -1,8 +1,9 @@
 <!--<button mat-raised-button color="warn" (click)="reset()">Reset dataset</button>-->
 <!--<app-algo-legend [algos]="algos" [asic]="asic" (filteredAlgos)="filterByAlgo($event)"></app-algo-legend> -->
 
-<div flex fxLayoutGap="5px" fxLayout="column" fxLayout.lt-sm="column" fxLayoutAlign="space-around center">
-  <app-ranking [color]="colorAlgo"
+<div fxLayout="column" fxLayout.lt-sm="column" fxLayoutAlign="stretch">
+  <app-ranking
+    [color]="colorAlgo"
                [asic]="asic"
                [algo]="algos"
                (filteredAlgos)="filterByAlgo($event)"
@@ -10,13 +11,11 @@
   ></app-ranking>
     <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center">
       <app-scatter fxFlex="50"
-                   class="mat-elevation-z8"
                    [color]="colorAlgo"
                    [asic]="asic"
                    [selectedAsic]="selectedAsic"
                    (filteredAsicEvent)="updateAsic($event)"></app-scatter>
       <app-parallel fxFlex="50"
-        class="mat-elevation-z8"
         [color]="colorAlgo"
         [asic]="asic"
         (selectedParallel)="selectAsic($event)"
@@ -28,6 +27,7 @@
         [color]="colorAlgo"
         [asic]="asic"></app-pca>
     <app-asic-table fxFlex="50"
+                    style="height: 100%"
                     [data]="asic">
     </app-asic-table>
 

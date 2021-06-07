@@ -23,7 +23,7 @@ export class AsicComponent implements OnInit {
   private parseTime = d3.timeParse("%Y-%m-%d");
   private parseDesTime = d3.timeParse("%b\xa0%Y");
 
-  colorAlgo = d3.scaleOrdinal(d3.schemeCategory10);
+  colorAlgo = d3.scaleOrdinal(d3.schemeTableau10);
   originalAsic: Asic[];
   asic: Asic[];
   algos: Algo[];

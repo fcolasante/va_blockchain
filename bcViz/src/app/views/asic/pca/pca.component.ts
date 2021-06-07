@@ -13,9 +13,9 @@ export class PcaComponent implements OnInit, OnChanges {
   @Input() color;
 
   private svg;
-  private margin = { top: 20, right: 10, bottom: 40, left: 40 };
+  private margin = { top: 20, right: 10, bottom: 30, left: 40 };
   private width = 800 - this.margin.left - this.margin.right;
-  private height = 400 - this.margin.top - this.margin.bottom;
+  private height = 350 - this.margin.top - this.margin.bottom;
 
 
   constructor() { }

@@ -2,6 +2,7 @@
 .vscode/
 .idea/
 
+data/sources/NaturePaper/*
 
 bcVisualizer/
 

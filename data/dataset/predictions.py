@@ -196,4 +196,4 @@ print("[INFO]: last prediction:", date_list[-1])
 
 print()
 print(hr_preds_df)
-hr_preds_df.to_csv("data/dataset/hashrate_preds.csv")
+hr_preds_df.to_csv("data/dataset/hashrate_preds.csv", index=False)

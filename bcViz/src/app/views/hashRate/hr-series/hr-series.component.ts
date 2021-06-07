@@ -80,6 +80,8 @@ export class HrSeriesComponent implements OnInit, OnChanges {
   private drawChart(filterData): void {
     if (this.allHashRate === undefined) { return; }
     console.log("drawChart");
+
+
     this.hashRate = this.allHashRate.filter( d => this.filterCrypto[d.id]);
     if (this.marginDate !== undefined) {
       this.hashRate = this.hashRate.map( hr => ({...hr, values: hr.values.filter(v => v.date > this.marginDate[0] && v.date < this.marginDate[1])}));
@@ -96,6 +98,11 @@ export class HrSeriesComponent implements OnInit, OnChanges {
 
     this.g.selectAll("*").remove();
     this.drawLegend();
+    this.g.append("text")
+      .attr('transform', `translate(${this.width / 2 }, 0)`)
+      .style("text-anchor", "middle")
+      .text("Cryptocurrency hashrate");
+
     this.g.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + this.height + ")")

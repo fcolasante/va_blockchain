@@ -1,17 +1,30 @@
 import numpy as np
 import pandas as pd
 
-SAVE    = True
+SAVE    = False
 VERBOSE = False
 
+efficiencies = {
+    "BTC" : 0.031,   # SHA-256
+    "ETH" : 1250,    # EtHash
+    "LTC" : 955,     # Scrypt
+    "XMR" : 2000000, # CryptoNight
+    "BCH" : 0.031,   # SHA-256
+    "BSV" : 0.031,   # SHA-256
+    "DASH": 5.0,     # X11
+    "DOGE": 955,     # Scrypt
+    "ETC" : 1250,    # EtHash 
+    "VTC" : 860,     # EagleSong
+    "ZEC" : 3595000, # Equihash     
+}
 
-def consumptionFromHashrate(path="data/dataset/hashrate_race.csv"):
-    print("\n################## HASHRATE")
-    hr_df = pd.read_csv(path, delimiter=",")
-    print(hr_df)
 
+def consumptionFromHashrate(data_df, eff: float=0.02, same_hr: bool=False, verbose: bool=VERBOSE):
+    """
+    Compute an estimate of cryptos energy consumption from estimated efficiency (eff) and hashrate data.
+    """
     count = 0
-    year_lens = []
+    year_ends = []
     years = [str(year) for year in range(2016,2030,1)]
     for y in years:
         if int(y) % 4 == 0:
@@ -19,49 +32,70 @@ def consumptionFromHashrate(path="data/dataset/hashrate_race.csv"):
         else:
             count += 365
 
-        year_lens.append(count)
+        year_ends.append(count)
 
-    hr_race_df = pd.DataFrame(columns=hr_df.columns)
+    hr_race_df = pd.DataFrame(columns=data_df.columns)
     hr_race_df["date"] = years
 
     # computing hashrate prediction via regression for each crypto (i.e. each column)
-    print(f"\n[INFO]: Computing crypto consumptio from hashrate ({len(hr_df['date'])//365} years data) ...")
-    for crypto in hr_df.columns[1:]:
-        print(f"\nAnalyzing hashrate of {crypto} ...")
+    print(f"\n[INFO]: Computing crypto energy consumption from hashrate (using efficiency {eff:0.2f}) ...\n")
+    for crypto in data_df.columns[1:]:
+        print(f"Analyzing hashrate of {crypto} ...")
         
         # removing NaN values for cryptos that have only recent data
-        y = np.array(hr_df[crypto], dtype=np.float64)
-        nan = np.isnan(y)
-        y[nan] = 0
+        y = np.array(data_df[crypto], dtype=np.float64)
+        y[np.isnan(y)] = 0
         
-        hr_list = []
+        if (crypto == "BTC" and same_hr):
+            hr_list = []
+
+        cons_list = []
         start = 0
-        for end in year_lens:
-            hr_year = np.sum(y[start:end])
-            print(f"hr: {hr_year}")
+        for end in range(len(year_ends)):
+            if not same_hr:
+                hr_year = np.sum(y[start:year_ends[end]])
+            else:
+                # use BTC hahrate for all crypto with relative efficiency
+                eff = efficiencies[crypto]
+                if crypto == "BTC":
+                    # compute year hr for BTC
+                    hr_year = np.sum(y[start:year_ends[end]])
+                    hr_list.append(hr_year)
+                else:
+                    # reuse BTC year hr for other crypto
+                    hr_year = hr_list[end]
 
-            eff = 0.02
-            hr_year = np.multiply(hr_year, eff*1000)
-            hr_year = np.divide(hr_year, 24*1000000)
+            if verbose:
+                print(f"hr: {hr_year}")
+                print(f"eff: {eff}, crypto: {crypto}")
 
-            hr_list.append(hr_year)
-            start = end
+            # compute estimated consumption
+            cons_year = np.multiply(hr_year, eff*1000)
+            cons_year = np.divide(cons_year, 24*1000000)
 
-        hr_list = pd.Series(hr_list)
-        hr_race_df[crypto] = hr_list
+            cons_list.append(cons_year)
+            start = year_ends[end]
+
+        hr_series = pd.Series(cons_list)
+        hr_race_df[crypto] = hr_series
+        #print("hr_list", len(cons_list))
             
     print()
-    print(hr_race_df.T)
+    if verbose:
+        print(hr_race_df.T)
 
     hr_race_df = hr_race_df.T
-    hr_race_df.to_csv("data/dataset/temp.csv")
+    hr_race_df.to_csv(f"data/dataset/temp_{eff}.csv")
+
 
 ###############################
 #     ENERGY CONSUMPTION
 ###############################
 print("\n################## CONSUMPTION")
+mode = "data"  # "data" or "sameHR"
+
 # read full consumption data from csv file to compute weighted percentile over all years
-full_df = pd.read_csv("data/dataset/country_race.csv", delimiter=",", skiprows=2)
+full_df = pd.read_csv(f"data/dataset/race/raw_race_{mode}.csv", delimiter=",", skiprows=2)
 print(full_df)
 
 country_col = "country"
@@ -74,6 +108,12 @@ for col in full_df.columns[1:]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
 
+    if col != "2029":
+        # last year has no next
+        next_col = str(int(col)+1)
+        last_df = full_df.sort_values(by=[next_col], ascending=False, ignore_index=True)
+        last_df = last_df[col]
+
     to_race = sorted_df[[country_col,col]].rename(columns={
         country_col : "country", 
         col : "value"})
@@ -81,7 +121,7 @@ for col in full_df.columns[1:]:
     to_race.insert(2, "year", int(col), True)
     to_race.insert(2, "rank", np.arange(1,len(sorted_df["country"])+1), True)
     
-    lastValue = sorted_np
+    lastValue = last_df
     race_df = race_df.append(to_race, ignore_index=True, verify_integrity=True)
 
     print(f"---> year: {col}")
@@ -92,15 +132,22 @@ for col in full_df.columns[1:]:
 
 sorted_race = race_df.sort_values(by=["rank"], ascending=True, ignore_index=True)    
 if SAVE:
-    sorted_race.to_csv("data/dataset/race_data.csv", columns=["country","value","year","lastValue","rank"])
+    sorted_race.to_csv(f"data/dataset/race/race_{mode}.csv", columns=["country","value","year","lastValue","rank"])
 print(sorted_race)
 
 
 ###############################
 #         HASHRATE
 ###############################
-#consumptionFromHashrate()
+print("\n################## HASHRATE")
+hr_df = pd.read_csv("data/dataset/race/hashrate_race.csv", delimiter=",")
+print(hr_df)
 
+eff_range = [0.02, 0.05]
 
+#for eff in eff_range:
+#    consumptionFromHashrate(data_df=hr_df, eff=eff)
+
+consumptionFromHashrate(data_df=hr_df, same_hr=True)
 
 

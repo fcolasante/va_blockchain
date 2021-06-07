@@ -26,7 +26,7 @@ def consumptionFromHashrate(data_df, eff: float=0.02, same_hr: bool=False, verbo
     """
     count = 0
     year_ends = []
-    years = [str(year) for year in range(2016,2030,1)]
+    years = [str(year) for year in range(2016,2050,1)]
     for y in years:
         if int(y) % 4 == 0:
             count += 366
@@ -111,7 +111,7 @@ for col in full_df.columns[1:]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
 
-    if col != "2029":
+    if col != "2049":
         # last year has no next
         next_col = str(int(col)+1)
         last_df = full_df.sort_values(by=[next_col], ascending=False, ignore_index=True)
@@ -145,7 +145,6 @@ sorted_race = race_df.sort_values(by=["rank"], ascending=True, ignore_index=True
 if SAVE:
     sorted_race.to_csv(f"data/dataset/race/race_{mode}.csv", columns=["name","value","year","lastValue","rank"])
 print(sorted_race)
-
 
 ###############################
 #         HASHRATE            #

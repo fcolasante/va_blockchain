@@ -131,13 +131,13 @@ for idx, row in full_df.iterrows():
 
         plt.show()
         
-    x_to_pred = np.arange(years_to_plt,years_to_plt+10,1)
+    x_to_pred = np.arange(years_to_plt,years_to_plt+30,1)
     y_preds = predict(x_to_pred)
     # append prediction to DataFrame
     cons_preds.append([country_name] + list(y_preds))
     
 
-year_to_pred = ["country"] + [str(year) for year in range(2020,2030,1)]
+year_to_pred = ["country"] + [str(year) for year in range(2020,2050,1)]
 cons_preds_df = pd.DataFrame(cons_preds, columns=year_to_pred)
 print(cons_preds_df)
 cons_preds_df.to_csv("data/dataset/preds/consumption_preds.csv")
@@ -153,7 +153,7 @@ print("\n\n################## CRYPTO HASHRATE")
 hr_df = pd.read_csv("data/dataset/hashrate_complete.csv", delimiter=",")
 print(hr_df)
 
-days_to_pred = (366*3) + (365*7)  # 3 leap and 7 normal years to predict 
+days_to_pred = (366*8) + (365*22)  # 3 leap and 7 normal years to predict 
 hr_preds_df = pd.DataFrame(columns=hr_df.columns)
 
 

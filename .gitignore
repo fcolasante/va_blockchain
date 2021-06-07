@@ -6,6 +6,8 @@ data/sources/NaturePaper/*
 
 bcVisualizer/
 
+data/dataset/temp_*.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

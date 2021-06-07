@@ -1,17 +1,20 @@
 import numpy as np
 import pandas as pd
 
-SAVE    = True
+SAVE    = False
 VERBOSE = False
 
 
-def consumptionFromHashrate(path="data/dataset/hashrate_race.csv"):
+def consumptionFromHashrate(path="data/dataset/hashrate_race.csv", eff=0.02, verbose=VERBOSE):
+    """
+    Compute an estimate of cryptos energy consumption from estimated efficiency (eff) and hashrate data.
+    """
     print("\n################## HASHRATE")
     hr_df = pd.read_csv(path, delimiter=",")
     print(hr_df)
 
     count = 0
-    year_lens = []
+    year_ends = []
     years = [str(year) for year in range(2016,2030,1)]
     for y in years:
         if int(y) % 4 == 0:
@@ -19,28 +22,28 @@ def consumptionFromHashrate(path="data/dataset/hashrate_race.csv"):
         else:
             count += 365
 
-        year_lens.append(count)
+        year_ends.append(count)
 
     hr_race_df = pd.DataFrame(columns=hr_df.columns)
     hr_race_df["date"] = years
 
     # computing hashrate prediction via regression for each crypto (i.e. each column)
-    print(f"\n[INFO]: Computing crypto consumptio from hashrate ({len(hr_df['date'])//365} years data) ...")
+    print(f"\n[INFO]: Computing crypto consumptio from hashrate ({len(hr_df['date'])//365} years data) ...\n")
     for crypto in hr_df.columns[1:]:
-        print(f"\nAnalyzing hashrate of {crypto} ...")
+        print(f"Analyzing hashrate of {crypto} ...")
         
         # removing NaN values for cryptos that have only recent data
         y = np.array(hr_df[crypto], dtype=np.float64)
-        nan = np.isnan(y)
-        y[nan] = 0
+        y[np.isnan(y)] = 0
         
         hr_list = []
         start = 0
-        for end in year_lens:
+        for end in year_ends:
             hr_year = np.sum(y[start:end])
-            print(f"hr: {hr_year}")
+            if verbose:
+                print(f"hr: {hr_year}")
 
-            eff = 0.02
+            # compute estimated consumption
             hr_year = np.multiply(hr_year, eff*1000)
             hr_year = np.divide(hr_year, 24*1000000)
 
@@ -51,17 +54,19 @@ def consumptionFromHashrate(path="data/dataset/hashrate_race.csv"):
         hr_race_df[crypto] = hr_list
             
     print()
-    print(hr_race_df.T)
+    if verbose:
+        print(hr_race_df.T)
 
     hr_race_df = hr_race_df.T
-    hr_race_df.to_csv("data/dataset/temp.csv")
+    hr_race_df.to_csv(f"data/dataset/temp_{eff:0.2f}.csv")
+
 
 ###############################
 #     ENERGY CONSUMPTION
 ###############################
 print("\n################## CONSUMPTION")
 # read full consumption data from csv file to compute weighted percentile over all years
-full_df = pd.read_csv("data/dataset/country_race.csv", delimiter=",", skiprows=2)
+full_df = pd.read_csv("data/dataset/raw_race_data.csv", delimiter=",", skiprows=2)
 print(full_df)
 
 country_col = "country"
@@ -105,7 +110,10 @@ print(sorted_race)
 ###############################
 #         HASHRATE
 ###############################
-#consumptionFromHashrate()
+eff_range = [0.02, 0.05]
+
+for eff in eff_range:
+    consumptionFromHashrate(eff=eff)
 
 
 

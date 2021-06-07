@@ -4,7 +4,8 @@ from numpy.core.numeric import full
 import pandas as pd
 import matplotlib.pyplot as plt
 
-PLOTS = False
+TEST    = False
+PLOTS   = False
 VERBOSE = False
 
 
@@ -44,22 +45,23 @@ def weighted_percentile(a, q=0.5, verbose=VERBOSE):
 #    WEIGHTED PERCENTILE
 #    (how much of the consumption (%) is due to how many countries)
 """
-# read consumption data from csv file
-print("\n################## MOST RECENT DATA")
-df = pd.read_csv("data/dataset/country_consumption.csv", delimiter=",", skiprows=2)
-print(df)
-print()
+if TEST:
+    # read consumption data from csv file
+    print("\n################## MOST RECENT DATA")
+    df = pd.read_csv("data/dataset/country_consumption.csv", delimiter=",", skiprows=2)
+    print(df)
+    print()
 
-# compute 90th weighted percentile for each year
-print("[INFO]: Computing 90th weighted percentile on recent data...")
-for col in df.columns[1:4]:
-    sorted_df = df.sort_values(by=[col], ascending=False, ignore_index=True)
-    sorted_np = sorted_df[col].to_numpy()
-    
-    q = 0.9
-    p_n, n = weighted_percentile(sorted_np, q=q)
-    print(f"---> year: {col}")
-    print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['country'][n]}")
+    # compute 90th weighted percentile for each year
+    print("[INFO]: Computing 90th weighted percentile on recent data...")
+    for col in df.columns[1:4]:
+        sorted_df = df.sort_values(by=[col], ascending=False, ignore_index=True)
+        sorted_np = sorted_df[col].to_numpy()
+        
+        q = 0.9
+        p_n, n = weighted_percentile(sorted_np, q=q)
+        print(f"---> year: {col}")
+        print(f"  weighted perc: {p_n:0.4f}, pos: {n}, country: {sorted_df['country'][n]}")
 
 
 print("\n################## FULL DATA")
@@ -68,9 +70,6 @@ full_df = pd.read_csv("data/dataset/INT-Export-05-18-2021_11-31-59.csv", delimit
 full_df['Country (billion kWh)'] = full_df['Country (billion kWh)'].apply(func=(lambda row : str(row)[8:]))
 print(full_df)
 
-#race_df = pd.DataFrame(columns=["country", "value", "rank"])
-#country_col = "Country (billion kWh)"
-#rank_col = "2019"
 
 # compute 90th weighted percentile for each year avilable (since 1980)
 print("\n[INFO]: Computing 90th weighted percentile on all data...")
@@ -78,24 +77,11 @@ for col in full_df.columns[2:-1]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
 
-    #sorted_df[rank_col] = np.arange(1,len(sorted_df["Country (billion kWh)"])+1)
-    #to_race = sorted_df[[country_col,col,rank_col]].rename(columns={
-    #    country_col : "country", 
-    #    col : "value",
-    #    rank_col : "rank"})
-    #race_df = race_df.append(to_race, ignore_index=True, verify_integrity=True)
-
     q = 0.9
     p_n, n = weighted_percentile(sorted_np, q=q)
     print(f"---> year: {col}")
     print(f"  weighted perc ({q}): {p_n:0.4f}, pos: {n}, country: {sorted_df['Country (billion kWh)'][n]}")
-    if VERBOSE:
-        print("  to_race cols: ", to_race.columns)
-        print("  race_df cols: ", race_df.columns)
-        print(f"col <{col}> added")
 
-#sorted_race = race_df.sort_values(by=["rank"], ascending=True, ignore_index=True)
-#sorted_race.to_csv("data/dataset/barRace_data.csv", columns=["country", "value", "rank"])
 print()
 
 

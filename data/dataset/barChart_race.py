@@ -111,11 +111,11 @@ for col in full_df.columns[1:]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
 
-    if "BTC" in list(sorted_df[country_col][:30]):
+    if "BTC" in list(sorted_df[country_col][:30]) and mode == "data":
         first_crypto = -10
         last_country = 30
         print("BTC top 30")
-    else:
+    elif mode == "data":
         first_crypto = -11
         last_country = 29
 
@@ -123,7 +123,11 @@ for col in full_df.columns[1:]:
         # last year has no next
         next_col = str(int(col)+1)
         last_df = full_df.sort_values(by=[next_col], ascending=False, ignore_index=True)
-        last_df = last_df[col][:last_country].append(full_df[col][first_crypto:], ignore_index=True)
+        if mode == "data":
+            last_df = last_df[col][:last_country].append(full_df[col][first_crypto:], ignore_index=True)
+        if mode == "sameHR":
+            last_country = 40
+            last_df = last_df[col][:last_country]
 
     # first 30 country consumption
     to_race = sorted_df[[country_col,col]][:last_country].rename(columns={
@@ -131,11 +135,12 @@ for col in full_df.columns[1:]:
         col : "value"})
 
     # crypto consumption
-    race_crypto = full_df[[country_col,col]][first_crypto:].rename(columns={
-        country_col : "name", 
-        col : "value"})
+    if mode == "data":
+        race_crypto = full_df[[country_col,col]][first_crypto:].rename(columns={
+            country_col : "name", 
+            col : "value"})
+        to_race = to_race[["name","value"]].append(race_crypto, ignore_index=True, verify_integrity=True)
 
-    to_race = to_race[["name","value"]].append(race_crypto, ignore_index=True, verify_integrity=True)
     to_race.insert(2, "lastValue", lastValue, True)
     to_race.insert(2, "year", int(col), True)
     to_race.insert(2, "rank", np.arange(1,40+1), True)

@@ -61,8 +61,8 @@ def efficiencyEstimates(crypto="BTC"):
     if crypto == "XMR":
         c_cols = ["cpu","hashRate","TDP","OS","date"]
         g_cols = ["gpu","hashRate","TDP","OS","date"]
-        df_cpu = pd.read_csv("data/asic/efficiency_randomx_cpu.csv", delimiter=',', parse_dates=True, usecols=c_cols)
-        df_gpu = pd.read_csv("data/asic/efficiency_randomx_gpu.csv", delimiter=',', parse_dates=True, usecols=g_cols)    
+        df_cpu = pd.read_csv("data/sources/asic/efficiency_randomx_cpu.csv", delimiter=',', parse_dates=True, usecols=c_cols)
+        df_gpu = pd.read_csv("data/sources/asic/efficiency_randomx_gpu.csv", delimiter=',', parse_dates=True, usecols=g_cols)    
 
         # remove measure units 
         df_cpu["TDP"] = df_cpu["TDP"].apply(lambda row: int(str(row)[:-2]) if str(row) != "nan" else 0)
@@ -73,6 +73,7 @@ def efficiencyEstimates(crypto="BTC"):
         eff_gpu = df_gpu[["hashRate","TDP"]].apply(lambda row: row.TDP/row.hashRate, axis=1)
 
         df_eff = eff_cpu.append(eff_gpu, ignore_index=True)
+        print("algo: RandomX")
         print("mean:",round(df_eff.mean(),2),"j/h")
         print("std :",round(df_eff.std(), 2))
         print("max :",round(df_eff.max(), 2),"j/h")
@@ -83,13 +84,16 @@ def efficiencyEstimates(crypto="BTC"):
     else:  # BTC, ETH or LTC
         if crypto == "BTC":
             unit = "j/Gh"
-            df = pd.read_csv("data/asic/efficiency_sha256.csv", delimiter=',', parse_dates=True)
+            print("algo: SHA256")
+            df = pd.read_csv("data/sources/asic/efficiency_sha256.csv", delimiter=',', parse_dates=True)
         elif crypto == "ETH":
             unit = "j/Mh"
-            df = pd.read_csv("data/asic/efficiency_ethash.csv", delimiter=',', parse_dates=True)
-        elif crypto == "LTC":
+            print("algo: EtHash")
+            df = pd.read_csv("data/sources/asic/efficiency_ethash.csv", delimiter=',', parse_dates=True)
+        elif crypto == "LTC" or crypto == "DOGE":
             unit = "j/Mh"
-            df = pd.read_csv("data/asic/efficiency_scrypt.csv", delimiter=',', parse_dates=True)
+            print("algo: Scrypt")
+            df = pd.read_csv("data/sources/asic/efficiency_scrypt.csv", delimiter=',', parse_dates=True)
 
         # get efficiency data
         df["efficiency"] = df["efficiency"].apply(lambda row: float(str(row)[:-4]) if str(row) != "nan" else 0)
@@ -102,7 +106,7 @@ def efficiencyEstimates(crypto="BTC"):
 
 
 if __name__ == "__main__":
-    dumpAll()
+    #dumpAll()
     #dumpCAP()
     
     efficiencyEstimates(crypto="BTC")

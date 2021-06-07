@@ -9,7 +9,6 @@ form {
     top: 10px;
 }
 
-
 .group-label {
     font-weight: bold;
     text-anchor: end;
@@ -18,18 +17,26 @@ form {
 /* My stuff */
 .wrapper {
     width: 100%;
-    max-width: 1870px;
+    max-width: 1900px;
     margin: 0 auto;
 }
 
 .flex-container {
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
     background-color: white;
 }
 
+.legend-box {
+    min-width: 400px;
+    flex-grow: 1;
+    background-color: orange;
+}
+
+
 .chart-box {
-    min-width: 500px;
+    min-width: 200px;
     flex-grow: 1;
     /* background-color: #b6ee62; */
 } 
@@ -42,9 +49,12 @@ form {
     background-color: aqua;
 }
 
+.three {
+    background-color: greenyellow;
+}
 
 
-/*
+/* ###############################################
     Time series stuff (may use another .css file) 
 */
 .axis--x path {

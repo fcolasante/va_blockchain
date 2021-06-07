@@ -114,7 +114,7 @@ for col in full_df.columns[1:]:
     if "BTC" in list(sorted_df[country_col][:30]):
         first_crypto = -10
         last_country = 30
-        print("top 30")
+        print("BTC top 30")
     else:
         first_crypto = -11
         last_country = 29
@@ -123,7 +123,7 @@ for col in full_df.columns[1:]:
         # last year has no next
         next_col = str(int(col)+1)
         last_df = full_df.sort_values(by=[next_col], ascending=False, ignore_index=True)
-        last_df = last_df[col][:last_country].append(last_df[col][first_crypto:], ignore_index=True)
+        last_df = last_df[col][:last_country].append(full_df[col][first_crypto:], ignore_index=True)
 
     # first 30 country consumption
     to_race = sorted_df[[country_col,col]][:last_country].rename(columns={

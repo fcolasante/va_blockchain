@@ -105,7 +105,7 @@ country_col = "country"
 race_df = pd.DataFrame(columns=["name", "value", "year", "lastValue", "rank"])
 lastValue = 0.0
 
-# compute country consumption ranking7 (since 1980)
+# compute country consumption ranking
 print("\n[INFO]: Computing country consumption ranking...")
 for col in full_df.columns[1:]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)

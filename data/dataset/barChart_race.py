@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
 
-SAVE    = False
+MODE    = "data"  # "data" or "sameHR"
+SAVE    = True
 VERBOSE = False
 
 efficiencies = {
@@ -71,7 +72,9 @@ def consumptionFromHashrate(data_df, eff: float=0.02, same_hr: bool=False, verbo
 
             # compute estimated consumption
             cons_year = np.multiply(hr_year, eff*1000)
-            cons_year = np.divide(cons_year, 24*1000000)
+            cons_year = cons_year/(24*1000000)
+            cons_year = np.divide(cons_year, 1000000)
+            # -----------------------------
 
             cons_list.append(cons_year)
             start = year_ends[end]
@@ -89,10 +92,10 @@ def consumptionFromHashrate(data_df, eff: float=0.02, same_hr: bool=False, verbo
 
 
 ###############################
-#     ENERGY CONSUMPTION
+#     ENERGY CONSUMPTION      #
 ###############################
 print("\n################## CONSUMPTION")
-mode = "data"  # "data" or "sameHR"
+mode = MODE
 
 # read full consumption data from csv file to compute weighted percentile over all years
 full_df = pd.read_csv(f"data/dataset/race/raw_race_{mode}.csv", delimiter=",", skiprows=2)
@@ -137,17 +140,16 @@ print(sorted_race)
 
 
 ###############################
-#         HASHRATE
+#         HASHRATE            #
 ###############################
 print("\n################## HASHRATE")
 hr_df = pd.read_csv("data/dataset/race/hashrate_race.csv", delimiter=",")
 print(hr_df)
 
 eff_range = [0.02, 0.05]
+if MODE == "data":
+    for eff in eff_range:
+        consumptionFromHashrate(data_df=hr_df, eff=eff)
 
-#for eff in eff_range:
-#    consumptionFromHashrate(data_df=hr_df, eff=eff)
-
-consumptionFromHashrate(data_df=hr_df, same_hr=True)
-
-
+elif MODE == "sameHR":
+    consumptionFromHashrate(data_df=hr_df, same_hr=True)

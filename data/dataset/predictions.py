@@ -48,7 +48,7 @@ def weighted_percentile(a, q=0.5, verbose=VERBOSE):
 if TEST:
     # read consumption data from csv file
     print("\n################## MOST RECENT DATA")
-    df = pd.read_csv("data/dataset/country_consumption.csv", delimiter=",", skiprows=2)
+    df = pd.read_csv("data/sources/csv/country_consumption.csv", delimiter=",", skiprows=2)
     print(df)
     print()
 
@@ -140,7 +140,7 @@ for idx, row in full_df.iterrows():
 year_to_pred = ["country"] + [str(year) for year in range(2020,2030,1)]
 cons_preds_df = pd.DataFrame(cons_preds, columns=year_to_pred)
 print(cons_preds_df)
-cons_preds_df.to_csv("data/dataset/consumption_preds.csv")
+cons_preds_df.to_csv("data/dataset/preds/consumption_preds.csv")
 
 
 
@@ -217,4 +217,4 @@ print("[INFO]: last prediction:", date_list[-1])
 
 print("\n################## HASHRATE PREDICTIONS")
 print(hr_preds_df)
-hr_preds_df.to_csv("data/dataset/hashrate_preds.csv")
+hr_preds_df.to_csv("data/dataset/preds/hashrate_preds.csv")

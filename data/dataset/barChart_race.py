@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-MODE    = "data"  # "data" or "sameHR"
+MODE    = "sameHR"  # "data" or "sameHR"
 SAVE    = True
 VERBOSE = False
 

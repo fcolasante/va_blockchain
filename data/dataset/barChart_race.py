@@ -102,11 +102,11 @@ full_df = pd.read_csv(f"data/dataset/race/raw_race_{mode}.csv", delimiter=",", s
 print(full_df)
 
 country_col = "country"
-race_df = pd.DataFrame(columns=["country", "value", "year", "lastValue", "rank"])
+race_df = pd.DataFrame(columns=["name", "value", "year", "lastValue", "rank"])
 lastValue = 0.0
 
-# compute 90th weighted percentile for each year avilable (since 1980)
-print("\n[INFO]: Computing 90th weighted percentile on all data...")
+# compute country consumption ranking7 (since 1980)
+print("\n[INFO]: Computing country consumption ranking...")
 for col in full_df.columns[1:]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
@@ -115,14 +115,22 @@ for col in full_df.columns[1:]:
         # last year has no next
         next_col = str(int(col)+1)
         last_df = full_df.sort_values(by=[next_col], ascending=False, ignore_index=True)
-        last_df = last_df[col]
+        last_df = last_df[col][:30].append(last_df[col][-10:], ignore_index=True)
 
-    to_race = sorted_df[[country_col,col]].rename(columns={
-        country_col : "country", 
+    # first 30 country consumption
+    to_race = sorted_df[[country_col,col]][:30].rename(columns={
+        country_col : "name", 
         col : "value"})
+
+    # crypto consumption
+    race_crypto = sorted_df[[country_col,col]][-10:].rename(columns={
+        country_col : "name", 
+        col : "value"})
+
+    to_race = to_race[["name","value"]].append(race_crypto, ignore_index=True, verify_integrity=True)
     to_race.insert(2, "lastValue", lastValue, True)
     to_race.insert(2, "year", int(col), True)
-    to_race.insert(2, "rank", np.arange(1,len(sorted_df["country"])+1), True)
+    to_race.insert(2, "rank", np.arange(1,40+1), True)
     
     lastValue = last_df
     race_df = race_df.append(to_race, ignore_index=True, verify_integrity=True)
@@ -135,7 +143,7 @@ for col in full_df.columns[1:]:
 
 sorted_race = race_df.sort_values(by=["rank"], ascending=True, ignore_index=True)    
 if SAVE:
-    sorted_race.to_csv(f"data/dataset/race/race_{mode}.csv", columns=["country","value","year","lastValue","rank"])
+    sorted_race.to_csv(f"data/dataset/race/race_{mode}.csv", columns=["name","value","year","lastValue","rank"])
 print(sorted_race)
 
 

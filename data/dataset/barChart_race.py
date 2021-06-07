@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-MODE    = "sameHR"  # "data" or "sameHR"
+MODE    = "data"  # "data" or "sameHR"
 SAVE    = True
 VERBOSE = False
 
@@ -73,7 +73,7 @@ def consumptionFromHashrate(data_df, eff: float=0.02, same_hr: bool=False, verbo
             # compute estimated consumption
             cons_year = np.multiply(hr_year, eff*1000)
             cons_year = cons_year/(24*1000000)
-            cons_year = np.divide(cons_year, 1000000)
+            cons_year = np.divide(cons_year, 1000)
             # -----------------------------
 
             cons_list.append(cons_year)

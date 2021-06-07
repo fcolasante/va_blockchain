@@ -9,5 +9,5 @@ export interface Asic {
   pca_X?: number;
   pca_Y?: number;
   enabled: boolean;
-  selParallel?: boolean;
+  selParallel: boolean;
 }

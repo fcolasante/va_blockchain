@@ -68,6 +68,15 @@ export class RankingComponent implements OnInit, OnChanges {
       .text((d, i) => d.name)
       .attr("text-anchor", "left")
       .style("alignment-baseline", "middle");
-
+    this.svg.selectAll("myCryptos")
+      .data(this.algo)
+      .enter()
+      .append("text")
+      .attr("x",  (d, i) => 30 + i * 150)
+      .attr("y", 15 ) // 100 is where the first dot appears. 25 is the distance between dots
+      .style("fill", d => d.enabled ? this.color(d.name) : 'gray')
+      .text((d, i) => d.algos)
+      .attr("text-anchor", "left")
+      .style("alignment-baseline", "middle");
   }
 }

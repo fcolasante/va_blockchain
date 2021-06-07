@@ -26,3 +26,7 @@ $angular-dark-theme: mat-dark-theme(
 .darkMode {
   @include angular-material-color($angular-dark-theme);
 }
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 40px;
+}

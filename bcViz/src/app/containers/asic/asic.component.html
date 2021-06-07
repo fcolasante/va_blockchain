@@ -25,6 +25,7 @@
       <app-pca
         fxFlex="50"
         [color]="colorAlgo"
+        (filteredAsicEvent)="updateAsic($event)"
         [asic]="asic"></app-pca>
     <app-asic-table fxFlex="50"
                     style="height: 100%"

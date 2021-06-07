@@ -17,26 +17,25 @@ export interface RaceEntry {
   styleUrls: ['./bar-race.component.scss']
 })
 export class BarRaceComponent implements OnInit {
-  private margin = { top: 50, right: 20, bottom: 30, left: 100 };
-  private width = 750 - this.margin.left - this.margin.right;
-  private height = 800 - this.margin.top - this.margin.bottom;
+  private margin = { top: 50, right: 0, bottom: 30, left: 100 };
+  private width = 800 - this.margin.left - this.margin.right;
+  private height = 840 - this.margin.top - this.margin.bottom;
   private svg;
   private g;
 
   private tickDuration = 500;
-  private incrementTimeSlot = 1000;
+  private incrementTimeSlot = 500;
 
   private barPadding;
   // tslint:disable-next-line:variable-name
   private top_n = 40;
   private year = 2016;
-  private finalYear = 2029;
+  private finalYear = 2049;
   constructor() { }
-
+  private fileName = ['assets/race_data.csv', 'assets/race_sameHR.csv'];
   ngOnInit(): void {
-    d3.csv('assets/race_data.csv')
+    d3.csv(this.fileName[0])
       .then( rawData => {
-        console.log("Brand", rawData);
         const data: RaceEntry[] = rawData.map(d => {
           // @ts-ignore
           return ({
@@ -67,12 +66,12 @@ export class BarRaceComponent implements OnInit {
       .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
   }
   private drawChart(): void {
-    this.barPadding = (this.height - (this.margin.bottom + this.margin.top)) / ( this.top_n * 5 );
+    this.barPadding = (this.height - (this.margin.bottom + this.margin.top)) / ( this.top_n * 3 );
 
     const title = this.svg.append('text')
       .attr('class', 'title')
       .attr('y', 24)
-      .html('Cryptocurrency consumption');
+      .html('Energy consumption [TWh/year]');
     /*
     const subTitle = this.svg.append("text")
       .attr("class", "subTitle")
@@ -139,7 +138,6 @@ export class BarRaceComponent implements OnInit {
       .attr('y', d => y(d.rank) + 5)
       .attr('height', y(1) - y(0) - this.barPadding)
       .style('fill', d => d.colour);
-
     this.svg.selectAll('text.label')
       .data(yearSlice, d => d.name)
       .enter()
@@ -149,7 +147,17 @@ export class BarRaceComponent implements OnInit {
       .attr('y', d => y(d.rank) + 5 + ((y(1) - y(0)) / 2) + 1)
       .style('text-anchor', 'end')
       .html(d => d.name);
-
+    /**
+    this.svg.selectAll('text.label')
+      .data(yearSlice, d => d.name)
+      .enter()
+      .append('text')
+      .attr('class', 'label')
+      .attr('x', d =>  0)
+      .attr('y', d => y(d.rank) + 5 + ((y(1) - y(0)) / 2) + 1)
+      .style('text-anchor', 'start')
+      .html(d => d.name);
+    **/
     this.svg.selectAll('text.valueLabel')
       .data(yearSlice, d => d.name)
       .enter()
@@ -161,6 +169,7 @@ export class BarRaceComponent implements OnInit {
 
     const yearText = this.svg.append('text')
       .attr('class', 'yearText')
+      .style("font-size", "34px")
       .attr('x', this.width - this.margin.right)
       .attr('y', this.height - 25)
       .style('text-anchor', 'end')

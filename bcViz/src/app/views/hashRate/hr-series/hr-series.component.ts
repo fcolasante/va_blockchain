@@ -37,7 +37,7 @@ export class HrSeriesComponent implements OnInit, OnChanges {
   private y;
   private line;
 
-  private margin = { top: 20, right: 80, bottom: 30, left: 60 };
+  private margin = { top: 20, right: 90, bottom: 30, left: 60 };
   private width = 800 - this.margin.left - this.margin.right;
   private height = 400 - this.margin.top - this.margin.bottom;
 
@@ -70,10 +70,6 @@ export class HrSeriesComponent implements OnInit, OnChanges {
       .style("text-anchor", "middle")
       .text("Hashrate [Th] ");
 
-    this.svg.append("text")
-      .attr('transform', `translate(${this.width / 2 }, ${this.height + this.margin.bottom  })`)
-      .style("text-anchor", "middle")
-      .text("Time");
 
     this.g = this.svg.append("g")
       .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
@@ -83,7 +79,7 @@ export class HrSeriesComponent implements OnInit, OnChanges {
     this.line = d3.line<HashPoint>()
       .curve(d3.curveBasis)
       .x((d) => this.x(d.date))
-      .y((d) => this.y(d.hashRate));
+      .y((d) => this.y(d.hashRate !== null ? d.hashRate : 1));
     const gridXaxis = () => d3.axisBottom(this.x);
 
     const gridYAxis = () => d3.axisLeft(this.y);
@@ -91,7 +87,7 @@ export class HrSeriesComponent implements OnInit, OnChanges {
 
   private drawChart(filterData): void {
     if (this.allHashRate === undefined) { return; }
-    console.log("drawChart");
+    console.log(this.allHashRate);
 
 
     this.hashRate = this.allHashRate.filter( d => this.filterCrypto[d.id]);

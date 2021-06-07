@@ -46,7 +46,8 @@ export class AsicComponent implements OnInit {
               efficiency: +d.efficiency,
               pca_X: +d.X,
               pca_Y: +d.Y,
-              enabled: true
+              enabled: true,
+              selParallel: false
             }
           );
         });

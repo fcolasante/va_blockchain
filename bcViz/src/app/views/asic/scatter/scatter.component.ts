@@ -20,21 +20,26 @@ export class ScatterComponent implements OnInit, OnChanges {
   private margin = { top: 20, right: 20, bottom: 30, left: 40 };
   private width = 700 - this.margin.left - this.margin.right;
   private height = 400 - this.margin.top - this.margin.bottom;
-
+  private myChange = false;
 
   ngOnInit(): void {
     this.createSvg();
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if ((changes.asic && changes.asic.previousValue === undefined) ||
+    if ((changes.asic && changes.asic.previousValue === undefined ) ||
       (changes.asic.previousValue !== undefined &&
-      changes.asic.previousValue.length !== changes.asic.currentValue.length)) {
+      changes.asic.previousValue.length !== changes.asic.currentValue.length)|| this.myChange === false ) {
+      console.log("Any", this.asic.find(asic => asic.selParallel));
       this.drawPlot(this.asic);
+    }
+    if (this.myChange === true) {
+      this.myChange = false;
     }
   }
   private createSvg(): void {}
 
   private drawPlot(data: Asic[]): void {
+    console.log("refreshing scatter");
     if (data === undefined) { return; }
     if (this.svg) { d3.select("figure#scatter").selectChild().remove(); }
 
@@ -90,10 +95,9 @@ export class ScatterComponent implements OnInit, OnChanges {
       .append("circle")
       .attr("cx", d => x(d.release))
       .attr("cy", d => y(d.hashRate))
-      .attr("r", d => {
-        if (this.selectedAsic === undefined) return 3;
-        return (d.model === this.selectedAsic.model) ? 5 : 3;
-      })
+      .attr("r", d => (d.selParallel) ? 5 : 3)
+      .style("stroke-width", 2)
+      .style("stroke", d => (d.selParallel) ? "blue" : "trasparent")
       .style("opacity", .5)
       .style("fill", d => this.color(d.algo));
       /**
@@ -139,6 +143,7 @@ export class ScatterComponent implements OnInit, OnChanges {
         });
         // this.asic = filteredAsic;
         this.filteredAsicEvent.emit(enAsic);
+        this.myChange = true;
         // console.log(this.asic);
         this.meanEfficiency = d3.mean(filteredAsic, d => d.efficiency);
       });

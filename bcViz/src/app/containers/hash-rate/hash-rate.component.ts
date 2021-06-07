@@ -43,7 +43,7 @@ export class HashRateComponent implements OnInit {
       .then( data => {
         this.originalSeries = data;
         this.allHashRate = data.columns.slice(1).map( id => {
-          return { id, values: data.map(d => ({date: this.parseTime(d.date), hashRate: +d[id]}) )};
+          return { id, values: data.map(d => ({date: this.parseTime(d.date), hashRate: +d[id] ? +d[id] : 1}) )};
         });
       }).catch(error => console.log(error));
 

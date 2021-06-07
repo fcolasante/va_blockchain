@@ -19,7 +19,7 @@ export class ParallelComponent implements OnInit, OnChanges {
   private svg;
   private margin = { top: 20, right: 20, bottom: 30, left: 20 };
   private width = 800 - this.margin.left - this.margin.right;
-  private height = 400 - this.margin.top - this.margin.bottom;
+  private height = 416 - this.margin.top - this.margin.bottom;
 
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
@@ -78,6 +78,7 @@ export class ParallelComponent implements OnInit, OnChanges {
       .attr("d",  path)
       .style("fill", "none")
       .style("stroke", d => d.enabled ? this.color(d.algo) : 'gray')
+      .style("stroke-dasharray", d => d.selParallel ? '2,5': '')
       .style("opacity", d => d.enabled ? 0.5 : 0.1)
       .on("mouseover", (event, d) => {
         console.log(d);

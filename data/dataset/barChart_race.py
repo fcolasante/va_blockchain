@@ -115,7 +115,7 @@ for col in full_df.columns[1:]:
         # last year has no next
         next_col = str(int(col)+1)
         last_df = full_df.sort_values(by=[next_col], ascending=False, ignore_index=True)
-        last_df = last_df[col][:30].append(last_df[col][-10:], ignore_index=True)
+        last_df = last_df[col][:30].append(last_df[col][-11:], ignore_index=True)
 
     # first 30 country consumption
     to_race = sorted_df[[country_col,col]][:30].rename(columns={
@@ -123,14 +123,14 @@ for col in full_df.columns[1:]:
         col : "value"})
 
     # crypto consumption
-    race_crypto = full_df[[country_col,col]][-10:].rename(columns={
+    race_crypto = full_df[[country_col,col]][-11:].rename(columns={
         country_col : "name", 
         col : "value"})
 
     to_race = to_race[["name","value"]].append(race_crypto, ignore_index=True, verify_integrity=True)
     to_race.insert(2, "lastValue", lastValue, True)
     to_race.insert(2, "year", int(col), True)
-    to_race.insert(2, "rank", np.arange(1,40+1), True)
+    to_race.insert(2, "rank", np.arange(1,41+1), True)
     
     lastValue = last_df
     race_df = race_df.append(to_race, ignore_index=True, verify_integrity=True)

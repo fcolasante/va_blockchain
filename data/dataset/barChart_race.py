@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-MODE    = "data"  # "data" or "sameHR"
+MODE    = "sameHR"  # "data" or "sameHR"
 SAVE    = True
 VERBOSE = False
 
@@ -154,6 +154,7 @@ if SAVE:
     sorted_race.to_csv(f"data/dataset/race/race_{mode}.csv", columns=["name","value","year","lastValue","rank"])
 print(sorted_race)
 
+
 ###############################
 #         HASHRATE            #
 ###############################
@@ -162,9 +163,8 @@ hr_df = pd.read_csv("data/dataset/race/hashrate_race.csv", delimiter=",")
 print(hr_df)
 
 eff_range = [0.02, 0.05]
-#if MODE == "data":
-#    for eff in eff_range:
-#        consumptionFromHashrate(data_df=hr_df, eff=eff)
-
-#elif MODE == "sameHR":
-#    consumptionFromHashrate(data_df=hr_df, same_hr=True)
+if MODE == "data":
+    for eff in eff_range:
+        consumptionFromHashrate(data_df=hr_df, eff=eff)
+elif MODE == "sameHR":
+    consumptionFromHashrate(data_df=hr_df, same_hr=True)

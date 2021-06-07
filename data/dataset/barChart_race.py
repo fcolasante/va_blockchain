@@ -123,7 +123,7 @@ for col in full_df.columns[1:]:
         col : "value"})
 
     # crypto consumption
-    race_crypto = sorted_df[[country_col,col]][-10:].rename(columns={
+    race_crypto = full_df[[country_col,col]][-10:].rename(columns={
         country_col : "name", 
         col : "value"})
 

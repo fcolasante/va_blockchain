@@ -74,6 +74,12 @@ for col in full_df.columns[1:]:
     sorted_df = full_df.sort_values(by=[col], ascending=False, ignore_index=True)
     sorted_np = sorted_df[col].to_numpy()
 
+    if col != "2029":
+        # last year has no next
+        next_col = str(int(col)+1)
+        last_df = full_df.sort_values(by=[next_col], ascending=False, ignore_index=True)
+        last_df = last_df[col]
+
     to_race = sorted_df[[country_col,col]].rename(columns={
         country_col : "country", 
         col : "value"})
@@ -81,7 +87,7 @@ for col in full_df.columns[1:]:
     to_race.insert(2, "year", int(col), True)
     to_race.insert(2, "rank", np.arange(1,len(sorted_df["country"])+1), True)
     
-    lastValue = sorted_np
+    lastValue = last_df
     race_df = race_df.append(to_race, ignore_index=True, verify_integrity=True)
 
     print(f"---> year: {col}")

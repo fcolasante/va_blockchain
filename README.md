@@ -2,3 +2,4 @@
 Project on Blockchain electricity consumption for the exam of Visual Analytics 20/21, Sapienza University of Rome.
 
 
+![view_asic](img/view_asic.png)

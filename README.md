@@ -6,7 +6,7 @@ This system aims to show the relations between the most important factors relate
 
 
 The following are two screenshot of the main views of our VA system, that is fully available [here](https://blockchain-viz.web.app/asic). The first one is the ASIC view:
-![view_asic](img/view_asic.png)
+![view_asic](img/asic_view.png)
 
 The latter is focused on Hashrate data:
 ![view_hashrate](img/view_hr.png)

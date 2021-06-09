@@ -15,7 +15,7 @@ The latter is focused on Hashrate data:
 ## Dataset
 There was no dataset already comprehending all the data we needed in this analysis, thus we have performed some information integration. We exploited data from the following sources:
 
-- crypto-currency PoW networks hashrate -> [coinmetrics.io](https://coinmetrics.io/)
+- PoW-based crypto-currency networks hashrate -> [coinmetrics.io](https://coinmetrics.io/)
 - Application Specific Integrated Circuit (ASICs) -> [asicminervalue.com](https://www.asicminervalue.com/)
 - countries electricity consumption -> [U.S. EIA](https://www.eia.gov/about/)
 

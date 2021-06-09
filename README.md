@@ -17,4 +17,10 @@ There was no dataset already comprehending all the data we needed in this analys
 
 - crypto-currency PoW networks hashrate -> [coinmetrics.io](https://coinmetrics.io/)
 - Application Specific Integrated Circuit (ASICs) -> [asicminervalue.com](https://www.asicminervalue.com/)
-- countries electricity consumption [U.S. EIA](https://www.eia.gov/about/)
+- countries electricity consumption -> [U.S. EIA](https://www.eia.gov/about/)
+
+
+## Authors
+- Francesco Colasante
+- Giammarco D'Alessandro
+- Simone Di Tanna

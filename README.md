@@ -21,6 +21,6 @@ There was no dataset already comprehending all the data we needed in this analys
 
 
 ## Authors
-- Francesco Colasante
-- Giammarco D'Alessandro
-- Simone Di Tanna
+- [Francesco Colasante](https://github.com/fcolasante)
+- [Giammarco D'Alessandro](https://github.com/giamdalessandro)
+- [Simone Di Tanna](https://github.com/sditanna)
